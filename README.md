@@ -1,7 +1,7 @@
 # NLW-Next-Level-Week #2
 
 <h1 align="center">
-    <img alt="NextLevelWeek" title="#NextLevelWeek" style="object-fit: cover; width:250px; height:250px;" src="web/src/assets/imagens/nlw.gif"  />
+    <img alt="NextLevelWeek" title="#NextLevelWeek" style="object-fit: cover; width:250px; height:250px;" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/web/src/assets/images/nlw.gif"  />
 </h1>
 
 
@@ -17,9 +17,9 @@
 <p align="center">
   <a href="#-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-motivo">Motivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-days-e-techs">Days e Techs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-desenvolvimento">Desenvolvimento</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-instalação-e-start">Instalação e Start</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-extra-chalenges">Extra chalenges</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-issues">Issues</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -37,7 +37,7 @@ Durante o evento Next Level Week #2, foi desenvolvido a projeto Proffy, que é u
 
 O projeto está sendo desenvolvido na [Next Level Week 2](https://nextlevelweek.com/episodios/omnistack/1/edicao/2). Uma plataforma de estudos online que visa conectar alunos e professores de forma rápida e fácil.
 
-##🧐 Motivo
+## 🧐 Motivo
 
 Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 
@@ -61,6 +61,8 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - [x] Estilizando listagem de professores
 - [x] Criando componentes comuns (Teacher Item)
 
+[Passo-a-Passo Aula 1](Aula01.md)
+
 #### Aula 2: Proffy-Server
 - [x] Identificando casos de uso
 - [x] Configurando conexão com o banco
@@ -69,6 +71,8 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - [x] Listagem de aulas
 - [x] Criação e total de coneções
 
+[Passo-a-Passo Aula 2](Aula02.md)
+
 #### Aula 3: Finalizando Front-End
 - [x] Estruturando página de cadastro
 - [x] Estilizando página de cadastro
@@ -76,6 +80,8 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - [x] Carregando total de conexões na Landing
 - [x] Cadastro de novas aulas
 - [x] Listagem de professores
+
+[Passo-a-Passo Aula 3](Aula03.md)
 
 #### Aula 4: Estruturando app mobile
 - [ ] Criando projeto com expo
@@ -102,7 +108,7 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 
 ### Web Responsive Interface  para Desktop com ReactJS
 <p align="center">
-  <img src="web/src/assets/imagens/appweb.gif" alt="Study Page in Mobile" width="100%" />
+  <img src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/web/src/assets/images/appweb.gif" alt="Study Page in Mobile" width="100%" />
 </p>
 
 <h2 align="left"> 📥 Figma layout available for download at: </h2>
@@ -185,16 +191,24 @@ Back End (pasta server) Front End (pasta web) Mobile (pasta mobile)
 # Será startado em `http://localhost:3333`
 ```
 
-# Extra chalenges in App
+## Extra chalenges in App Version 2.0
 
-<ul>
-    <li> Splash Screen </li>
-    <li> OnBoarding Screen na primeira execução</li>
-	<li> Cadastro de Senha </li>
-	<li> Login / Logout </li>
-	<li> Recuperar Senha </li>
-    <li> Horários na tela de Favoritos usando ContextApi</li>
-</ul>
+- [ ] Splash Screen
+- [ ] OnBoarding Screen na primeira execução
+- [ ] Infinite Scroll
+- [ ] Autenticação
+  - [ ] Login / Logout 
+  - [ ] Permanecer logado - Token
+  - [ ] Recuperar senha
+  - [ ] Web
+  - [ ] Mobile
+- [ ] Rating system
+- [ ] Manutenção de cadastro de Professor
+- [ ] Perfil do usuário
+- [ ] Horários na tela de Favoritos usando ContextApi
+- [ ] Adicionando e removendo favoritos
+- [ ] Deploy
+ 
 
 <h2 align="left"> 📥 Figma layout available for download at: </h2>
 
