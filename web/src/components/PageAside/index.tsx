@@ -4,24 +4,23 @@ import { Link } from 'react-router-dom';
 import logoimg from '../../assets/images/logo.svg';
 import backicon from '../../assets/images/icons/back.svg';
 
-interface PageHeaderProps {
+interface PageAsideProps {
     title: string;
     description?: string;
-    logo?: boolean;
+    voltar?: boolean;
   }
   
-const PageHeader: React.FC<PageHeaderProps> = (propriedade) => 
+const PageAside: React.FC<PageAsideProps> = (propriedade) => 
 {
     return (
-        <header className="page-header">
+        <header className="aside-header">
             <div className="top-bar-container">
               <Link to="/">
                 <img src={backicon} alt="Voltar" />
               </Link>
               <img src={logoimg} alt="Proffy" />
             </div>
-            <div className="header-content">
-              {propriedade.logo? <p><img src={logoimg} alt="Proffy"/></p> : null}
+            <div className="aside-content">
               <strong> {propriedade.title} </strong>
               {propriedade.description? <p>{propriedade.description}</p> : null}
               {propriedade.children}
@@ -30,4 +29,4 @@ const PageHeader: React.FC<PageHeaderProps> = (propriedade) =>
     )
 }
 
-export default PageHeader;
+export default PageAside;

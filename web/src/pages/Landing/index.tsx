@@ -29,11 +29,10 @@ function Landing() {
             setTotalConnections(response.data.total);
         });
         
-        api.get('accounts/credentials', {params: {email: user?.email}}).then(response => {
-            const { username } = response.data;
+        api.get('login', {params: {email: user?.email, password: user?.password}}).then(response => {
+            const { data } = response.data;
 
-            setUserName(username);
-            console.log(username);
+            setUserName(data.name);
         })
       }, []);
 

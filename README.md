@@ -1,7 +1,7 @@
 # NLW-Next-Level-Week #2
 
 <h1 align="center">
-    <img alt="NextLevelWeek" title="#NextLevelWeek" style="object-fit: cover; width:250px; height:250px;" src="server/src/assets/imagens/nlw.gif"  />
+    <img alt="NextLevelWeek" title="#NextLevelWeek" style="object-fit: cover; width:250px; height:250px;" src="web/src/assets/imagens/nlw.gif"  />
 </h1>
 
 
@@ -45,11 +45,11 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 
 | Dia | Descriçao | tecnologias |
 |:---:|---------|:-----------:|
-|  03/08  |Acelerando sua evolução| ![npm](https://img.shields.io/npm/v/react?color=black&label=React&logo=react)  ![npm](https://img.shields.io/npm/v/typescript?color=black&label=Typescript&logo=typescript&logoColor=blue) |
-|  04/08  |Olhando as oportunidades| ![npm](https://img.shields.io/npm/v/express?color=black&label=Express&logo=node.js)  ![npm](https://img.shields.io/npm/v/knex?color=black&label=Knex&logo=wolfram&logoColor=orange)           |
+|  **03/08**  |**Acelerando sua evolução**| ![npm](https://img.shields.io/npm/v/react?color=black&label=React&logo=react)  ![npm](https://img.shields.io/npm/v/typescript?color=black&label=Typescript&logo=typescript&logoColor=blue) |
+|  **04/08**  |**Olhando as oportunidades**| ![npm](https://img.shields.io/npm/v/express?color=black&label=Express&logo=node.js)  ![npm](https://img.shields.io/npm/v/knex?color=black&label=Knex&logo=wolfram&logoColor=orange)           |
 |  **05/08**  |**A escolha da stack**|    ![npm](https://img.shields.io/npm/v/axios?color=black&label=Axios&logo=insomnia&logoColor=purple)   ![npm](https://img.shields.io/npm/v/sqlite3?color=black&label=Sqlite3&logo=sqlite&logoColor=Blue)     |
 |  06/08  |Até 2 anos em 2 meses|   ![npm](https://img.shields.io/npm/v/react-native?color=black&label=React-Native&logo=react) ![npm](https://img.shields.io/npm/v/expo?color=black&label=Expo&logo=expo)            |
-|  **07/08**  |**A milha extra**|   
+|  07/08  |A milha extra|   
 
 ### Desenvolvimento
 
@@ -102,13 +102,7 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 
 ### Web Responsive Interface  para Desktop com ReactJS
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shyoutarou/NLW2_Server/master/server/src/assets/imagens/appweb.gif" alt="Study Page in Mobile" width="100%" />
-</p>
-
-### Mobile Interface com React Native
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/shyoutarou/NLW2_Server/master/server/src/assets/imagens/appmobile.gif" alt="Landing Page Proffy in Mobile" width="25%" />
+  <img src="web/src/assets/imagens/appweb.gif" alt="Study Page in Mobile" width="100%" />
 </p>
 
 <h2 align="left"> 📥 Figma layout available for download at: </h2>
@@ -116,8 +110,6 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - [Instruções](https://whimsical.com/4Ug5pJLABvCj2NWQXyuK38)
 - [Protótipo](https://www.notion.so/Layout-Proffy-3d5f45f54ec54ef9b2103565b7cce4e1)
 - [Proffy-Web](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web)
-- [Proffy-Mobile](https://www.figma.com/file/e33KvgUpFdunXxJjHnK7CG/Proffy-Mobile)
-- [Proffy Versão 2.0](https://www.notion.so/Vers-o-2-0-Proffy-eefca1b981694cd0a895613bc6235970)
 
 ## ⚙ Instalação e Start
 
@@ -152,14 +144,6 @@ Primeiro, clone o repositório para seu ambiente:
 
 Depois, entre no repositório clonado e no diretório correspondente ao que quer testar (web, server).
 Logo após, insira os seguintes comandos no seu terminal para cada diretório respectivamente:
-
-### Como executar o projeto
-
-Podemos considerar este projeto como sendo divido em três partes:
-
-Back End (pasta server) Front End (pasta web) Mobile (pasta mobile)
-
-💡 Tanto o Front End quanto o Mobile precisam que o Back End esteja sendo executado para funcionar.
 
 ### Como executar o projeto
 
@@ -212,6 +196,11 @@ Back End (pasta server) Front End (pasta web) Mobile (pasta mobile)
     <li> Horários na tela de Favoritos usando ContextApi</li>
 </ul>
 
+<h2 align="left"> 📥 Figma layout available for download at: </h2>
+
+- [Instruções](https://www.notion.so/Vers-o-2-0-Proffy-eefca1b981694cd0a895613bc6235970)
+- [Proffy-Web 2.0](https://www.figma.com/file/Agvethfp7FANyXDDU3LUfd/Proffy-Web-2.0)
+
 ## 🐛 Issues
 
 Sinta-se à vontade para registrar um novo problema com o respectivo título e descrição no repositório Proffy. Se você já encontrou uma solução para seu problema, adoraria revisar sua solicitação de pull!
@@ -236,12 +225,11 @@ Siga os passos abaixo para contribuir:
 
 ## 📜 License
 
-O projeto lançado em 2020 sobre a licença [MIT](./LICENSE) ❤️ 
+O projeto publicado em 2020 sobre a licença [MIT](./LICENSE) ❤️ 
 
-Made with ♥ by Shyoutarou
+Made with ❤️ by Shyoutarou
 
 Gostou? Deixe uma estrelinha para ajudar o projeto ⭐
-
  
 
 

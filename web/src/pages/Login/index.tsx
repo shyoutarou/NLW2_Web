@@ -1,41 +1,87 @@
-import React, { FormEvent, useState } from 'react';
-import { useAuth } from '../../contexts/auth';
+import React, { FormEvent, useState, useEffect } from 'react';
 
+import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../../contexts/auth';
+import api from '../../services/api';
+
+import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 
 import logoImg from '../../assets/images/logo.svg';
 
 import './style.css';
-import { Link } from 'react-router-dom';
+import PageAside from '../../components/PageAside';
+
+
+interface ServerResponse {
+    success: boolean;
+    access_token: string;
+  }
 
 function Login() {
-    const { signed, signIn, handleToggleRemember } = useAuth();
+
+    const history = useHistory();
+
+    useEffect(() => {
+        const token = localStorage.getItem('access_token');
+        if (token) {
+        api.defaults.headers.common['Authorization'] = token;
+        history.push('/study');
+        }
+    }, [])
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    console.log(signed);
+    const { signed, signIn, handleToggleRemember } = useAuth();
 
-    function handleSignIn(e: FormEvent){
+    function handleLogin(e: FormEvent) {
         e.preventDefault();
-        console.log(signed);
-        console.log(email);
-        console.log(password);
-        signIn(email, password);
-    }
 
+        api.post<ServerResponse>('login', {
+          email,
+          password
+            }).then(response => {
+                const { data } = response;
+                const { access_token } = data;
+
+                // api.defaults.headers.common['Authorization'] = access_token;
+
+                signIn( email, password, access_token);
+
+                history.push('/give-classes');
+            }).catch(() => alert('Erro no login!'));
+      }
+      
     return (
         <div id="page-login">
             <div id="page-login-content">
-                <div className="login-logo-container">
+
+                <div id="page-login-header" >
+                    <PageHeader 
+                        title="Suaforma de estudos online."
+                        logo={true} 
+                        >
+                    </PageHeader>
+                </div>
+                <div id="page-login-aside">
+                    <PageAside 
+                        title="Suaforma de estudos online."
+                        voltar={true}
+                        >
+                    </PageAside>
+                </div>
+
+
+                {/* <div className="login-logo-container">
                     <div className="login-logo">
                         <img src={logoImg} alt="Proffy"/>
                         <h2>Your online study platform.</h2>
                     </div>
-                </div>
+                </div> */}
                 <div className="login-form">
                         <fieldset>
-                            <form onSubmit={handleSignIn}>
+                            <form onSubmit={handleLogin}>
                                 <header>
                                     <legend>Login</legend>
                                     <Link to='/signup' className="signup-button">
@@ -43,22 +89,25 @@ function Login() {
                                     </Link>
                                 </header>
                                 <div className="input-container">
-                                    <Input 
-                                        name="email" 
+                                    <Input
+                                        name="email"
+                                        type="email"
                                         placeholder="example@youremail.com"
-                                        value={email} 
+                                        value={email}
+                                        label="E-mail"
                                         onChange={(e) => {
                                             setEmail(e.target.value)
-                                        }} 
+                                        }}
                                         />
-                                    <Input 
-                                        name="password" 
+                                    <Input
+                                        name="password"
                                         placeholder="password"
                                         type="password"
-                                        value={password} 
+                                        label="Senha"
+                                        value={password}
                                         onChange={(e) => {
                                             setPassword(e.target.value)
-                                        }} 
+                                        }}
                                         />
                                 </div>
                                 <footer>

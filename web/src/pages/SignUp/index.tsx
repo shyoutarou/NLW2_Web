@@ -12,7 +12,7 @@ import './style.css';
 function TeacherForm(){
     const history = useHistory();
 
-    const [username, setUsername] = useState('');
+    const [name, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [avatar, setAvatar] = useState('');
@@ -23,8 +23,8 @@ function TeacherForm(){
     function handleCreateAccount(e: FormEvent){
         e.preventDefault();
 
-        api.post('accounts', {
-            username,
+        api.post('users', {
+            name,
             email,
             password,
             avatar,
@@ -49,7 +49,7 @@ function TeacherForm(){
                         <Input 
                             name="name" 
                             label="Complete Name" 
-                            value={username} 
+                            value={name} 
                             onChange={(e) => {
                                 setUsername(e.target.value)
                             }} 

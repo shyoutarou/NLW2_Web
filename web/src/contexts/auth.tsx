@@ -9,7 +9,7 @@ interface User {
 interface AuthContextData {
     signed: boolean;
     user: User | null;
-    signIn(email: string, username:string): Promise<void>;
+    signIn(email: string, password :string, token:string): Promise<void>;
     signOut(): void;
     handleToggleRemember(): void;
 }
@@ -37,14 +37,15 @@ export const AuthProvider: React.FunctionComponent = ({ children }) => {
         setRemember(!remember);
     }
 
-    async function signIn(username:string, email: string) {
-        const response = await auth.signIn(username, email);
-        console.log(response);
-        setUser(response.user);
+    async function signIn(email: string, password: string, token: string) {
+
+        // const response = await auth.signInAPI(username, email);
+
+        setUser({ email: email, password: password });
 
         if (remember){
-            localStorage.setItem('@proffy:user', JSON.stringify(response.user));
-            localStorage.setItem('@proffy:token', response.token);
+            localStorage.setItem('@proffy:user', JSON.stringify(user));
+            localStorage.setItem('@proffy:token', token);
         }
     }
 
@@ -52,7 +53,6 @@ export const AuthProvider: React.FunctionComponent = ({ children }) => {
         localStorage.clear();
         setUser(null);
     }
-
 
     return(
 

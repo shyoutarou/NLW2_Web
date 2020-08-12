@@ -5,6 +5,10 @@
     background-color: var(--color-background);
 }
 
+#page-login-header{
+    display: none;
+} 
+
 #page-login-content{
     display: flex;
     flex-direction: column;
@@ -143,6 +147,12 @@
 }
 
 
-/* @media (min-width: 1100px) {
-    
-} */
+@media (min-width: 1000px) {
+    #page-login-header{
+        display: block;
+    } 
+
+    #page-login-aside{
+        display: none;
+    } 
+}

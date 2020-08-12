@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import Landing from './pages/Landing';
 import TeacherList from './pages/TeacherList';
 import TeacherForm from './pages/TeacherForm';
+import LoginError from './pages/LoginError';
 
 function Routes()
 {
@@ -15,8 +16,10 @@ function Routes()
 
     if (signed) {
         return (
-            <BrowserRouter>
+            <BrowserRouter  >
                 <Route path="/" exact component={Landing}/>
+                <Route path="/login" exact component={Login} />
+                <Route path="/signup" exact component={SignUp} />
                 <Route path="/study" component={TeacherList}/>  
                 <Route path="/give-classes" component={TeacherForm}/>
             </BrowserRouter>
@@ -25,9 +28,9 @@ function Routes()
         return (
             <BrowserRouter>
                 <Route path="/" exact component={Login}/>
-                {/* <Route path="/study" component={LoginError}/> */}
+                <Route path="/study" component={LoginError}/>
                 <Route path="/signup" component={SignUp}/>
-                {/* <Route path="/give-classes" component={LoginError}/> */}
+                <Route path="/give-classes" component={LoginError}/>
             </BrowserRouter>
         );
     }
