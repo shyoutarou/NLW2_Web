@@ -27,10 +27,6 @@
   <a href="#-license">License</a> 
 </p>
 
-<p align="center">
-  <a href="https://insomnia.rest/run/?label=Proffy&uri=https%3A%2F%2Fgithub.com%2Frafacdomin%2Fproffy%2Fblob%2Fmaster%2Fapi%2FInsomnia_proffy.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
-</p>
-
 ## ❔ Sobre o projeto
 
 Durante o evento Next Level Week #2, foi desenvolvido a projeto Proffy, que é uma plataforma de estudos online, conectando alunos com professores para aulas online, tendo um calendário para o professro com seus horários disponíveis para que os alunos possam entrar em contato, não engloba vídeo. Trazendo uma representação e homenagem para o dia nacional do profissional da educação, que é comemorado no dia 06 de agosto.
