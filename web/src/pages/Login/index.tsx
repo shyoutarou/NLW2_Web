@@ -5,13 +5,10 @@ import { useAuth } from '../../contexts/auth';
 import api from '../../services/api';
 
 import PageHeader from '../../components/PageHeader';
+import PageAside from '../../components/PageAside';
 import Input from '../../components/Input';
 
-import logoImg from '../../assets/images/logo.svg';
-
 import './style.css';
-import PageAside from '../../components/PageAside';
-
 
 interface ServerResponse {
     success: boolean;

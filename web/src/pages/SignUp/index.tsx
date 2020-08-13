@@ -9,7 +9,7 @@ import warningIcon from '../../assets/images/icons/warning.svg'
 
 import './style.css';
 
-function TeacherForm(){
+function SignUp(){
     const history = useHistory();
 
     const [name, setUsername] = useState('');
@@ -121,4 +121,4 @@ function TeacherForm(){
     )
 }
 
-export default TeacherForm;
+export default SignUp;
