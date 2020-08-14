@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import Autorizados from './Autorizado';
-import NaoAutorizados from './NaoAutorizados';
+import AppRoutes from './AppRoutes';
+import AuthRoutes from './AuthRoutes';
+import { useAuth } from '../contexts/auth';
 
 
 const Routes: React.FC = () => {
-    const [signed, setsigned] = useState(true);
-    
-    return signed ? <Autorizados /> : <NaoAutorizados />;
+
+      const { signed, signIn, handleToggleRemember } = useAuth();
+      console.log(signed);
+
+      return signed ? <AppRoutes/> : < AuthRoutes />;
   };
   
   export default Routes;

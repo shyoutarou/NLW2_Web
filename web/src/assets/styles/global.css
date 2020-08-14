@@ -38,7 +38,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vg; 
+    height: 100vh; 
 }
 
 body,
@@ -49,7 +49,7 @@ textarea {
 }
 
 .container{
-    width: 90vm;
+    width: 90vw;
     max-width: 700px;
 }
 

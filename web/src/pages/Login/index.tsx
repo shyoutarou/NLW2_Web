@@ -10,46 +10,35 @@ import Input from '../../components/Input';
 
 import './style.css';
 
-interface ServerResponse {
-    success: boolean;
-    access_token: string;
-  }
-
 function Login() {
 
     const history = useHistory();
 
     useEffect(() => {
         const token = localStorage.getItem('access_token');
+
+        console.log(token);
+
         if (token) {
-        api.defaults.headers.common['Authorization'] = token;
-        history.push('/study');
+            api.defaults.headers.common['Authorization'] = token;
+            history.push('/study');
         }
     }, [])
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { signed, signIn, handleToggleRemember } = useAuth();
+    const { signed, user, signIn, handleToggleRemember } = useAuth();
 
-    function handleLogin(e: FormEvent) {
+    async function handleLogin(e: FormEvent) {
         e.preventDefault();
+        
+        const response = await signIn( email, password);
+        console.log(response);
 
-        api.post<ServerResponse>('login', {
-          email,
-          password
-            }).then(response => {
-                const { data } = response;
-                const { access_token } = data;
-
-                // api.defaults.headers.common['Authorization'] = access_token;
-
-                signIn( email, password, access_token);
-
-                history.push('/give-classes');
-            }).catch(() => alert('Erro no login!'));
+        if(signed) history.push('/give-classes');
       }
-      
+ 
     return (
         <div id="page-login">
             <div id="page-login-content">
@@ -81,7 +70,7 @@ function Login() {
                             <form onSubmit={handleLogin}>
                                 <header>
                                     <legend>Login</legend>
-                                    <Link to='/signup' className="signup-button">
+                                    <Link to='/register' className="login-button">
                                        <label>Sign Up</label>
                                     </Link>
                                 </header>
@@ -112,11 +101,19 @@ function Login() {
                                         <input onChange={handleToggleRemember} type="checkbox" name="remember"/>
                                         <label htmlFor="remember">Remember</label>
                                     </div>
-                                    <Link to='/signup' className="signup-button">
+                                    <Link to='/register' className="login-button">
                                        <label>Forgot my password</label>
                                     </Link>
                                 </footer>
-                                <button type="submit">Login</button>
+                                <Link to="/forgot-password" className="teste-button">
+                                    Forgot
+                                </Link>
+                                <Link to="/signin" className="teste-button">
+                                    signin
+                                </Link>
+                                <Link to="/signup" className="teste-button">
+                                    signup
+                                </Link>
                             </form>
                         </fieldset>
                 </div>
