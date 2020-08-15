@@ -40,12 +40,12 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 ### ***Utilitários***
 
 - Protótipo: **[Figma](https://www.figma.com/)** &rarr; **<kbd>[Protótipo (Proffy)](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web/duplicate)</kbd>**
-- Editor: **[Visual Studio Code][vscode]** &rarr; Extensions: **<kbd>[SQLite][vscode_sqlite_extension]</kbd>**
-- Markdown: **[StackEdit][stackedit]**, **<kbd>[Markdown Emoji][markdown_emoji]</kbd>**
-- Commit Conventional: **[Commitlint][commitlint]**
-- Teste de API: **[Insomnia][insomnia]**
-- Ícones: **[Feather Icons][feather_icons]**, **[Font Awesome][font_awesome]**
-- Fontes: **[Archivo][font_archivo]**, **[Poopins][font_poopins]**
+- Editor: **[Visual Studio Code](https://code.visualstudio.com/)** &rarr; Extensions: **<kbd>[SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)</kbd>**
+- Markdown: **[StackEdit](https://stackedit.io)**, **<kbd>[Markdown Emoji][markdown_emoji]</kbd>**
+- Commit Conventional: **[Commitlint](https://github.com/conventional-changelog/commitlint)**
+- Teste de API: **[Insomnia](https://insomnia.rest/)**
+- Ícones: **[Feather Icons](https://feathericons.com/)**, **[Font Awesome](https://fontawesome.com/)**
+- Fontes: **[Archivo](https://fonts.google.com/specimen/Archivo)**, **[Poopins](https://fonts.google.com/specimen/Poppins)**
 
 ### 🛠 Days e Techs
 
@@ -203,16 +203,16 @@ Back End (pasta server) Front End (pasta web) Mobile (pasta mobile)
 - [ ] OnBoarding Screen na primeira execução
 - [ ] Infinite Scroll
 - [ ] Autenticação
-  - [ ] Login / Logout 
-  - [ ] Permanecer logado - Token
-  - [ ] Recuperar senha
-  - [ ] Web
-  - [ ] Mobile
+  - [x] Login / Logout 
+  - [x] Permanecer logado - Token
+  - [x] Recuperar senha
+  - [x] Telas da Web
+  - [ ] Telas do Mobile
 - [ ] Rating system
 - [ ] Manutenção de cadastro de Professor
 - [ ] Perfil do usuário
-- [ ] Horários na tela de Favoritos usando ContextApi
-- [ ] Adicionando e removendo favoritos
+- [ ] Adicionar e remover os Horários no cadastro das Aulas 
+- [ ] Adicionando e removendo favoritos usando ContextApi
 - [ ] Deploy
  
 
@@ -229,9 +229,9 @@ Sinta-se à vontade para registrar um novo problema com o respectivo título e d
 
 Siga os passos abaixo para contribuir:
 
-1. Faça o *fork* do projeto (<https://github.com/shyoutarou/proffy>)
+1. Faça o *fork* do projeto (<https://github.com/shyoutarou/NLW2_Web.git>)
 
-2. Clone o seu *fork* para sua maquína (`git clone https://github.com/user_name/proffy.git`)
+2. Clone o seu *fork* para sua maquína (`git clone https://github.com/user_name/NLW2_Web.git`)
 
 3. Crie uma *branch* para realizar sua modificação (`git checkout -b feature/name_new_feature`)
 
@@ -242,6 +242,42 @@ Siga os passos abaixo para contribuir:
 6. Crie um novo *Pull Request*
 
 7. Pronto, agora só aguardar a análise 🚀 
+
+## ***:star2: AGRADECIMENTOS***
+
+<div align=center>
+  <table style="width:100%">
+    <tr align=center>
+      <th><strong>Rocketseat</strong></th>
+      <th><strong>diego3g</strong></th>
+    </tr>
+    <tr align=center>
+      <td>
+        <a href="https://rocketseat.com.br/">
+          <img width="200" height="180" src="https://user-images.githubusercontent.com/38081852/83981650-1e2e6680-a8f6-11ea-9f42-6df8fe809e4b.png">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/diego3g">
+          <img width="200" height="180" src="https://user-images.githubusercontent.com/38081852/83981712-b7f61380-a8f6-11ea-9099-bd3677e97e39.jpg">
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+## ***:books: REFERÊNCIAS***
+
+- [Autenticação no React Native / ReactJS com Context API & Hooks](https://blog.rocketseat.com.br/autenticacao-no-react-native-reactjs-com-context-api-hooks/)
+- [https://blog.rocketseat.com.br/reactjs-autenticacao/](https://blog.rocketseat.com.br/reactjs-autenticacao/)
+- [Autenticação JWT no React Native com API REST em NodeJS](https://blog.rocketseat.com.br/autenticacao-react-native-nodejs/) 
+- [Iniciando com React Native: Navegação e Autenticação com JWT](https://blog.rocketseat.com.br/react-native-autenticacao/)
+- [Tipos de navegação no React Native](https://blog.rocketseat.com.br/navegacao-react-native/)
+- [How I set up React and Node with JSON Web Token for Authentication](https://medium.com/@romanchvalbo/how-i-set-up-react-and-node-with-json-web-token-for-authentication-259ec1a90352)
+- [React (without Redux) - JWT Authentication Tutorial & Example](https://jasonwatmore.com/post/2019/04/06/react-jwt-authentication-tutorial-example)
+- [Scroll infinito no React Native](https://blog.rocketseat.com.br/scroll-infinito-no-react-native/)
+- [Deploy NLW](https://www.notion.so/Deploy-NLW-56f2a980c20e41d6b1dd22a4d1348e6e)
+- [Joi](https://hapi.dev/module/joi/)
 
 ## 📜 License
 
