@@ -5,9 +5,9 @@
 
 ## 📌 Index
 - [FLUXO DESENVOLVIMENTO REACT](#fluxo-desenvolvimento-react)
-    - [API (Application Programming Interface)](#api-(application-programming-interface))
-    - [REST (Representational State Transfer)](#rest-(representational-state-transfer))
-    - [Rotas, Recursos e Métodos HTTP](#rotas,-recursos-e-métodos-http)
+    - [API (Application Programming Interface)](#api-application-programming-interface)
+    - [REST (Representational State Transfer)](#rest-representational-state-transfer)
+    - [Rotas, Recursos e Métodos HTTP](#rotas-recursos-e-métodos-http)
 
 ## FLUXO DESENVOLVIMENTO REACT
 
