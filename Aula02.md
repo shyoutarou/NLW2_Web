@@ -3,6 +3,12 @@
 [Voltar a Aula 1](Aula01.md)
 [Voltar as README.md](README.md)
 
+## 📌 Index
+- [FLUXO DESENVOLVIMENTO REACT](#fluxo-desenvolvimento-react)
+    - [API (Application Programming Interface)](#api-(application-programming-interface))
+    - [REST (Representational State Transfer)](#rest-(representational-state-transfer))
+    - [Rotas, Recursos e Métodos HTTP](#rotas,-recursos-e-métodos-http)
+
 ## FLUXO DESENVOLVIMENTO REACT
 
 É explicado o fluxo normal de aplicações, as funções Front e Back-End. A diferença do modelo MVC (carregava tudo a cada Refresh) e o modelo SPA (Single Page Application). Explicado que está se utilizando o Node.js pois permite utilizar a mesma linguagem, Typescript e React, para escrever o Front o Back e o mobile.
