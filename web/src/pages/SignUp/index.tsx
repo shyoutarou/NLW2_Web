@@ -1,9 +1,14 @@
 import React, { FormEvent, useContext, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+
 import Input from '../../components/Input'
 import WrapperContent from '../../components/WrapperContent'
 import LogoContainer from '../../components/LogoContainer'
+
+import backicon from '../../assets/images/icons/back.svg';
 import './styles.css'
-import { Link } from 'react-router-dom'
+import api from '../../services/api'
+
 // import { AuthContext } from '../../contexts/auth'
 
 function SignUp() {
@@ -14,11 +19,22 @@ function SignUp() {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
 
+  const history = useHistory();
+  
   async function handleCreateUser(e: FormEvent) {
     e.preventDefault()
     if (isAble()) {
-    //   await register({ name, email, password, surname })
-      window.location.href = '/'
+      await api.post('register', {
+        name,
+        surname,
+        email,
+        password
+        }).then(() => {
+            alert('Cadastro realizado com sucesso!');
+            history.push('/');
+        }).catch(() =>{
+            alert('Error');
+        })
     }
   }
 
@@ -29,11 +45,15 @@ function SignUp() {
   return (
     <div id="page-signup">
       <WrapperContent className="page-content-left">
+
         <LogoContainer />
         <div className="signup-container">
-        <Link to="/signin">Sign In</Link>
-        <Link to="/forgot-password">Esqueci minha senha</Link>
-          {/* <form
+          <div className="top-bar-container">
+              <Link to="/">
+                <img src={backicon} alt="Voltar" />
+              </Link>
+          </div>
+          <form
             className="form-80"
             onSubmit={(event) => handleCreateUser(event)}
           >
@@ -63,6 +83,7 @@ function SignUp() {
               <Input
                 name="email"
                 placeholder="E-mail"
+                type="email"
                 // stacked={true}
                 value={String(email)}
                 onChange={(e) => {
@@ -80,20 +101,14 @@ function SignUp() {
                 }}
               />
               <button
-                className={`login-submit ${isAble() && 'login-submit-active'}`}
+                className={`signup-submit ${isAble() && 'signup-submit-active'}`}
                 disabled={!isAble()}
                 type="submit"
               >
                 Concluir cadastro
               </button>
-              <Link to="/forgot-password" className="teste-button">
-                    forgot-password
-              </Link>
-              <Link to="/signin" className="teste-button">
-                    signin
-              </Link>
             </fieldset>
-          </form> */}
+          </form>
         </div>
       </WrapperContent>
     </div>

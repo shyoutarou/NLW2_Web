@@ -1,5 +1,5 @@
 import React, { useState, FormEvent } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
@@ -19,11 +19,17 @@ function TeacherForm()
     const [bio, setBio] = useState('');
     const [subject, setSubject] = useState('');
     const [cost, setCost] = useState('');
+      
+    const classID = useQuery().has('edit') ? useQuery().get('edit') : null
 
     const [scheduleItems, setScheduleItems] = useState([
         { week_day: 0, from: '', to: ''},
       ]);
     
+    function useQuery() {
+    return new URLSearchParams(useLocation().search)
+    }
+
     function addNewScheduleItem() {
         setScheduleItems([...scheduleItems,
           { week_day: 0, from: '', to: '' }
@@ -59,7 +65,30 @@ function TeacherForm()
         console.log(err);
         });
     }
-      
+
+    function handleDeleteClassSchedule(index: number) {
+        if (scheduleItems.length > 1) {
+          if (!!classID) {
+            let initialSchedule = [...scheduleItems]
+            return api
+              .delete('/class-schedule', {
+                params: {
+                  // @ts-ignore
+                  id: initialSchedule[index]['id'],
+                },
+              })
+              .then(() => {
+                initialSchedule.splice(index, 1)
+                return setScheduleItems(initialSchedule)
+              })
+          } else {
+            let initialSchedule = [...scheduleItems]
+            initialSchedule.splice(index, 1)
+            return setScheduleItems(initialSchedule)
+          }
+        }
+     }
+
     return (
         <div id="page-teacher-form" className="container">
             <PageHeader 
@@ -143,22 +172,34 @@ function TeacherForm()
                                     { id: '6', value: 'Sabado' },
                                 ]}
                                 />
-                                <Input
-                                    name="from"
-                                    label="Das"
-                                    type="time"
-                                    value={scheduleItem.from}
-                                    onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
-                                    />
+                                <div className="schedule-time">
+                                    <Input
+                                        name="from"
+                                        label="Das"
+                                        type="time"
+                                        value={scheduleItem.from}
+                                        required
+                                        onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
+                                        />
 
                                     <Input
                                     name="to"
                                     label="Até"
                                     type="time"
                                     value={scheduleItem.to}
+                                    required
                                     onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
                                     />
+                                </div>
+                                <div className="schedule-item-delete">
+                                    <hr />
+                                    <span onClick={() => handleDeleteClassSchedule(index)}>
+                                    Excluir horário
+                                    </span>
+                                    <hr />
+                                </div>
                             </div>
+                            
                         ))}
                     </fieldset>
                     <footer>

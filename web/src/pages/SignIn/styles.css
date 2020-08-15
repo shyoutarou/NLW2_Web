@@ -1,0 +1,128 @@
+.login-container {
+    width: 100%;
+    background: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.login-container form{
+    width: 80%;
+}
+
+.login-container form fieldset{
+    border: 0;
+}
+
+.login-container form fieldset legend{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+
+.login-container form fieldset legend p{
+    color: var(--color-text-title);
+    font: 700 2.2rem Poppins;
+}
+
+.login-container form fieldset legend a{
+    text-align: right;
+    color: var(--color-primary-light);
+    font: 400 1.2rem Poppins;
+}
+
+.login-tools{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.4rem 0;
+    width: 100%;
+}
+
+.login-tools a{
+    text-decoration: none;
+    font: 400 1.2rem Poppins;
+    color: var(--color-text-complement);
+}
+
+.login-tools div input{
+    margin-right: 0.8rem;
+}
+
+.login-submit,
+.login-submit-active {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    padding: 1.6rem 0;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-line-in-white);
+    color: var(--color-text-complement);
+    border: 0;
+    outline: 0;
+    transition: 0.2s;
+    border-radius: 0.8rem;
+    cursor: not-allowed;
+}
+
+.login-submit-active {
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    cursor: pointer;
+}
+
+.login-submit-active:hover {
+    background: var(--color-secondary-dark);
+    color: var(--color-button-text);
+}
+
+.login-footer{
+    display: none;
+}
+
+.login-footer .signup{
+    font-family: Poppins;
+    font-size: 1.4rem;
+}
+
+.login-footer .signup p{
+    color: var(--color-text-complement);
+    font-weight: 400;
+}
+
+.login-footer .signup a{
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+.login-footer span{
+    font: 400 1.4rem Poppins;
+    color: var(--color-text-complement);
+}
+
+@media (min-width: 900px) {
+
+    .login-container form fieldset legend a {
+        display: none;
+    }
+
+    .login-footer {
+        margin-top: 8rem;
+        display: flex !important;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+

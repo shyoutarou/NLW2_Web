@@ -15,6 +15,7 @@ interface User {
 interface AuthContextData {
     signed: boolean;
     user: User | null;
+    loading: boolean;
     signIn(email: string, password :string): Promise<void>;
     signOut(): void;
     handleToggleRemember(): void;
@@ -22,20 +23,27 @@ interface AuthContextData {
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
-export const AuthProvider: React.FunctionComponent = ({ children }) => {
+const AuthProvider: React.FunctionComponent = ({ children }) => {
  
     const [user, setUser] = useState<User | null>(null);
     const [token, setToken] = useState('');
     const [remember, setRemember] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function  loadStoragedData (){
             const storagedUser = await localStorage.getItem('@proffy:user');
             const storagedToken = await localStorage.getItem('@proffy:token');
 
+            // simular uma lentidão para mostar o loading.
+            await new Promise((resolve) => setTimeout(resolve, 2000));
+
             if (storagedUser && storagedToken){
                 setUser(JSON.parse(storagedUser));
+                api.defaults.headers.Authorization = `Baerer ${storagedToken}`;
             }
+
+            setLoading(false);
         }
 
         loadStoragedData();
@@ -52,7 +60,7 @@ export const AuthProvider: React.FunctionComponent = ({ children }) => {
                     const { data } = response;
                     console.log(data);
                     setUser(data);
-
+                    setLoading(true);
                     api.defaults.headers.Authorization = `Baerer ${token}`;
  
                     if (remember){
@@ -66,17 +74,18 @@ export const AuthProvider: React.FunctionComponent = ({ children }) => {
     function signOut() {
         localStorage.clear();
         setUser(null);
+        setLoading(true);
     }
 
     return(
 
-        <AuthContext.Provider value={{signed: !!user, user, signIn, signOut, handleToggleRemember}}>
+        <AuthContext.Provider value={{signed: !!user, user, loading, signIn, signOut, handleToggleRemember}}>
             {children}
         </AuthContext.Provider>
     );
 };
 
-export function useAuth() {
+function useAuth() {
     const context = useContext(AuthContext);
 
     if (!context) {
@@ -87,4 +96,4 @@ export function useAuth() {
 }
 
 
-export default AuthContext;
+export {AuthProvider, useAuth} ;

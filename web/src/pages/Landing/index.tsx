@@ -15,8 +15,7 @@ import './styles.css';
 function Landing() {
 
     const [totalConnections, setTotalConnections] = useState(0);
-    const [userName, setUserName] = useState();
-
+    const [userName, setUserName] = useState<string| undefined>('')
     const { user, signOut } = useAuth();
 
     function handleSignOut() {
@@ -25,15 +24,16 @@ function Landing() {
 
     useEffect(() => {
         api.get('connections').then(response => {
-            // console.log(response);
             setTotalConnections(response.data.total);
         });
         
-        api.get('login', {params: {email: user?.email, password: user?.password}}).then(response => {
-            const { data } = response.data;
+        setUserName(user?.name);
 
-            setUserName(data.name);
-        })
+        // api.get('login', {params: {email: user?.email, password: user?.password}}).then(response => {
+        //     const { data } = response.data;
+
+        //     setUserName(data.name);
+        // })
       }, []);
 
     return (

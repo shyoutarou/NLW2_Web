@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import Loader from 'react-loader-spinner'
 import AppRoutes from './AppRoutes';
 import AuthRoutes from './AuthRoutes';
 import { useAuth } from '../contexts/auth';
@@ -6,10 +7,19 @@ import { useAuth } from '../contexts/auth';
 
 const Routes: React.FC = () => {
 
-      const { signed, signIn, handleToggleRemember } = useAuth();
-      console.log(signed);
+        const { signed, loading  } = useAuth();
+        console.log(signed);
 
-      return signed ? <AppRoutes/> : < AuthRoutes />;
+      
+        // if (loading) {
+        //     return (
+        //         <Loader type="Puff" color="#00BFFF" height={100}
+        //                 width={100} timeout={3000} //3 secs
+        //         />
+        //     );
+        // }
+
+        return signed ? <AppRoutes/> : < AuthRoutes />;
   };
   
   export default Routes;

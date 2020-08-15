@@ -1,0 +1,90 @@
+#page-forgot .top-bar-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-int-primary);
+    padding: 1.6rem 0;
+}
+
+#page-forgot .top-bar-container a {
+    height: 3.2rem;
+    transition: opacity 0.2s;
+}
+
+#page-forgot .top-bar-container a:hover {
+    opacity: 0.6;
+}
+
+
+.forgot-container {
+    height: 100%;
+    width: 100%;
+    background: var(--color-background);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-family: Poppins;
+    color: var(--color-text-title);
+}
+
+.forgot-container > form {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.forgot-container form fieldset {
+    border: 0;
+    width: 80%;
+}
+  
+.forgot-container form legend p  {
+    color: var(--color-text-title);
+    font: 700 4rem Poppins;
+}
+  
+.forgot-container form legend + span {
+    font-size: 1.2rem;
+}
+
+.forgot-submit,
+.forgot-submit-active {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    padding: 1.6rem 0;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-line-in-white);
+    color: var(--color-text-complement);
+    border: 0;
+    outline: 0;
+    transition: 0.2s;
+    border-radius: 0.8rem;
+    cursor: not-allowed;
+}
+
+.forgot-submit-active {
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    cursor: pointer;
+}
+
+.forgot-submit-active:hover {
+    background: var(--color-secondary-dark);
+    color: var(--color-button-text);
+}
+    
+  @media (min-width: 900px) {
+
+        .forgot-container form fieldset legend a {
+            display: none;
+        }
+  } 
+
+
+  

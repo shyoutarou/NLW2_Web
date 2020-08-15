@@ -5,7 +5,6 @@ import { useAuth } from '../../contexts/auth';
 import api from '../../services/api';
 
 import PageHeader from '../../components/PageHeader';
-import PageAside from '../../components/PageAside';
 import Input from '../../components/Input';
 
 import './style.css';
@@ -36,7 +35,9 @@ function Login() {
         const response = await signIn( email, password);
         console.log(response);
 
-        if(signed) history.push('/give-classes');
+        
+        // if(signed) history.push('/give-classes');
+        // if(signed)  window.location.href = '/give-classes'
       }
  
     return (
@@ -45,19 +46,11 @@ function Login() {
 
                 <div id="page-login-header" >
                     <PageHeader 
-                        title="Suaforma de estudos online."
+                        title="Sua forma de estudos online."
                         logo={true} 
                         >
                     </PageHeader>
                 </div>
-                <div id="page-login-aside">
-                    <PageAside 
-                        title="Suaforma de estudos online."
-                        voltar={true}
-                        >
-                    </PageAside>
-                </div>
-
 
                 {/* <div className="login-logo-container">
                     <div className="login-logo">
@@ -105,6 +98,7 @@ function Login() {
                                        <label>Forgot my password</label>
                                     </Link>
                                 </footer>
+                                <button type="submit">Login</button>
                                 <Link to="/forgot-password" className="teste-button">
                                     Forgot
                                 </Link>
