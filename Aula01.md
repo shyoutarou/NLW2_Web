@@ -4,12 +4,12 @@
 
 ## 📌 Index
 - [INSTALAÇÕES](#instalações-node-e-npm)
-    - [Windows](#Wwindows)
+    - [Windows](#windows)
     - [Shell](#escolhido-o-shell)
     - [NPM](#npm)
-    - [Chocolatey](#chocolatey)
-    - [YARN](#yarn-1)
-    - [VS-Code](#cvisual-studio-code)
+    - [Chocolatey](#chocolatey-opcional)
+    - [YARN](#yarn-1-opcional)
+    - [VS-Code](#visual-studio-code)
 - [CRIAR-PROJETO](#criar-projeto)
 
 ## INSTALAÇÕES - Node E NPM 
@@ -123,7 +123,7 @@ O melhor de tudo é que tanto o npm quanto o Yarn utilizam o package.json, dando
 Se você usa o npm, não é necessário mais nada. O comando npm install vai ser executado durante o deploy da sua aplicação. Lembrando que se você já usa o Node.js 8, é indicado que você adicione o arquivo package-lock.json no versionamento de código para aproveitar todos os benefícios da nova versão do npm.
 Já se você usa o Yarn, é só ter certeza que o arquivo yarn.lock foi adicionado no controle de versão que, durante o deploy, será identificado o uso do Yarn e o comando yarn install será executado.
 
-### Chocolatey (Opcional)
+### Chocolatey Opcional
 
 O Chocolatey entra na categoria de gerenciador de pacotes, mais precisamente para sistemas Windows. Por exemplo: caso tente instalar uma ferramenta que possui dependências, tal como o VSCode possui do DotNet, o Chocolatey vai resolver tudo para você! Ele vai lá, baixa a versão correta do DotNet, instala, testa, depois baixa o VSCode, instala, configura e testa para ver se a instalação e configuração ocorreram com sucesso.
 
