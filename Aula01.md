@@ -2,6 +2,16 @@
 
 [Voltar as README.md](README.md)
 
+## 📌 Index
+- [INSTALAÇÕES](##instalações-node-e-npm)
+    - [Windows](###Wwindows)
+    - [Shell](###escolhido-o-shell)
+    - [NPM](###npm)
+    - [Chocolatey](###chocolatey)
+    - [YARN](###yarn-1)
+    - [VS-Code](###cvisual-studio-code)
+- [CRIAR-PROJETO](##-criar-projeto)
+
 ## INSTALAÇÕES - Node E NPM 
 
 O primeiro passo para podermos utilizar a Omnistack (Node.js, ReactJS e React Native) é instalar o Node.js, que vem acompanhado do NPM. Para visualizar o site do Node.js e suas versões:
@@ -25,13 +35,13 @@ Não só pelo fato de facilitar possíveis desinstalações e atualizações do 
     <br>
 </h1>
 
-## Windows
+### Windows
 
 Para o Windows utilizaremos o gerenciador de pacotes [Chocolatey] (https://chocolatey.org/), porém antes dos passos de instalação vamos falar brevemente sobre qual shell você deve usar.
 - **CMD**: também conhecido como Command Prompt, ele é um dos shells mais antigos da atualidade (foi construído para ser compatível com o MS-DOS) e, apesar da sua fama, hoje em dia tem sido cada vez menos utilizado.
 - **Powershell**: novo shell apresentado pela Microsoft por volta de 2005, ele apresenta diversas melhorias em relação ao CMD, tornando-o popular atualmente e consequemente a nossa escolha para a NLW#02.
 
-### Escolhido o shell, vamos começar a instalação:
+### Escolhido o shell:
 
 Busque no campo de busca do Windows por Windows Powershell, clique com o botão direito em cima do programa e escolha a opção “Executar como administrador”. O Powershell trabalha com um esquema de autorizações (conhecido como `Execution Policy`) para execução de scripts e, por isso, precisamos verificar se o presente no sistema está compatível com o que o Chocolatey precisa. Execute o seguinte comando:
 
@@ -60,7 +70,7 @@ Gerenciador de pacotes vs Gerenciador de dependências
 - Um gerenciador de pacotes é uma ferramenta utilizada para instalação, remoção e atualização de programas/pacotes ou software.
 - Um gerenciador de dependências é uma ferramenta que permite registrar dependências externas (bibliotecas) que serão utilizadas por nossa aplicação.
 
-## NPM
+### NPM
 
 O npm é um projeto Open Source criado em 2009 com objetivo de facilitar a troca de código JavaScript, sendo usado como gerenciador de pacotes padrão do Node.js. Ao falarmos de npm podemos estar nos referindo a um destes itens:
 - O repositório aberto onde ficam armazenados os pacotes
@@ -113,7 +123,7 @@ O melhor de tudo é que tanto o npm quanto o Yarn utilizam o package.json, dando
 Se você usa o npm, não é necessário mais nada. O comando npm install vai ser executado durante o deploy da sua aplicação. Lembrando que se você já usa o Node.js 8, é indicado que você adicione o arquivo package-lock.json no versionamento de código para aproveitar todos os benefícios da nova versão do npm.
 Já se você usa o Yarn, é só ter certeza que o arquivo yarn.lock foi adicionado no controle de versão que, durante o deploy, será identificado o uso do Yarn e o comando yarn install será executado.
 
-## Chocolatey (Opcional)
+### Chocolatey (Opcional)
 
 O Chocolatey entra na categoria de gerenciador de pacotes, mais precisamente para sistemas Windows. Por exemplo: caso tente instalar uma ferramenta que possui dependências, tal como o VSCode possui do DotNet, o Chocolatey vai resolver tudo para você! Ele vai lá, baixa a versão correta do DotNet, instala, testa, depois baixa o VSCode, instala, configura e testa para ver se a instalação e configuração ocorreram com sucesso.
 
@@ -163,7 +173,7 @@ Para atualizar os pacotes instalados:
 > npm cache clean -f
 > npm update npm -g
 ```
-## YARN 1 (Opcional)
+### YARN 1 (Opcional)
 
 Para instalar o Yarn 1 no Windows com o choco siga os seguintes passos, execute o comando no Powershell (como admin):
 ```bash
@@ -209,7 +219,7 @@ Para verificar se a instalação ocorreu com sucesso, execute:
 > expo –version
 ```
 
-## Visual Studio Code
+### Visual Studio Code
 
 Para instalar o editor de texto Visual Studio Code em qualquer um dos 3 sistemas operacionais, basta [acessar o site](https://code.visualstudio.com/), baixar e rodar o executável. Com a instalação finalizada, abra o programa. 
 
@@ -244,7 +254,7 @@ Depois do Node.js ou Yarn instalado. Execute um dos seguintes comandos:
     * npx create-react-app web --template typescript
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/01_create_project.png" />
+    <img alt="Create Project" src=".github/create_project.png" />
     <br>
 </h1>
 
@@ -525,7 +535,51 @@ Para criar um componente é o mesmo processo de criar as páginas:
 Uma das diferenças é a criação personalizada de atributos que é feita adicionando uma interface, onde define-se o nome e tipo do atributo, como a seguir:
 interface PageHeaderProps 
 
+```bash
+interface PageHeaderProps 
+{
+    title: string;
+}
 
-[Voltar as README.md](README.md)
+```
+
+Se fosse permitido nulos no parâmetro title teria que colocar um sinal de interrogação após o nome (title?). Além disso, é necessário transformar a função em um objeto constante ficando como abaixo:
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/objetocontatne.png" />
+    <br>
+</h1>
+
+O React.FC é uma abreviação de React.FuncionalComponent. As duas formas são aceitas, quando você passa a interface PageHeaderProps está declarando as propriedades que esse componente pode aceitar. Sempre quando se deseja inserir um objeto Javascript dentro do HTML coloca-se em chaves {props} ou {logimg}. O props refere-se a construção lambda, essa denominação é definida pelo programador.
+
+O props.children refere-se a um propriedade que todos os componentes possuem. E significa que tudo que você colocar dentro de um componente será considerado como “children” e será renderizado se você chamar props.children.Na página TeacherList ficaria assim:
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/children.png" />
+    <br>
+</h1>
+
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/childrenfilters.png" />
+    <br>
+</h1>
+
+
+Para a listagem dos professores foi criado um componente TeacherItem e feita a estilização como abaixo:
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/teacherliststyle.png" />
+    <br>
+</h1>
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/itemList.png" />
+    <br>
+</h1>
+
+
+[Continuar com a Aula 2](Aula02.md)
+[Voltar ao README.md](README.md)
     
 

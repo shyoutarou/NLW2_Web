@@ -283,7 +283,6 @@ Siga os passos abaixo para contribuir:
 - [React (without Redux) - JWT Authentication Tutorial & Example](https://jasonwatmore.com/post/2019/04/06/react-jwt-authentication-tutorial-example)
 - [Scroll infinito no React Native](https://blog.rocketseat.com.br/scroll-infinito-no-react-native/)
 - [Deploy NLW](https://www.notion.so/Deploy-NLW-56f2a980c20e41d6b1dd22a4d1348e6e)
-- [Joi](https://hapi.dev/module/joi/)
 
 ## 📜 License
 

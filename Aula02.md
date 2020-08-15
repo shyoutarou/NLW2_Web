@@ -1,53 +1,269 @@
-# Aula 2: Proffy-Server
+# Aula 2 (04/08/2020): Proffy-Server
 
+[Voltar a Aula 1](Aula01.md)
 [Voltar as README.md](README.md)
 
 ## FLUXO DESENVOLVIMENTO REACT
 
-… explicado o fluxo normal de aplicaÁıes, as funÁıes Front e Back-End. A diferenÁa do modelo MVC (carregava tudo a cada Refresh) e o modelo SPA (Single Page Application). Explicado que est· se utilizando o Node.js pois permite utilizar a mesma linguagem, Typescript e React, para escrever o Front o Back e o mobile.
+√â explicado o fluxo normal de aplica√ß√µes, as fun√ß√µes Front e Back-End. A diferen√ßa do modelo MVC (carregava tudo a cada Refresh) e o modelo SPA (Single Page Application). Explicado que est√° se utilizando o Node.js pois permite utilizar a mesma linguagem, Typescript e React, para escrever o Front o Back e o mobile.
 
 <h1 align="center">
     <img alt="Create Project" src=".github/fluxo_react.png" />
     <br>
 </h1>
 
-Em aplicativos mobile (Kotlin, Swift, React, Flutter), n„o entendem HTML (body, table, etc.) para facilitar o consumo de dados por este tipo de dispositivos que tornou popular as API REST, pois retornam os dados em formato JSON e a tecnologia do Front-End que constrÛi o HTML, ele n„o retorna mais do servidor (modelo MVC). 
+Em aplicativos mobile (Kotlin, Swift, React, Flutter), n√£o entendem HTML (body, table, etc.) para facilitar o consumo de dados por este tipo de dispositivos que tornou popular as API REST, pois retornam os dados em formato JSON e a tecnologia do Front-End que constr√≥i o HTML, ele n√£o retorna mais do servidor (modelo MVC). 
 
 ### API (Application Programming Interface)
 
-O acrÙnimo API que provÈm do inglÍs trata-se de um conjunto de rotinas e padrıes estabelecidos e documentados por uma aplicaÁ„o A, para que outras aplicaÁıes consigam utilizar as funcionalidades desta aplicaÁ„o A, sem precisar conhecer detalhes da implementaÁ„o do software.
+O acr√¥nimo API que prov√©m do ingl√™s trata-se de um conjunto de rotinas e padr√µes estabelecidos e documentados por uma aplica√ß√£o A, para que outras aplica√ß√µes consigam utilizar as funcionalidades desta aplica√ß√£o A, sem precisar conhecer detalhes da implementa√ß√£o do software.
 
-Desta forma, entendemos que as APIs permitem uma interoperabilidade entre aplicaÁıes. Em outras palavras, a comunicaÁ„o entre aplicaÁıes e entre os usu·rios.
+Desta forma, entendemos que as APIs permitem uma interoperabilidade entre aplica√ß√µes. Em outras palavras, a comunica√ß√£o entre aplica√ß√µes e entre os usu√°rios.
 
 ### REST (Representational State Transfer)
 
-REST trata-se de uma abstraÁ„o da arquitetura da Web. Resumidamente, o REST consiste em princÌpios/regras/constraints que, quando seguidas, permitem a criaÁ„o de um projeto com interfaces bem definidas. Desta forma, permitindo, por exemplo, que aplicaÁıes se comuniquem.
+REST trata-se de uma abstra√ß√£o da arquitetura da Web. Resumidamente, o REST consiste em princ√≠pios/regras/constraints que, quando seguidas, permitem a cria√ß√£o de um projeto com interfaces bem definidas. Desta forma, permitindo, por exemplo, que aplica√ß√µes se comuniquem.
 
-O HTTP È o principal protocolo de comunicaÁ„o para sistemas Web, existente h· mais de 20 anos, e em todo esse tempo sofreu algumas atualizaÁıes. Nos anos 2000, um dos principais autores do protocolo HTTP, Roy Fielding, sugeriu, dentre outras coisas, o uso de novos mÈtodos HTTP. Estes mÈtodos visavam resolver problemas relacionados a sem‚ntica quando requisiÁıes HTTP eram feitas.
+O HTTP √© o principal protocolo de comunica√ß√£o para sistemas Web, existente h√° mais de 20 anos, e em todo esse tempo sofreu algumas atualiza√ß√µes. Nos anos 2000, um dos principais autores do protocolo HTTP, Roy Fielding, sugeriu, dentre outras coisas, o uso de novos m√©todos HTTP. Estes m√©todos visavam resolver problemas relacionados a sem√¢ntica quando requisi√ß√µes HTTP eram feitas.
 
-Estas sugestıes permitiram o uso do HTTP de uma forma muito mais prÛxima da nossa realidade, dando sentido ‡s requisiÁıes HTTP. Para melhor compreens„o, veja os exemplos abaixo (requisiÁıes em formatos fictÌcios):
+Estas sugest√µes permitiram o uso do HTTP de uma forma muito mais pr√≥xima da nossa realidade, dando sentido √†s requisi√ß√µes HTTP. Para melhor compreens√£o, veja os exemplos abaixo (requisi√ß√µes em formatos fict√≠cios):
 
 - **GET** http://www.meusite.com/usuarios
 - **DELETE** http://www.meusite.com/usuarios/jackson
-- **POST** http://www.meusite.com/usuarios ñdata {nome: joaquim}
+- **POST** http://www.meusite.com/usuarios ÔøΩdata {nome: joaquim}
 
-Pela simples leitura  È possÌvel inferir que no primeiro caso estamos pegando (GET) todos os usu·rios do site, ou seja, teremos uma lista de todos os usu·rios que est„o cadastrados no sistema/site. J·, no segundo caso, estamos apagando (DELETE) o usu·rio Jackson. No ˙ltimo exemplo, estamos usando o mÈtodo POST, em que percebemos o envio de dados extras para cadastrar um novo usu·rio.
 
-Veja o qu„o simples ficou expressar o que desejamos realizar ao acessar um determinado endereÁo, usando verbos especÌficos para URLs especÌficas e usando dados padronizados, quando necess·rio.
+Pela simples leitura  √© poss√≠vel inferir que no primeiro caso estamos pegando (GET) todos os usu√°rios do site, ou seja, teremos uma lista de todos os usu√°rios que est√£o cadastrados no sistema/site. J√°, no segundo caso, estamos apagando (DELETE) o usu√°rio Jackson. No √∫ltimo exemplo, estamos usando o m√©todo POST, em que percebemos o envio de dados extras para cadastrar um novo usu√°rio.
 
-Estes princÌpios apresentados fazem parte do REST! Em outras palavras, nesses exemplos, temos: uma representaÁ„o padronizada, verbos e mÈtodos usados, bem como, URLs.
+Veja o qu√£o simples ficou expressar o que desejamos realizar ao acessar um determinado endere√ßo, usando verbos espec√≠ficos para URLs espec√≠ficas e usando dados padronizados, quando necess√°rio.
 
-Existe uma certa confus„o quanto aos termos REST e RESTful. Entretanto, ambos representam os mesmo princÌpios. A diferenÁa È apenas gramatical. Em outras palavras, sistemas que utilizam os princÌpios REST s„o chamados de RESTful.
-- **REST**: conjunto de princÌpios de arquitetura
-- **RESTful**: capacidade de determinado sistema aplicar os princÌpios de REST.
+Estes princ√≠pios apresentados fazem parte do REST! Em outras palavras, nesses exemplos, temos: uma representa√ß√£o padronizada, verbos e m√©todos usados, bem como, URLs.
 
-Iremos agora criar uma Web API REST. Crie uma pasta server, abra o PowerShell. Para iniciar um projeto, entre na pasta onde o projeto ser· criado e dÍ o comando:
+Existe uma certa confus√£o quanto aos termos REST e RESTful. Entretanto, ambos representam os mesmo princ√≠pios. A diferen√ßa √© apenas gramatical. Em outras palavras, sistemas que utilizam os princ√≠pios REST s√£o chamados de RESTful.
+
+- **REST**: conjunto de princ√≠pios de arquitetura
+- **RESTful**: capacidade de determinado sistema aplicar os princ√≠pios de REST.
+
+Iremos agora criar uma Web API REST. Crie uma pasta server, abra o PowerShell. Para iniciar um projeto, entre na pasta onde o projeto ser√° criado e d√™ o comando:
 
 ```bash
 yarn init -y
 ```
 
-O par‚metro ì-yî serve para pular as perguntas iniciais como nome e autor do projeto. ApÛs isso abra o VS Code e foi criado a dependÍncias da aplicaÁ„o (packages.json)
+O par√¢metro ‚Äú-y‚Äù serve para pular as perguntas iniciais como nome e autor do projeto. Ap√≥s isso abra o VS Code e foi criado a depend√™ncias da aplica√ß√£o (packages.json)
 
+<h1 align="center">
+    <img alt="Create Project" src=".github/dependencias.png" />
+    <br>
+</h1>
+
+Crie uma pasta src e um arquivo server.ts
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/serverfile.png" />
+    <br>
+</h1>
+
+Abra um terminal no VS Code e instale a biblioteca typescript com o comando:
+```bash
+yarn add typescript ‚ÄìD
+```
+<h1 align="center">
+    <img alt="Create Project" src=".github/addtypescript.png" />
+    <br>
+</h1>
+
+
+Gere o arquivo de configura√ß√£o do Typescript com o comando:
+```bash
+yarn tsc ‚Äìinit
+```
+<h1 align="center">
+    <img alt="Create Project" src=".github/typescriptsonfig.png" />
+    <br>
+</h1>
+
+
+Definimos a vers√£o do ECMAScript para es2017 pois √© a vers√£o que o Node.js entende. Se fosse uma vers√£o de browser como o IE teria que ser uma vers√£o mais antiga. Instalamos a tamb√©m a depend√™ncia:
+<h1 align="center">
+    <img alt="Create Project" src=".github/addnodedev.png" />
+    <br>
+</h1>
+
+Que executa o servidor Node, fazendo ele entender Typescript, e monitora se teve altera√ß√£o no Script. Se houver, ele restart automaticamente o servidor. Por padr√£o, sem a extens√£o, ter√≠amos que parar e reiniciar o Node manualmente se houvesse altera√ß√µes.
+
+Para testar o servi√ßo, altere o arquivo packages.json e crie uma se√ß√£o scripts e no arquivo server.ts uma mensagem console.log gen√©rica:
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/testestart.png" />
+    <br>
+</h1>
+
+Observe que esta configura√ß√£o "start": "ts-node-dev src/server.ts" poderia ser abreviada como "start": "tsnd src/server.ts". Para executar no terminai digite:
+```bash
+yarn start OU npm start
+```
+<h1 align="center">
+    <img alt="Create Project" src=".github/runserver.png" />
+    <br>
+</h1>
+
+No script do   iremos inserir algumas flags e ficar√° assim:
+
+```bash
+"scripts": {
+    "dev": "tsnd -
+            --transpile-only
+            --ignore-watch
+            --respawn
+            src/server.ts",
+   },
+```
+- **transpile-only** Converte Javacript para Typescript, n√£o verifica se tem erros, acelara desenvolvimento
+- **ignore-watch** N√£o converte c√≥digo dentro da pasta node_modules
+- **respawn** Funcionamento de, se alterar o c√≥digo, faz um restart e continua rodando. S√≥ sai se der Crtl+C
+
+Abaixo um comparativo das sa√≠das de usando o flag respawn, exemplificando que ele continua rodando...
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/respawn.png" />
+    <br>
+</h1>
+
+Outro exemplo √© que se alterar a sa√≠da, ele atualiza automaticamente:
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/respawnupdate.png" />
+    <br>
+</h1>
+
+Por causa dessa funcionalidade temos que abrir outro terminal para instalar outra depend√™ncia o express:
+yarn add express
+```bash
+yarn add express
+```
+<h1 align="center">
+    <img alt="Create Project" src=".github/addexporess.png" />
+    <br>
+</h1>
+
+
+O express √© micro-framework que traz algumas funcionalidades prontas que evitam ficar fazendo configura√ß√µes. Ao importar o express no arquivo server.ts d√° um erro de depend√™ncia j√° visto anteriormente
+<h1 align="center">
+    <img alt="Create Project" src=".github/expresserror.png" />
+    <br>
+</h1>
+
+
+Quando estamos trabalhando com typescript, alguns pacotes adicionados s√£o tamb√©m em typescript e outros n√£o. Os que n√£o s√£o a comunidade precisar criar esses pacotes de tipagem (com @type) que precisam ser instaladas tamb√©m.
+```bash
+npm install @types/express ‚ÄìD
+```
+<h1 align="center">
+    <img alt="Create Project" src=".github/expresstypes.png" />
+    <br>
+</h1>
+
+
+Executando o m√©todo get acima, j√° temos a comunica√ß√£o da aplica√ß√£o mas os resultados n√£o saem no navegador.
+<h1 align="center">
+    <img alt="Create Project" src=".github/CannotGET.png" />
+    <br>
+</h1>
+
+
+Para dar a sa√≠da temos que incluir os 2 par√¢metros que s√£o injetados pelo m√©todo app.get: o request e o response. O request traz informa√ß√µes sobre a requisi√ß√£o (o cabe√ßalho e o corpo, o usu√°rio, e-mail, senha, dados recebidos pelo Front-End). O response √© a resposta da API para a aplica√ß√£o. O c√≥digo fica assim:
+
+```bash
+import express from 'express';
+
+const app = express();
+
+app.get("/users", (request, response) =>{
+    return response.send('Start on port 3333 üöÄ')
+});
+
+app.listen(3333);
+
+```
+<h1 align="center">
+    <img alt="Create Project" src=".github/start3333.png" />
+    <br>
+</h1>
+
+
+Por√©m como trabalhar com formato JSON precisamos fazer algumas altera√ß√µes:
+
+```bash
+import express from 'express';
+
+const app = express();
+
+app.get("/users", (request, response) =>{
+    const users =[
+        {name: 'Diogo', age:25},
+        {name: 'Ana', age:25},
+    ]
+
+    return response.json(users)
+});
+
+app.listen(3333);
+```
+<h1 align="center">
+    <img alt="Create Project" src=".github/startJSON.png" />
+    <br>
+</h1>
+
+Para visualizarmos melhor os resultados podemos instalar um plugin no navegador Chrome, JSON Viewer:
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/JSONViewer.png" />
+    <br>
+</h1>
+
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/JSONViewerformat.png" />
+    <br>
+</h1>
+
+
+## Rotas, Recursos e M√©todos HTTP
+
+Cada endere√ßo √© uma rota (Ex.: http://localhost:3333/users ou http://localhost:3333/contact). O recurso √© qualquer coisa que vem depois da URL base, ou seja, /users e /contact s√£o os recursos. Os m√©todos HTTP de uma API mais comuns s√£o o GET, POST, PUT e DELETE respons√°veis pelas opera√ß√µes de CRUD. Como o pacote express que estamos utilizando parece ter limita√ß√µes(???) quanto as outras requisi√ß√µes que n√£o seja GET vamos utilizar outra ferramenta: O Insomnia Core. E vamo criar um Worksapace para o NLW.
+Insonmnia (https://insomnia.rest/download/)
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/insomniacreat.png" />
+    <br>
+</h1>
+
+
+
+Depois criamos uma nova requisi√ß√£o CriarUsuario pelo m√©todo POST:
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/userrequest.png" />
+    <br>
+</h1>
+
+
+Depois de alterarmos o m√©todo de GET para POST conseguimos obter o resultado desejado:
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/GETtoPOST.png" />
+    <br>
+</h1>
+
+<h1 align="center">
+    <img alt="Create Project" src=".github/GETtoPOSTresult.png" />
+    <br>
+</h1>
+
+
+
+[Voltar a Aula 1](Aula01.md)
+[Continuar a Aula 3](Aula03.md)
 [Voltar as README.md](README.md)
     
