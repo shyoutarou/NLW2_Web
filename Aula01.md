@@ -3,7 +3,7 @@
 [Voltar as README.md](README.md)
 
 ## 📌 Index
-- [INSTALAÇÕES](##instalações-node-e-npm)
+- [INSTALAÇÕES](##instalacoes-node-e-npm)
     - [Windows](###Wwindows)
     - [Shell](###escolhido-o-shell)
     - [NPM](###npm)
@@ -12,7 +12,7 @@
     - [VS-Code](###cvisual-studio-code)
 - [CRIAR-PROJETO](##-criar-projeto)
 
-## INSTALAÇÕES - Node E NPM 
+## :instalacoes: Node E NPM 
 
 O primeiro passo para podermos utilizar a Omnistack (Node.js, ReactJS e React Native) é instalar o Node.js, que vem acompanhado do NPM. Para visualizar o site do Node.js e suas versões:
     * https://nodejs.org/en/
@@ -35,13 +35,13 @@ Não só pelo fato de facilitar possíveis desinstalações e atualizações do 
     <br>
 </h1>
 
-### Windows
+### :Windows
 
 Para o Windows utilizaremos o gerenciador de pacotes [Chocolatey] (https://chocolatey.org/), porém antes dos passos de instalação vamos falar brevemente sobre qual shell você deve usar.
 - **CMD**: também conhecido como Command Prompt, ele é um dos shells mais antigos da atualidade (foi construído para ser compatível com o MS-DOS) e, apesar da sua fama, hoje em dia tem sido cada vez menos utilizado.
 - **Powershell**: novo shell apresentado pela Microsoft por volta de 2005, ele apresenta diversas melhorias em relação ao CMD, tornando-o popular atualmente e consequemente a nossa escolha para a NLW#02.
 
-### Escolhido o shell:
+### :Escolhido o shell:
 
 Busque no campo de busca do Windows por Windows Powershell, clique com o botão direito em cima do programa e escolha a opção “Executar como administrador”. O Powershell trabalha com um esquema de autorizações (conhecido como `Execution Policy`) para execução de scripts e, por isso, precisamos verificar se o presente no sistema está compatível com o que o Chocolatey precisa. Execute o seguinte comando:
 
