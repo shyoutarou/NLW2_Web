@@ -8,13 +8,23 @@
     - [API (Application Programming Interface)](#api-application-programming-interface)
     - [REST (Representational State Transfer)](#rest-representational-state-transfer)
     - [Rotas, Recursos e Métodos HTTP](#rotas-recursos-e-métodos-http)
-
-## FLUXO DESENVOLVIMENTO REACT
+- [PARÂMETROST](#parametros)
+    - [RequestBody](#requestBody)
+    - [Route Params](#route-params)
+    - [Route Query](#route-query)
+- [CASOS DE USO](#casos-de-uso)
+    - [Conexões](#conexões)
+    - [Aulas/Classes](#aulas-classes)
+- [ROTA PARA CRIAR UMA AULA](#rota-para-criar-uma-aula)
+    - [Databases](#databases)
+    - [Migrations](#migrations)
+    - [Organizando Código](#organizando-código)
+- [ROTA PARA LISTAR AULAS](#rota-para-listar-aulas)
 
 É explicado o fluxo normal de aplicações, as funções Front e Back-End. A diferença do modelo MVC (carregava tudo a cada Refresh) e o modelo SPA (Single Page Application). Explicado que está se utilizando o Node.js pois permite utilizar a mesma linguagem, Typescript e React, para escrever o Front o Back e o mobile.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/fluxo_react.png" />
+    <img alt="Missing Image" src=".github/fluxo_react.png" />
     <br>
 </h1>
 
@@ -59,14 +69,14 @@ yarn init -y
 O parâmetro “-y” serve para pular as perguntas iniciais como nome e autor do projeto. Após isso abra o VS Code e foi criado a dependências da aplicação (packages.json)
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/dependencias.png" />
+    <img alt="Missing Image" src=".github/dependencias.png" />
     <br>
 </h1>
 
 Crie uma pasta src e um arquivo server.ts
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/serverfile.png" />
+    <img alt="Missing Image" src=".github/serverfile.png" />
     <br>
 </h1>
 
@@ -75,7 +85,7 @@ Abra um terminal no VS Code e instale a biblioteca typescript com o comando:
 yarn add typescript –D
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/addtypescript.png" />
+    <img alt="Missing Image" src=".github/addtypescript.png" />
     <br>
 </h1>
 
@@ -85,14 +95,14 @@ Gere o arquivo de configuração do Typescript com o comando:
 yarn tsc –init
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/typescriptsonfig.png" />
+    <img alt="Missing Image" src=".github/typescriptsonfig.png" />
     <br>
 </h1>
 
 
 Definimos a versão do ECMAScript para es2017 pois é a versão que o Node.js entende. Se fosse uma versão de browser como o IE teria que ser uma versão mais antiga. Instalamos a também a dependência:
 <h1 align="center">
-    <img alt="Create Project" src=".github/addnodedev.png" />
+    <img alt="Missing Image" src=".github/addnodedev.png" />
     <br>
 </h1>
 
@@ -101,7 +111,7 @@ Que executa o servidor Node, fazendo ele entender Typescript, e monitora se teve
 Para testar o serviço, altere o arquivo packages.json e crie uma seção scripts e no arquivo server.ts uma mensagem console.log genérica:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/testestart.png" />
+    <img alt="Missing Image" src=".github/testestart.png" />
     <br>
 </h1>
 
@@ -110,7 +120,7 @@ Observe que esta configuração "start": "ts-node-dev src/server.ts" poderia ser
 yarn start OU npm start
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/runserver.png" />
+    <img alt="Missing Image" src=".github/runserver.png" />
     <br>
 </h1>
 
@@ -132,14 +142,14 @@ No script do   iremos inserir algumas flags e ficará assim:
 Abaixo um comparativo das saídas de usando o flag respawn, exemplificando que ele continua rodando...
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/respawn.png" />
+    <img alt="Missing Image" src=".github/respawn.png" />
     <br>
 </h1>
 
 Outro exemplo é que se alterar a saída, ele atualiza automaticamente:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/respawnupdate.png" />
+    <img alt="Missing Image" src=".github/respawnupdate.png" />
     <br>
 </h1>
 
@@ -149,14 +159,14 @@ yarn add express
 yarn add express
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/addexporess.png" />
+    <img alt="Missing Image" src=".github/addexporess.png" />
     <br>
 </h1>
 
 
 O express é micro-framework que traz algumas funcionalidades prontas que evitam ficar fazendo configurações. Ao importar o express no arquivo server.ts dá um erro de dependência já visto anteriormente
 <h1 align="center">
-    <img alt="Create Project" src=".github/expresserror.png" />
+    <img alt="Missing Image" src=".github/expresserror.png" />
     <br>
 </h1>
 
@@ -166,14 +176,14 @@ Quando estamos trabalhando com typescript, alguns pacotes adicionados são tamb�
 npm install @types/express –D
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/expresstypes.png" />
+    <img alt="Missing Image" src=".github/expresstypes.png" />
     <br>
 </h1>
 
 
 Executando o método get acima, já temos a comunicação da aplicação mas os resultados não saem no navegador.
 <h1 align="center">
-    <img alt="Create Project" src=".github/CannotGET.png" />
+    <img alt="Missing Image" src=".github/CannotGET.png" />
     <br>
 </h1>
 
@@ -193,7 +203,7 @@ app.listen(3333);
 
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/start3333.png" />
+    <img alt="Missing Image" src=".github/start3333.png" />
     <br>
 </h1>
 
@@ -217,20 +227,20 @@ app.get("/users", (request, response) =>{
 app.listen(3333);
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/startJSON.png" />
+    <img alt="Missing Image" src=".github/startJSON.png" />
     <br>
 </h1>
 
 Para visualizarmos melhor os resultados podemos instalar um plugin no navegador Chrome, JSON Viewer:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/JSONViewer.png" />
+    <img alt="Missing Image" src=".github/JSONViewer.png" />
     <br>
 </h1>
 
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/JSONViewerformat.png" />
+    <img alt="Missing Image" src=".github/JSONViewerformat.png" />
     <br>
 </h1>
 
@@ -241,16 +251,15 @@ Cada endereço é uma rota (Ex.: http://localhost:3333/users ou http://localhost
 Insonmnia (https://insomnia.rest/download/)
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/insomniacreat.png" />
+    <img alt="Missing Image" src=".github/insomniacreat.png" />
     <br>
 </h1>
-
 
 
 Depois criamos uma nova requisição CriarUsuario pelo método POST:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/userrequest.png" />
+    <img alt="Missing Image" src=".github/userrequest.png" />
     <br>
 </h1>
 
@@ -258,16 +267,387 @@ Depois criamos uma nova requisição CriarUsuario pelo método POST:
 Depois de alterarmos o método de GET para POST conseguimos obter o resultado desejado:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/GETtoPOST.png" />
+    <img alt="Missing Image" src=".github/GETtoPOST.png" />
     <br>
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/GETtoPOSTresult.png" />
+    <img alt="Missing Image" src=".github/GETtoPOSTresult.png" />
+    <br>
+</h1>
+
+## PARÂMETROS
+
+	Quando fazemos requisição existem 3 tipos de parâmetros:
+- **RequestBody**: Para criar ou atualizar um registro, uma informação vem no corpo da requisição.
+- **Route Params**: Identifica um recusrso na nossa rota qunado for atualizar ou deletar um registro específico.
+- **Query Params**: Usados principalmente em listagens, para fazer filtros, paginação, ordenação, etc.
+
+### RequestBody
+
+Se colocarmos um request.body no método POST:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/RequestPOST.png" />
     <br>
 </h1>
 
 
+E no Insomnia enviarmos um novo registro de usuário e colocamos método POST:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/createuserPOT.png" />
+    <br>
+</h1>
+
+
+No terminal retorna undefined pois o express não entende JSON por padrão. Corrigimos isso adicionando no arquivo server.ts o módulo que interpreta o JSON:
+```bash
+app.use(express.json());
+```
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/servermodule.png" />
+    <br>
+</h1>
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/servermoduleresult.png" />
+    <br>
+</h1>
+
+### Route Params
+
+Se colocarmos um request.params no método DELETE:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/routeparams.png" />
+    <br>
+</h1>
+
+E no Insomnia enviarmos uma rota com a barra e um id e selecionamos método DELETE:
+
+```bash
+http://localhost:3333/users/1
+```
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/routeparamsdelete.png" />
+    <br>
+</h1>
+
+No terminal retorna
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/routeparamsdeletereturn.png" />
+    <br>
+</h1>
+
+
+### Route Query
+
+Se colocarmos um request.query no método GET:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/routequery.png" />
+    <br>
+</h1>
+
+
+E no Insomnia enviarmos uma rota com a query:
+```bash
+http://localhost:3333/users?page=20&name=Bob
+```
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/routequeryinsomnia.png" />
+    <br>
+</h1>
+
+No terminal retorna
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/routequeryreturn.png" />
+    <br>
+</h1>
+
+
+## CASOS DE USO
+
+	Identificando acessos de Back-End pelo layout Front-End:
+
+### Conexões
+- Rota para listar o total de conexões realizadas
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/rotaconections.png" />
+    <br>
+</h1>
+
+
+- Rota para criar uma nova conexão (Entrar em contato). Juntamente irá abrir o WhatsApp do professor
+- Armazenamento interno do Mobile dos Professores favoritos
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/rotazap.png" />
+    <br>
+</h1>
+
+### Aulas/Classes
+
+- Rota para criar uma aula;
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/rotacriarclass.png" />
+    <br>
+</h1>
+
+- Rota para listar aulas
+    - Filtra por matéria, dia da semana e horário
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/rotalistarclass.png" />
+    <br>
+</h1>
+
+## ROTA PARA CRIAR UMA AULA
+
+### Databases
+
+- Instalar 
+    - knex (Query-Builer, escreve comando SQL em Javascript) 
+    - sqlite3 (driver para que o Node consiga se conectar ao sqlite)
+```bash
+yarn add knex sqlite3
+```
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/addsqllite.png" />
+    <br>
+</h1>
+
+Adicione uma pasta dentro de src com um arquivo connections.ts:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/connetionsrtx.png" />
+    <br>
+</h1>
+
+
+A função path.resolve é útil pois não precisamos colocar as barras do caminho. Esta função irá gerar um arquivo sqlite dentro da pasta database (que é o valor gravado em _dirname também). O sqlite não sabe o que fazer com valores não preenchidos por isso setamos useNullAsDefault como true.
+
+## Migrations
+
+Como o knex só entende Javascript e não Typescript precisamos criar um arquivo na raiz do projeto chamado knexfile.ts:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/knexfilets.png" />
+    <br>
+</h1>
+
+
+Depois incluímos um script no arquivo packages.json, que faz o redirecionamento dos comando knex através do arquivo anterior. Para cada comando que a gente tiver necessidade de usar pelo Typescript, podemos declarar neste script.
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/knexredirect.png" />
+    <br>
+</h1>
+
+
+- **make**: Cria uma nova migração, com o nome da migração sendo adicionado.
+- **latest**: Executa todas as migrações que ainda não foram executadas.
+
+Controlam as versões dentro do banco de dados, similar ao Git. Por isso que vamos montar a estrutura do BD utilizando essa ferramenta. Quando outro desenvolvedor for trabalhar no mesmo projeto o Migrations reconstrói o banco na sua versão mais atualizada.
+
+Poderíamos utilizar um comando knex que cria a Migrations tudo em Javascript (???), mas como estamos utilizando Typescript vamos cria-los manualmente. Primeiro, é interessante nomear os arquivos com número, pois isso definirá uma ordem de execução do Migrations. Crie uma pasta migrations dentro de database com os seguintes arquivos para gerar os objetos do DB:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/migrationsfiles.png" />
+    <br>
+</h1>
+
+- **Up**: Executa o especificado (pelo parâmetro config.name) ou a próxima migração cronológica que ainda não foi executada.
+- **Down**: Desfaz o especificado (pelo parâmetro config.name) ou a última migração que foi danificada
+
+Para maiores informações de implementação desses objetos pode ser obtida na documentação oficial [aqui] (http://knexjs.org/#Migrations-API)
+
+Rodando o comando adaptado para criar a tabela de usuários:
+```bash
+yarn knex:migrate OU npx knex migrate:latest
+```
+<h1 align="center">
+    <img alt="Missing Image" src=".github/knexmigration.png" />
+    <br>
+</h1>
+
+Para visualizar os dados gravados em database.sqlite precisamos instalar a Extensão abaixo. (OBS.: Essa extensão dá muitos problemas na hora de visualizar os dados e **tem que ficar dando RELOAD no VS Code e reiniciando o yarn start)**
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/sqlliteerrror.png" />
+    <br>
+</h1>
+
+
+Ao clicar com o botão direito no arquivo database.sqlite, podemos abrir uma nova janela com nossa conexão sqlite com a tabela gerada. As outras tabelas migrations são as que guardam o histórico de alterações desse BD. Se outro desenvolvedor executar o comando yarn knex:migrate executará só as migrações não executadas.
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/tableusers.png" />
+    <br>
+</h1>
+
+Se algo der errado, o mais fácil e deletar o arquivo database.sqlite e tentar gerar novamente tudo. No código abaixo, podemos ver a implementação de tabelas relacionadas e Trigger em Cascade para Deletar e Fazer update das tabelas. A cada alteração do banco, para atualizar o arquivo database.sqlite precisamos rodar o comando:
+```bash
+yarn knex:migrate OU npx knex migrate:latest
+```
+<h1 align="center">
+    <img alt="Missing Image" src=".github/yarnmigrate.png" />
+    <br>
+</h1>
+
+
+### Organizando Código
+
+Por critério de organização iremos criar um arquivo routes.ts para retirar o código de rotas que estava dentro de server:
+
+
+Como está em um arquivo separado utilizamos express.Router() (anteriormente as rotas eram construídas diretamente através de express). Isso possibilita as rotas serem chamadas e utilizadas em diversas partes do projeto. Para testar as alterações voltamos ao Insomnia e fazemos as seguintes alterações:
+<h1 align="center">
+    <img alt="Missing Image" src=".github/changeservertoroutes.png" />
+    <br>
+</h1>
+
+
+Como está em um arquivo separado utilizamos express.Router() (anteriormente as rotas eram construídas diretamente através de express). Isso possibilita as rotas serem chamadas e utilizadas em diversas partes do projeto. Para testar as alterações voltamos ao Insomnia e fazemos as seguintes alterações:
+<h1 align="center">
+    <img alt="Missing Image" src=".github/testchanges.png" />
+    <br>
+</h1>
+
+
+Ao enviar temos a resposta no terminal:
+<h1 align="center">
+    <img alt="Missing Image" src=".github/testchangesresult.png" />
+    <br>
+</h1>
+
+
+Agora altramos os dados do objeto para cadastrar uma classe:
+```bash
+{
+	"name": "Shyoutaou Shyou",
+	"avatar": "https://image",
+	"whatsapp":"999999999",
+	"bio": "Software developer, whose likes to be in tune with the technology flow.",
+	"subject": "Mathematic",
+	"cost": 250,
+	"schedule": [
+		{"week_day": 1, "from": "8:08", "to": "12:00"},
+		{"week_day": 3, "from": "10:08", "to": "18:00"},
+		{"week_day": 4, "from": "8:08", "to": "12:00"}
+	]
+}
+```
+
+Fazemos as alterações abaixo no arquivo routes.ts para testar a gravação n tabela users:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/insertusers.png" />
+    <br>
+</h1>
+
+Para inserir classes o mesmo procedimentos, só temos que recuperar o user_id ao salvar um usuário:
+<h1 align="center">
+    <img alt="Missing Image" src=".github/insertclass.png" />
+    <br>
+</h1>
+
+Para habilitar as operações em transações e commit igual no SQL declaramos uma constante:
+```bash
+const trx = await db.transaction();
+```
+<h1 align="center">
+    <img alt="Missing Image" src=".github/transactions.png" />
+    <br>
+</h1>
+
+E substituímos por toda ocorrência de db que havia antes. No final damos o commit: 
+```bash
+trx.commit();
+```
+<h1 align="center">
+    <img alt="Missing Image" src=".github/commits.png" />
+    <br>
+</h1>
+
+Para tratar erro com try-catch pode ser feito assim:
+
+```bash
+const trx = await db.transaction();
+try 
+{
+        Code here	
+       trx.commit();
+} 
+catch (error) 
+{
+        trx.rollback();
+        console.log(error);
+        return response.status(400).json({error: "Unexpected error"})
+}
+```
+
+## ROTA PARA LISTAR AULAS
+	
+ Foi feito um refatoramento de código, retirando tudo que estava em route.ts (que gravava no BD) e deixado somente o que é relativo a rotas neste arquivo. Repare que já foi adicionado a rota do método GET que será usado na página de filtragem.
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/listpage.png" />
+    <br>
+</h1>
+
+As partes de código de gravação e filtragem estão agora em outra pasta chamada controllers que segue o modelo MVC e que foi visto uma implementação similar quando vimos a parte de componentes anteriormente. Foi criado o arquivo ClassesController.ts e codificado um teste para página de filtro utilizando o método GET:
+
+<h1 align="center">
+    <img alt="Missing Image" src=".github/classcontrolles.png" />
+    <br>
+</h1>
+
+Para testar no Insomnia, crie o 3 parâmetros utilizados (week_day, subject, time) com o auxílio da interface e clique Enviar
+<h1 align="center">
+    <img alt="Missing Image" src=".github/tresparams.png" />
+    <br>
+</h1>
+
+
+Se retornar o valor dos minutos no terminal está tudo OK:
+<h1 align="center">
+    <img alt="Missing Image" src=".github/minutes.png" />
+    <br>
+</h1>
+
+
+Adicionando a filtragem e retornando um objeto JSON:
+<h1 align="center">
+    <img alt="Missing Image" src=".github/filtragemJSON.png" />
+    <br>
+</h1>
+
+
+Testando no Insomnia:
+<h1 align="center">
+    <img alt="Missing Image" src=".github/filterInsomnia.png" />
+    <br>
+</h1>
+
+
+Para finalizar, adicionamos o pacote cors, que permite que aplicações em endereços diferentes, no caso,  nosso Front-End esteja no localhost:3000 e seja acessado pela API Back End em localhost:3333. Por padrão, só permite o acesso de aplicações no mesmo endereço a API.
+```bash
+yarn add cors
+```
+<h1 align="center">
+    <img alt="Missing Image" src=".github/addcors.png" />
+    <br>
+</h1>
 
 [Voltar a Aula 1](Aula01.md)
 [Continuar a Aula 3](Aula03.md)
