@@ -1,0 +1,61 @@
+#page-full-content .page-full-container {
+      background: var(--color-primary-dark);
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+  
+#page-full-content .page-full-background {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 85%;
+    height: 85%;
+    z-index: 0;
+}
+  
+#page-full-content .page-full-background > div {
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: var(--color-line-in-white);
+    z-index: 999;
+}
+  
+#page-full-content .page-full-background h2 {
+    font: 700 4rem Poppins;
+    z-index: 1;
+}
+  
+#page-full-content .page-full-background p {
+    max-width: 400px;
+    z-index: 1;
+}
+  
+#page-full-content .page-full-background a {
+    margin-top: 8rem;
+    padding: 1.6rem 4rem;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    outline: 0;
+    transition: 0.2s;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1;
+}
+  
+#page-full-content .page-full-background:hover {
+    background: var(--color-secondary-dark);
+    color: var(--color-button-text);
+}

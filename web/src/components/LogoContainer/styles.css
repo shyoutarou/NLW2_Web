@@ -1,0 +1,49 @@
+.logocontain-container {
+    position: relative;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-bg-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-hero {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.logo-hero img {
+    height: 7rem;
+    z-index: 1;
+}
+
+.logo-hero h2 {
+    width: 14rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-top: 0.8rem;
+    z-index: 1;
+}
+  
+@media (min-width: 900px) {
+    .logocontain-container {
+        grid-area: logo;
+    }
+
+    .logo-hero h2 {
+        font-size: 3rem !important;
+        line-height: 4rem !important;
+        width: 32rem !important;
+    }
+
+    .logo-hero img {
+        height: 14rem !important;
+    }
+}

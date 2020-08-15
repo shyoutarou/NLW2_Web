@@ -1,0 +1,87 @@
+.holder-top-bar {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.holder-top-bar + div {
+      margin-top: 7.2rem;
+    }
+
+.holder-top-bar.holder-dark {
+    background: var(--color-primary-dark);
+}
+
+  
+.top-bar-container {
+    width: 90%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-in-primary);
+    padding: 1.6rem 0;
+}
+
+.top-bar-container > img {
+    height: 1.6rem;
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.profile-button img {
+    height: 4.2rem;
+    border-radius: 50%;
+    margin-right: 1.2rem;
+}
+
+.profile-button  p {
+    text-decoration: none;
+    color: var(--color-button-text);
+    font: 400 1.2rem Poppins;
+    border: 0;
+}
+
+.profile-button + p + img {
+    background: var(--color-primary-dark);
+    height: 100%;
+    padding: 0.7rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profile-button :hover {
+    opacity: 0.6;
+}
+
+
+.top-bar-container   p {
+    font: 400 1.4rem Archivo;
+}
+
+.top-bar-container   a {
+    height: 3.2rem;
+    transition: opacity 0.2s;
+}
+
+.top-bar-container   a:hover {
+    opacity: 0.6;
+}
+
+  
+  @media (min-width: 900px) {
+    .top-bar-container {
+      max-width: 1100px;
+    }
+  }
+  
