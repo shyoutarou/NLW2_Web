@@ -7,6 +7,7 @@ import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
 import './styles.css'
 import { useAuth } from '../../contexts/auth'
 import api from '../../services/api'
+import { toast } from 'react-toastify'
 
 function SignIn() {
 
@@ -31,9 +32,13 @@ function SignIn() {
 
   async function handleSignIn(e: FormEvent) {
     e.preventDefault()
-    if (isAble()) {
-      const response = await signIn( email, password);
-      // console.log(response);
+
+    try {
+      if (isAble()) {
+        const response = await signIn( email, password);
+      }
+    } catch (err) {
+        toast.error('Ocorreu um erro ao fazer login, cheque as credenciais');
     }
   }
 

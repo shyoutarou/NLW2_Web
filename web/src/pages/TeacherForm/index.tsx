@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect, useCallback } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import PageHeader from '../../components/PageHeader';
@@ -7,9 +7,16 @@ import Select from '../../components/Select';
 import Textarea from '../../components/Textarea';
 import warningicon from '../../assets/images/icons/warning.svg';
 
-import './styles.css';
 import api from '../../services/api';
+import { toast } from 'react-toastify';
 
+import './styles.css';
+
+interface Schedule {
+    week_day: number;
+    from: string;
+    to: string;
+  }
 
 function TeacherForm()
 {
@@ -19,16 +26,26 @@ function TeacherForm()
     const [bio, setBio] = useState('');
     const [subject, setSubject] = useState('');
     const [cost, setCost] = useState('');
-      
-    const classID = useQuery().has('edit') ? useQuery().get('edit') : null
+
+    const [schedules, setSchedules] = useState<Schedule[]>([
+        {
+          week_day: 0,
+          from: '',
+          to: '',
+        },
+      ]);
+
+    const [classID, setclassID] = useState('');
+
+    // const classID = useQuery().has('edit') ? useQuery().get('edit') : null
 
     const [scheduleItems, setScheduleItems] = useState([
         { week_day: 0, from: '', to: ''},
       ]);
     
-    function useQuery() {
-    return new URLSearchParams(useLocation().search)
-    }
+    // function useQuery() {
+    // return new URLSearchParams(useLocation().search)
+    // }
 
     function addNewScheduleItem() {
         setScheduleItems([...scheduleItems,
@@ -36,33 +53,45 @@ function TeacherForm()
         ]);
       }
 
-    function setScheduleItemValue(position: number, field: string, value: string) {
-        const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
-            if (index === position) {
-                return {...scheduleItem, [field]: value };
-            }
-            return scheduleItem;
-        });
+    const setScheduleItemValue = useCallback(
+        (scheduleIndex: number, field: string, value: string) => {
+            setSchedules(state => {
+            return state.map((item, index) =>
+                index === scheduleIndex ? { ...item, [field]: value } : item,
+            );
+            });
+        },
+        [],
+    );
 
-        console.log( updatedScheduleItems);
-        setScheduleItems(updatedScheduleItems);
-    }
+    // function setScheduleItemValue(position: number, field: string, value: string) {
+    //     const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
+    //         if (index === position) {
+    //             return {...scheduleItem, [field]: value };
+    //         }
+    //         return scheduleItem;
+    //     });
+
+    //     console.log( updatedScheduleItems);
+    //     setScheduleItems(updatedScheduleItems);
+    // }
 
     const history = useHistory();
     
     function handleCreateClass(e: FormEvent) {
         e.preventDefault();
 
-        // console.log( name, avatar, whatsapp, bio, subject, cost, scheduleItems)
         api.post('classes', { name, avatar, whatsapp,
         bio, subject, cost: Number(cost), schedule: scheduleItems,
         }).then(() => {
-        alert('Cadastro realizado com sucesso!');
+
+            toast.success(
+                'Cadastro realizado com sucesso!',
+              );
 
         history.push('/');
         }).catch((err) => {
-        alert('Ocorreu um erro!');
-        console.log(err);
+            toast.error('Ocorreu um erro ao fazer o cadastro');
         });
     }
 

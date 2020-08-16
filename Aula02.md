@@ -1,25 +1,27 @@
 # Aula 2 (04/08/2020): Proffy-Server
 
-[Voltar a Aula 1](Aula01.md)
-[Voltar as README.md](README.md)
+- [Voltar a Aula 1](Aula01.md)
+- [Voltar as README.md](README.md)
 
 ## 📌 Index
 - [FLUXO DESENVOLVIMENTO REACT](#fluxo-desenvolvimento-react)
     - [API (Application Programming Interface)](#api-application-programming-interface)
     - [REST (Representational State Transfer)](#rest-representational-state-transfer)
     - [Rotas, Recursos e Métodos HTTP](#rotas-recursos-e-métodos-http)
-- [PARÂMETROST](#parametros)
+- [PARÂMETROS](#parâmetros)
     - [RequestBody](#requestBody)
     - [Route Params](#route-params)
     - [Route Query](#route-query)
 - [CASOS DE USO](#casos-de-uso)
     - [Conexões](#conexões)
-    - [Aulas/Classes](#aulas-classes)
+    - [Aulas/Classes](#aulas/classes)
 - [ROTA PARA CRIAR UMA AULA](#rota-para-criar-uma-aula)
     - [Databases](#databases)
     - [Migrations](#migrations)
     - [Organizando Código](#organizando-código)
 - [ROTA PARA LISTAR AULAS](#rota-para-listar-aulas)
+
+## FLUXO DESENVOLVIMENTO REACT
 
 É explicado o fluxo normal de aplicações, as funções Front e Back-End. A diferença do modelo MVC (carregava tudo a cada Refresh) e o modelo SPA (Single Page Application). Explicado que está se utilizando o Node.js pois permite utilizar a mesma linguagem, Typescript e React, para escrever o Front o Back e o mobile.
 
@@ -251,7 +253,7 @@ Cada endereço é uma rota (Ex.: http://localhost:3333/users ou http://localhost
 Insonmnia (https://insomnia.rest/download/)
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/insomniacreat.png" />
+    <img alt="Missing Image" src=".github/insomniacreate.png" />
     <br>
 </h1>
 
@@ -649,7 +651,7 @@ yarn add cors
     <br>
 </h1>
 
-[Voltar a Aula 1](Aula01.md)
-[Continuar a Aula 3](Aula03.md)
-[Voltar as README.md](README.md)
+- [Voltar a Aula 1](Aula01.md)
+- [Continuar a Aula 3](Aula03.md)
+- [Voltar as README.md](README.md)
     

@@ -8,7 +8,7 @@ import { useAuth } from '../contexts/auth';
 const Routes: React.FC = () => {
 
         const { signed, loading  } = useAuth();
-        console.log(signed);
+        console.log("Routes:" + signed);
 
       
         // if (loading) {

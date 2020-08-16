@@ -579,7 +579,7 @@ Para a listagem dos professores foi criado um componente TeacherItem e feita a e
 </h1>
 
 
-[Continuar com a Aula 2](Aula02.md)
-[Voltar ao README.md](README.md)
+- [Continuar com a Aula 2](Aula02.md)
+- [Voltar ao README.md](README.md)
     
 

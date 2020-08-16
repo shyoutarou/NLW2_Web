@@ -33,7 +33,7 @@ function Login() {
         e.preventDefault();
         
         const response = await signIn( email, password);
-        console.log(response);
+        console.log("login: " + response);
 
         
         // if(signed) history.push('/give-classes');

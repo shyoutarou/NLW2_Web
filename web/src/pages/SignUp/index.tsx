@@ -8,6 +8,7 @@ import LogoContainer from '../../components/LogoContainer'
 import backicon from '../../assets/images/icons/back.svg';
 import './styles.css'
 import api from '../../services/api'
+import { toast } from 'react-toastify'
 
 // import { AuthContext } from '../../contexts/auth'
 
@@ -30,10 +31,14 @@ function SignUp() {
         email,
         password
         }).then(() => {
-            alert('Cadastro realizado com sucesso!');
+
+            toast.success(
+              'Cadastro realizado com sucesso!',
+            );
+
             history.push('/');
         }).catch(() =>{
-            alert('Error');
+          toast.error('Ocorreu um erro ao fazer o cadastro');
         })
     }
   }

@@ -2,8 +2,8 @@ import React, {SelectHTMLAttributes} from 'react';
 import './styles.css';
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement>  {
-    label: string;
     name: string;
+    label: string;
     options: Array<{
         id: string, value: string
     }>;
@@ -16,9 +16,12 @@ const Select: React.FC<SelectProps> = ({label, name, options, ...rest}) =>
             <label htmlFor={name}>{label}</label>
 
             <select id={name} {...rest} >
-                <option value="" disabled hidden >Selecione um opção</option>
+                <option value="" disabled hidden >
+                    Selecione um opção
+                </option>
                 {options.map(option => {
-                    return <option key={option.id} value={option.id}>{option.value}</option>
+                    return <option key={option.id} 
+                    value={option.id}>{option.value}</option>
                 })}
             </select>
         </div>

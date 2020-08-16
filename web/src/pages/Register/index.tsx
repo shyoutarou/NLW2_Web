@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 import warningIcon from '../../assets/images/icons/warning.svg'
 
 import './style.css';
+import { toast } from 'react-toastify';
 
 function Register(){
     const history = useHistory();
@@ -31,10 +32,14 @@ function Register(){
             whatsapp,
             bio,
         }).then(() => {
-            alert('All done!');
+
+            toast.success(
+                'Cadastro realizado com sucesso!',
+              );
+              
             history.push('/');
         }).catch(() =>{
-            alert('Error');
+            toast.error('Ocorreu um erro ao fazer o cadastro');
         })
     }
 

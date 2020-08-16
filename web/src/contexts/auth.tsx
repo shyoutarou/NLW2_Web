@@ -58,7 +58,7 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
         await api.post<User>('login', { email, password })
                  .then(response => {
                     const { data } = response;
-                    console.log(data);
+                    console.log("AuthProvider: " + data);
                     setUser(data);
                     setLoading(true);
                     api.defaults.headers.Authorization = `Baerer ${token}`;
@@ -67,8 +67,7 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
                         localStorage.setItem('@proffy:user', JSON.stringify(user));
                         localStorage.setItem('@proffy:token', token);
                     }
-
-                }).catch(() => alert('Erro no login!'));
+                })
     }
 
     function signOut() {
