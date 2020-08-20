@@ -73,7 +73,7 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - [x] Estilizando listagem de professores
 - [x] Criando componentes comuns (Teacher Item)
 
-[Passo-a-Passo Aula 1](Aula01.md)
+[Passo-a-Passo Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web#criar-projeto)
 
 #### Aula 2: Proffy-Server
 - [x] Identificando casos de uso
