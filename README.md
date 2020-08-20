@@ -13,11 +13,6 @@
   <img src="https://img.shields.io/github/license/matheusfelipeog/proffy?color=blue&style=for-the-badge" alt="License" />
 </h2>
 
-## 👅 Línguas
-
-- [README in English](README-EN.md)
-- [README in German/Deustch](README-DE.md)
-- [README in Japanese](README-JA.md)
 
 ## 📌 Index
 <p align="center">
