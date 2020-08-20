@@ -47,7 +47,7 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 
 - Protótipo: **[Figma](https://www.figma.com/)** &rarr; **<kbd>[Protótipo (Proffy)](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web/duplicate)</kbd>**
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)** &rarr; Extensions: **<kbd>[SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)</kbd>**
-- Markdown: **[StackEdit](https://stackedit.io)**, **<kbd>[Markdown Emoji][markdown_emoji]</kbd>**
+- Markdown: **[StackEdit](https://stackedit.io)**, **<kbd>[Markdown Emoji](https://gist.github.com/rxaviers/7360908)</kbd>**
 - Commit Conventional: **[Commitlint](https://github.com/conventional-changelog/commitlint)**
 - Teste de API: **[Insomnia](https://insomnia.rest/)**
 - Ícones: **[Feather Icons](https://feathericons.com/)**, **[Font Awesome](https://fontawesome.com/)**
@@ -73,7 +73,7 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - [x] Estilizando listagem de professores
 - [x] Criando componentes comuns (Teacher Item)
 
-[Passo-a-Passo Aula 1](Aula01.md)
+[Passo-a-Passo Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web)
 
 #### Aula 2: Proffy-Server
 - [x] Identificando casos de uso
@@ -83,7 +83,7 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - [x] Listagem de aulas
 - [x] Criação e total de coneções
 
-[Passo-a-Passo Aula 2](Aula02.md)
+[Passo-a-Passo Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
 
 #### Aula 3: Finalizando Front-End
 - [x] Estruturando página de cadastro
@@ -93,7 +93,7 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - [x] Cadastro de novas aulas
 - [x] Listagem de professores
 
-[Passo-a-Passo Aula 3](Aula03.md)
+[Passo-a-Passo Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
 
 #### Aula 4: Estruturando app mobile
 - [ ] Criando projeto com expo
@@ -125,8 +125,8 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 
 <h2 align="left"> 📥 Figma layout available for download at: </h2>
 
-- [Instruções](https://whimsical.com/4Ug5pJLABvCj2NWQXyuK38)
-- [Protótipo](https://www.notion.so/Layout-Proffy-3d5f45f54ec54ef9b2103565b7cce4e1)
+- [Instruções](https://www.notion.so/Layout-Proffy-3d5f45f54ec54ef9b2103565b7cce4e1)
+- [Protótipo](https://whimsical.com/4Ug5pJLABvCj2NWQXyuK38)
 - [Proffy-Web](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web)
 
 ## ⚙ Instalação e Start
