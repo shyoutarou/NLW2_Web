@@ -20,10 +20,9 @@ function SignIn() {
   const history = useHistory();
 
   useEffect(() => {
-      const token = localStorage.getItem('access_token');
+      const token = localStorage.getItem('@proffy:token');
 
       if (token) {
-          console.log('Authorization:' + token);
           api.defaults.headers.common['Authorization'] = token;
           history.push('/study');
       }

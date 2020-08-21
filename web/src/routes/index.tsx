@@ -4,12 +4,8 @@ import AppRoutes from './AppRoutes';
 import AuthRoutes from './AuthRoutes';
 import { useAuth } from '../contexts/auth';
 
-
 const Routes: React.FC = () => {
-
         const { signed, loading  } = useAuth();
-        console.log("Routes:" + signed);
-
         // if (loading) {
         //     return (
         //         <Loader type="Puff" color="#00BFFF" height={100}
@@ -17,7 +13,6 @@ const Routes: React.FC = () => {
         //         />
         //     );
         // }
-
         return signed ? <AppRoutes/> : < AuthRoutes />;
   };
   

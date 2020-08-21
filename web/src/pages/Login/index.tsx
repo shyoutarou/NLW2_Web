@@ -14,7 +14,7 @@ function Login() {
     const history = useHistory();
 
     useEffect(() => {
-        const token = localStorage.getItem('access_token');
+        const token = localStorage.getItem('@proffy:token');
 
         console.log(token);
 

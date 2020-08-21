@@ -11,6 +11,7 @@ import { useAuth } from '../../contexts/auth';
 
 import api from '../../services/api';
 import './styles.css';
+import LandingHeader from '../../components/LandingHeader';
 
 function Landing() {
 
@@ -29,16 +30,12 @@ function Landing() {
         
         setUserName(user?.name);
 
-        // api.get('login', {params: {email: user?.email, password: user?.password}}).then(response => {
-        //     const { data } = response.data;
-
-        //     setUserName(data.name);
-        // })
       }, []);
 
     return (
-        
+
         <div id="page-landing">
+            <LandingHeader />
             <div id="page-landing-content" className="container">
                 <div className="logo-container">
                     <img src={logoimg} alt="Proffy"/>
@@ -63,11 +60,7 @@ function Landing() {
                     Total de {totalConnections} conexões já realizadas
                     <img src={purplehearticon} alt="Coração"/>
                 </span>
-                <span className="logged-as">
-                    Logged as {userName||'Guest'} 
-                    <img src={purplehearticon} alt="Purple Heart"/>
-                    <button onClick={handleSignOut}>sign out</button>
-                </span>
+
             </div>
         </div> 
     );

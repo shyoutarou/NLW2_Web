@@ -14,7 +14,6 @@ function LoginError() {
     useEffect(() => {
         api.get('connections').then(response => {
             const { total } = response.data;
-
             setTotalConnections(total);
         })
     }, []);

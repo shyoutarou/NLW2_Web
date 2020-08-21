@@ -6,6 +6,7 @@ import Input from '../../components/Input';
 import './styles.css';
 import Select from '../../components/Select';
 import api from '../../services/api';
+import { toast } from 'react-toastify';
 
 function TeacherList()
 {
@@ -14,9 +15,12 @@ function TeacherList()
     const [subject, setSubject] = useState('');
     const [week_day, setWeek_day] = useState('');
     const [time, setTime] = useState('');
-    
+
+
     async function searchTeachers(e: FormEvent) {
         e.preventDefault();
+        try {
+
         const response = await api.get('classes', {
           params: {
             subject,
@@ -26,11 +30,17 @@ function TeacherList()
         });
     
         setTeachers(response.data);
+
+        } catch (err) {
+            toast.error('Ocorreu um erro ao listar professores!');
+        }
+
       }
       
     return (
         <div id="page-teacher-list" className="container">
-            <PageHeader title="Estes são os proffys disponíveis.">
+            <PageHeader icon = "smile"
+                        title="Estes são os proffys disponíveis.">
                 <form onSubmit={searchTeachers} id="search-teachers">
                     <Select
                         name="subject" 

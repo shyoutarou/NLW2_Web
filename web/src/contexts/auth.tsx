@@ -3,6 +3,7 @@ import api from '../services/api';
 
 interface User {
     success: boolean;
+    id?: number;
     name?: string;
     surname?: string;
     avatar?: string;
@@ -32,8 +33,17 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
 
     useEffect(() => {
         async function  loadStoragedData (){
-            const storagedUser = await localStorage.getItem('@proffy:user');
-            const storagedToken = await localStorage.getItem('@proffy:token');
+            let storagedUser = await localStorage.getItem('@proffy:user');
+
+            if (!storagedUser) {
+                storagedUser = await sessionStorage.getItem('@proffy:user');
+            }
+            
+            let storagedToken = await localStorage.getItem('@proffy:token');
+
+            if (!storagedToken) {
+                storagedToken = sessionStorage.getItem('@proffy:token');
+            }
 
             // simular uma lentidão para mostar o loading.
             await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -55,23 +65,30 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
 
     async function signIn(email: string, password: string) {
 
-        await api.post<User>('auth', { email, password })
+        await api.post('auth', { email, password })
                  .then(response => {
                     const { data } = response;
-                    console.log("AuthProvider: " + data);
-                    setUser(data);
+
+  
+                    console.log("AuthProvider: " + data.user);
+                    setUser(data.user);
                     setLoading(true);
-                    api.defaults.headers.Authorization = `Baerer ${token}`;
+                    api.defaults.headers.Authorization = `Baerer ${data.token}`;
  
-                    if (remember){
-                        localStorage.setItem('@proffy:user', JSON.stringify(user));
-                        localStorage.setItem('@proffy:token', token);
+                    if (remember) {
+                        localStorage.setItem('@proffy:token', data.token);
+                        localStorage.setItem('@proffy:user', JSON.stringify(data.user));
+                    } else {
+                        sessionStorage.setItem('@proffy:token', data.token);
+                        sessionStorage.setItem('@proffy:user', JSON.stringify(data.user));
                     }
                 })
     }
 
     function signOut() {
+
         localStorage.clear();
+        sessionStorage.clear();
         setUser(null);
         setLoading(true);
     }
