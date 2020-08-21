@@ -220,13 +220,7 @@ function TeacherForm()
                                     onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
                                     />
                                 </div>
-                                <div className="schedule-item-delete">
-                                    <hr />
-                                    <span onClick={() => handleDeleteClassSchedule(index)}>
-                                    Excluir horário
-                                    </span>
-                                    <hr />
-                                </div>
+     
                             </div>
                             
                         ))}

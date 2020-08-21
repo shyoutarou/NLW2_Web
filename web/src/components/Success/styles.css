@@ -1,0 +1,46 @@
+.success-container {
+    min-height: 100vh;
+    width: 100vw;
+    background: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.success-container h1 {
+    color: white;
+    font-size: 42;
+    padding: 20px;
+    font-family: Archivo;
+}
+
+.success-container p {
+    color: white;
+    font-family: Poppins;
+    font-weight: lighter;
+    max-width: 600px;
+    text-align: center;
+}
+
+.success-details {
+    position: absolute;
+    width: 100%;
+}
+
+.success-button {
+    width: 176px;
+    height: 56px;
+    background-color: #04dd61;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    color: white;
+    font-family: Poppins;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.z1 {
+    z-index: 1;
+}

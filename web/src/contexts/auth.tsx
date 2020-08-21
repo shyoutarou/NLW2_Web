@@ -55,7 +55,7 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
 
     async function signIn(email: string, password: string) {
 
-        await api.post<User>('login', { email, password })
+        await api.post<User>('auth', { email, password })
                  .then(response => {
                     const { data } = response;
                     console.log("AuthProvider: " + data);

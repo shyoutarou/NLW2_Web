@@ -10,7 +10,6 @@ const Routes: React.FC = () => {
         const { signed, loading  } = useAuth();
         console.log("Routes:" + signed);
 
-      
         // if (loading) {
         //     return (
         //         <Loader type="Puff" color="#00BFFF" height={100}

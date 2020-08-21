@@ -72,11 +72,16 @@ function TeacherList()
                 </form>
             </PageHeader>
             <main>
-                {teachers.map((teacher: Teacher) => (
-                    <TeacherItem 
-                    key={teacher.id} 
-                    teacher={teacher} />
-                ))}
+                {teachers.length === 0 ? 
+                <div className="no-results">
+                    <h2>Nenhum professor encontrado com sua pesquisa</h2>
+                </div> : 
+                    teachers.map((teacher: Teacher) => (
+                        <TeacherItem 
+                        key={teacher.id} 
+                        teacher={teacher} />
+                    ))
+                }                
             </main>
         </div>
     )

@@ -25,21 +25,20 @@ function SignUp() {
   async function handleCreateUser(e: FormEvent) {
     e.preventDefault()
     if (isAble()) {
-      await api.post('register', {
-        name,
-        surname,
-        email,
-        password
-        }).then(() => {
 
-            toast.success(
-              'Cadastro realizado com sucesso!',
-            );
+      try {
+        await api.post('users', {
+          name,
+          surname,
+          email,
+          password
+          })
+      } catch(e) {
+        toast.error('Ocorreu um erro ao fazer o cadastro');
+      }
 
-            history.push('/');
-        }).catch(() =>{
-          toast.error('Ocorreu um erro ao fazer o cadastro');
-        })
+      history.push('/signup-success')
+
     }
   }
 
@@ -70,6 +69,8 @@ function SignUp() {
               <Input
                 name="name"
                 placeholder="Nome"
+                // type="text"
+
                 // stacked={true}
                 value={String(name)}
                 onChange={(e) => {
@@ -78,6 +79,7 @@ function SignUp() {
               />
               <Input
                 name="surname"
+                type="text"
                 placeholder="Sobrenome"
                 // stacked={true}
                 value={String(surname)}
@@ -98,7 +100,7 @@ function SignUp() {
               <Input
                 name="password"
                 placeholder="Senha"
-                type="password"
+                eye="true"
                 // stacked={true}
                 value={String(password)}
                 onChange={(e) => {

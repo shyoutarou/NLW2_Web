@@ -4,10 +4,12 @@ import WrapperContent from '../../components/WrapperContent'
 import LogoContainer from '../../components/LogoContainer'
 import Input from '../../components/Input'
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
-import './styles.css'
 import { useAuth } from '../../contexts/auth'
 import api from '../../services/api'
 import { toast } from 'react-toastify'
+
+import './styles.css'
+
 
 function SignIn() {
 
@@ -15,13 +17,10 @@ function SignIn() {
   const [password, setPassword] = useState<string>('')
   
   const { signed, user, signIn, handleToggleRemember } = useAuth();
-
   const history = useHistory();
 
   useEffect(() => {
       const token = localStorage.getItem('access_token');
-
-      console.log('useEffect:' + token);
 
       if (token) {
           console.log('Authorization:' + token);
@@ -35,6 +34,7 @@ function SignIn() {
 
     try {
       if (isAble()) {
+
         const response = await signIn( email, password);
       }
     } catch (err) {
@@ -67,17 +67,19 @@ function SignIn() {
                   setEmail(e.target.value)
                 }}
               />
-              <Input
-                name="password"
-                type="password"
-                placeholder="Senha"
-                // stacked={true}
-                value={String(password)}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                }}
-              />
-              <div className="login-tools">
+                <div className="form-input">    
+                    <Input
+                      name="password"
+                      eye="true"
+                      placeholder="Senha"
+                      // stacked={true}
+                      value={String(password)}
+                      onChange={(e) => {
+                        setPassword(e.target.value)
+                      }}
+                    />
+                </div>    
+                <div className="login-tools">
                 <div>
                     <input onChange={handleToggleRemember} type="checkbox" name="remember"/>
                     <label htmlFor="remember">Remember</label>

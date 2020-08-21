@@ -37,6 +37,21 @@
     background: var(--color-secondary-dark);
   } 
   
+  .no-results {
+    grid-column: 4fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .no-results h2{
+      width: 300px;
+      font-size: 16px;
+      font-weight: lighter;
+      text-align: center;
+  }
+
   @media (min-width: 700px) {
     #page-teacher-list {
       max-width: 100%;

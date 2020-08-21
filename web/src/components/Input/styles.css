@@ -32,3 +32,16 @@
     right: 1.6rem;
     bottom: 0;
 }
+
+.eye {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}

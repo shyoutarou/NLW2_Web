@@ -104,6 +104,9 @@
     color: var(--color-text-complement);
 }
 
+
+
+
 @media (min-width: 900px) {
 
     .login-container form fieldset legend a {

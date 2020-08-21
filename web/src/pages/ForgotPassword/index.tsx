@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, FormEvent } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
 import Input from '../../components/Input'
 import WrapperContent from '../../components/WrapperContent'
@@ -8,13 +8,30 @@ import LogoContainer from '../../components/LogoContainer'
 import backicon from '../../assets/images/icons/back.svg';
 
 import './styles.css'
+import api from '../../services/api'
+import { toast } from 'react-toastify'
 
 function ForgotPassword() {
 
   const [email, setEmail] = useState<string>('')
+  const history = useHistory()
   
   function isAble() {
     return email !== '' 
+  }
+
+  const handleReset = async (e: FormEvent) => {
+    e.preventDefault()
+
+    try {
+        await api.post('/resetpassword', {
+            email
+        })
+    } catch(e) {
+      toast.error('Email inexistente!');
+    }
+
+      history.push('/forgot-password-success')
   }
 
   return (
@@ -27,7 +44,7 @@ function ForgotPassword() {
                 <img src={backicon} alt="Voltar" />
               </Link>
             </div>
-            <form className="form-80">
+            <form onSubmit={handleReset} className="form-80">
               <fieldset>
                 <legend>
                   <p>Eita, esqueceu sua senha?</p>
