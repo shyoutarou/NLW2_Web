@@ -1,0 +1,87 @@
+ul .schedule-external-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 3rem;
+}
+
+ul li .schedule-inner-label {
+  display: none;
+  font: 500 1.6rem Poppins;
+  color: var(--color-text-base);
+}
+
+ul .schedules-item {
+  width: 100%;
+  min-height: 6rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font: 700 2.4rem Archivo;
+  color: var(--color-text-base);
+
+  border-radius: 0.8rem;
+  border: 1px solid var(--color-line-in-white);
+  background: var(--color-box-footer);
+}
+
+ul .schedules-item-disabled {
+  opacity: 0.4;
+}
+
+ul .schedules-item-disabled img {
+  opacity: 0.8;
+  margin: 0 0.4rem;
+}
+
+ul .schedules-item .day-time {
+  width: 100%;
+  max-width: 16rem;
+  display: flex;
+  padding: 0 2rem;
+}
+
+ul .schedules-item img {
+  width: 100%;
+  max-width: 8rem;
+  transform: rotate(180deg);
+}
+
+@media (min-width: 700px) {
+  ul {
+    display: flex;
+  }
+
+  ul .schedules-item {
+    width: 100%;
+    height: 13rem;
+    margin-right: 0.5rem;
+    padding: 1.5rem 1rem;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ul .schedule-external-label {
+    display: none;
+  }
+
+  ul .schedules-item .schedule-inner-label {
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  ul .schedules-item .day-time {
+    padding: 0;
+    font-size: 1.6rem;
+  }
+
+  ul .schedules-item img {
+    display: none;
+  }
+}

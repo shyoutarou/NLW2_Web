@@ -34,10 +34,17 @@
     margin: 3.2rem auto;
   }
   
+  .page-header .header-description {
+    position: relative;
+  }
+
+  
+
   .page-header .header-content strong {
     font: 700 3.6rem Archivo;
     line-height: 4.2rem;
     color: var(--color-title-in-primary);
+    display: block;
   }
 
   .page-header .header-content p {
@@ -48,6 +55,22 @@
     margin-top: 2.4rem;
   }
   
+.page-header .message-header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+}
+
+.page-header .message-header h4 {
+    color: #D4C2FF;
+    font-size: 12px;
+    font-family: Poppins;
+    width: 105px;
+    margin-left: 8px;
+}
+
   @media (min-width: 700px) {
     .page-header {
       height: 340px;
@@ -65,7 +88,6 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
     }
     
     .page-header .header-content strong {
