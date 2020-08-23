@@ -7,11 +7,14 @@ import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 import api from '../../services/api';
 
 import './styles.css';
+import { useAuth } from '../../contexts/auth';
 
 function LoginError() {
     const [totalConnections, setTotalConnections] = useState(0);
-
+    const { signOut } = useAuth();
+    
     useEffect(() => {
+        
         api.get('connections').then(response => {
             const { total } = response.data;
             setTotalConnections(total);
@@ -27,7 +30,7 @@ function LoginError() {
                 </div>
 
                 <div className="login-buttons-container">
-                    <Link to="/" className="study">
+                    <Link onClick={signOut} to="/" className="study">
                         Login
                     </Link>
                 </div>

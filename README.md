@@ -58,58 +58,13 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 |  06/08  |Até 2 anos em 2 meses|   ![npm](https://img.shields.io/npm/v/react-native?color=black&label=React-Native&logo=react) ![npm](https://img.shields.io/npm/v/expo?color=black&label=Expo&logo=expo)            |
 |  07/08  |A milha extra|   
 
-### Desenvolvimento
+### Desenvolvimento NLW2_Web wiki!
 
-#### Aula 1: Proffy-Web
-- [x] Criando estrutura da landing page
-- [x] Estilizando landing page
-- [x] Configurando navegação do app
-- [x] Estruturando listagem de professores
-- [x] Estilizando listagem de professores
-- [x] Criando componentes comuns (Teacher Item)
+Resumo dos três primeiros dias da NLW da Rocketseat.
 
-[Passo-a-Passo Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web)
-
-#### Aula 2: Proffy-Server
-- [x] Identificando casos de uso
-- [x] Configurando conexão com o banco
-- [x] Criando tabelas no banco de dados
-- [x] Criação de aulas
-- [x] Listagem de aulas
-- [x] Criação e total de coneções
-
-[Passo-a-Passo Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
-
-#### Aula 3: Finalizando Front-End
-- [x] Estruturando página de cadastro
-- [x] Estilizando página de cadastro
-- [x] Preparando cadastro de horários
-- [x] Carregando total de conexões na Landing
-- [x] Cadastro de novas aulas
-- [x] Listagem de professores
-
-[Passo-a-Passo Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
-
-#### Aula 4: Estruturando app mobile
-- [ ] Criando projeto com expo
-- [ ] Estruturando Landing Page
-- [ ] Estilizando Landing Page
-- [ ] Navegação da Landing Page
-- [ ] Página de "Dar aulas"
-- [ ] Páginas internas
-- [ ] Navegação em abas
-- [ ] Componente Page Header
-
-#### Aula 5: Finalizando app mobile
-- [ ] Lista de professores
-- [ ] Lista de professores
-- [ ] Filtro de professores
-- [ ] Conectando com a API
-  - [ ] Total de conexões
-  - [ ] Lista de professores
-- [ ] Contato via Whatsapp
-- [ ] Adicionando e removendo favoritos
-- [ ] Listando favoritos
+1. [Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web)
+2. [Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
+3. [Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
 
 ## 📸 Screenshots
 
@@ -200,23 +155,14 @@ Back End (pasta server) Front End (pasta web) Mobile (pasta mobile)
 
 ## Extra chalenges in App Version 2.0
 
-- [ ] Splash Screen
-- [ ] OnBoarding Screen na primeira execução
-- [ ] Infinite Scroll
-- [ ] Autenticação
+- [x] Autenticação
   - [x] Login / Logout 
   - [x] Permanecer logado - Token
   - [x] Recuperar senha
-  - [x] Telas da Web
-  - [ ] Telas do Mobile
-- [ ] Rating system
-- [ ] Manutenção de cadastro de Professor
-- [ ] Perfil do usuário
-- [ ] Adicionar e remover os Horários no cadastro das Aulas 
-- [ ] Adicionando e removendo favoritos usando ContextApi
+- [x] Manutenção do Perfil do usuário
+- [x] Adicionar e remover os Horários no cadastro das Aulas 
 - [ ] Deploy
  
-
 <h2 align="left"> 📥 Figma layout available for download at: </h2>
 
 - [Instruções](https://www.notion.so/Vers-o-2-0-Proffy-eefca1b981694cd0a895613bc6235970)

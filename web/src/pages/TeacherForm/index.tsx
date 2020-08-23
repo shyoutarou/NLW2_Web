@@ -35,8 +35,6 @@ function TeacherForm()
     useEffect(() => {
         const token = sessionStorage.getItem('@proffy:token');
 
-        console.log(!token);
-
         if (!token) {
             history.push('/loginerror')
         }
@@ -62,23 +60,10 @@ function TeacherForm()
         },
         [],
     );
-
-    // function setScheduleItemValue(position: number, field: string, value: string) {
-    //     const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
-    //         if (index === position) {
-    //             return {...scheduleItem, [field]: value };
-    //         }
-    //         return scheduleItem;
-    //     });
-
-    //     console.log( updatedScheduleItems);
-    //     setScheduleItems(updatedScheduleItems);
-    // }
     
     function handleCreateClass(e: FormEvent) {
         e.preventDefault();
 
-        console.log(user)
         api.post('classes/', {  subject, cost: Number(cost), schedule: scheduleItems,
         }).then(() => {
 
@@ -125,24 +110,27 @@ function TeacherForm()
                     </fieldset>
                     <fieldset>
                         <legend>Sobre a aulas</legend>
-                        <Select
-                            name="subject" 
-                            label="Matéria"
-                            value={subject}
-                            onChange={e => setSubject(e.target.value)}
-                            options={[
-                                {id: "Artes", value:"Artes"},
-                                {id: "Física", value:"Física"},
-                                {id: "Biologia", value:"Biologia"},
-                                {id: "Matemática", value:"Matemática"}
-                            ]} >                            
-                        </Select>                    
-                        <Input  
-                        name="cost" 
-                        label="Custo da sua hora por aula" 
-                        value={cost}
-                        onChange={e => setCost(e.target.value)}
-                        ></Input>
+                        <div className="about-item">
+                            <Select
+                                name="subject" 
+                                label="Matéria"
+                                value={subject}
+                                onChange={e => setSubject(e.target.value)}
+                                options={[
+                                    {id: "Artes", value:"Artes"},
+                                    {id: "Física", value:"Física"},
+                                    {id: "Biologia", value:"Biologia"},
+                                    {id: "Matemática", value:"Matemática"}
+                                ]} >                            
+                            </Select>                    
+                            <Input  
+                            name="cost" 
+                            label="Custo da hora por aula" 
+                            placeholder="R$"
+                            value={cost}
+                            onChange={e => setCost(e.target.value)}
+                            ></Input>
+                        </div>
                     </fieldset>
                     <fieldset>
                         <legend>

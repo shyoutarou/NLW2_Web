@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, FormEvent } from 'react';
+import React, { useRef, useCallback, useState, FormEvent, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import Input from '../../components/Input';
@@ -7,57 +7,104 @@ import Select from '../../components/Select';
 import Textarea from '../../components/Textarea';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
-
+import cameraIcon from '../../assets/images/icons/camera.svg'
 import { useAuth } from '../../contexts/auth';
 
 import api from '../../services/api';
+import formatTime from '../../utils/formatTime';
 
 import './styles.css';
 
-interface ProfileFormData {
-  name: string;
-  surname: string;
-  email: string;
-  whatsapp: string;
-  bio: string;
+interface Schedule {
+  class_id: number
   subject: string;
+  week_day: number;
+  from: number;
+  to: number;
+}
+
+interface Subjects {
+  id: string;
+  value: string;
   cost: string;
 }
-
-interface Schedule {
-  week_day: number;
-  from: string;
-  to: string;
-}
-
 
 const Profile: React.FC = () => {
 
   const history = useHistory();
+
+  const { user, updateUser } = useAuth();
+
+  const [name, setName] = useState('')
+  const [surname, setSurname] = useState('')
+  const [avatar, setAvatar] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [email, setEmail] = useState('')
+  const [bio, setBio] = useState('')
   const [subject, setSubject] = useState('');
   const [cost, setCost] = useState('');
-  const { user } = useAuth();
+  const [schedules, setSchedules] = useState<Schedule[]>([])
+  const [subjects, setSubjects] = useState<Subjects[]>([])
 
-  const [schedules, setSchedules] = useState<Schedule[]>([
-    { week_day: 0, from: '', to: '' },
-])
+  useEffect(() => {
 
-function handleSubmit(e: FormEvent) {
-  e.preventDefault();
+      // console.log(user)
+      const sessiontoken = sessionStorage.getItem('@proffy:token')
+   
+      if(sessiontoken) {
+          
+          api.defaults.headers.authorization = `Bearer ${sessiontoken}`
+          
 
-  console.log(user)
-  api.post('classes/', {  subject, cost: Number(cost), schedule: schedules,
-  }).then(() => {
+              setName(user.name as string)
+              setSurname(user.surname as string)
+              setEmail(user.email as string)
+              setAvatar(user.avatar as string)
+              setWhatsapp(user.whatsapp as string)
+              setBio(user.bio as string)
+              setSubject(user.subject as string)
+              setCost(user.cost as string)
+              // setSchedules(user.schedules as Schedule[])
+              // setSubjects(user.subjects as Subjects[])
 
-      toast.success(
-          'Cadastro realizado com sucesso!',
-        );
+              api.get(
+                `showSubjects/${user.id}`,
+              ).then(res => {
+                setSubjects(res.data)
+              }).catch(e => history.push('/loginerror'))
 
-      history.push('/register-class-success');
-  }).catch((err) => {
-      toast.error('Ocorreu um erro ao fazer o cadastro');
-  });
-}
+              api.get(
+                `showSchedules/${user.id}`,
+              ).then(res => {
+                setSchedules(res.data)
+              }).catch(e => history.push('/loginerror'))
+
+      } else {
+          history.push('/')
+      }
+  }, [])
+
+
+
+  // const [schedules, setSchedules] = useState<Schedule[]>([
+  //     { week_day: 0, from: '', to: '' },
+  // ])
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    api.post('classes/', {  subject, cost: Number(cost), schedule: schedules,
+    }).then(() => {
+
+        toast.success(
+            'Cadastro realizado com sucesso!',
+          );
+
+        history.push('/register-class-success');
+    }).catch((err) => {
+        toast.error('Ocorreu um erro ao fazer o cadastro');
+    });
+  }
 
   const setScheduleItemValue = useCallback(
     (scheduleIndex: number, field: string, value: string) => {
@@ -82,20 +129,23 @@ function handleSubmit(e: FormEvent) {
     async (file: File) => {
       const formData = new FormData();
       formData.append('avatar', file);
-
+      
       try {
         const response = await api.put(
-          `/profiles/avatar/${user?.id}`,
+          `/profiles/avatar/1`,
           formData,
         );
 
         toast.success('Avatar atualizado');
       } catch (e) {
-        alert('erro ao atualizar sua imagem, tente novamente mais tarde!');
+
+        alert(e.message);
+        // alert('Erro ao atualizar sua imagem');
       }
     },
     [],
   );
+
 
   return (
     <div id="page-profile" className="container">
@@ -103,25 +153,26 @@ function handleSubmit(e: FormEvent) {
         <div className="profile-main-info">
           <div className="profile-image">
             <img
-              src={`${process.env.REACT_APP_API_URL}/uploads/${user?.avatar}`}
+              src={user?.avatar}
               alt="user"
               className="profile-image-picture"
             />
+          <div className="image-upload">
             <label htmlFor="file" className="change-image">
+              <img src={cameraIcon}
+                  alt="Ícone Camera"
+                  className="camera-icon"/>
             </label>
-            <input
-              onChange={e => {
-                if (e.target.files) {
-                  handleImageUpdate(e.target.files[0]);
-                }
-              }}
-              id="file"
-              type="file"
-              hidden
-            />
+            <input id="file" type="file" hidden
+                  onChange={e => {
+                    if (e.target.files) {
+                      handleImageUpdate(e.target.files[0]);
+                    }
+                  }} />
+          </div>            
           </div>
-          <h3>{user?.name}</h3>
-          {user?.email && <h2>{user?.email}</h2>}
+          <h3>{name}</h3>
+          {email && <h2>{email}</h2>}
         </div>
       </PageHeader>
 
@@ -130,19 +181,26 @@ function handleSubmit(e: FormEvent) {
           <fieldset>
             <legend>Seus dados</legend>
             <div className="name-item">
-              <Input name="name" label="Nome" />
-              <Input name="surname" label="Sobrenome" />
+              <Input name="name" label="Nome" value={name || ''}
+                     required onChange={(e) => setName(e.target.value)} />
+              <Input name="surname" label="Sobrenome" value={surname || ''}
+                     required onChange={(e) => setSurname(e.target.value)} />
             </div>
 
             <div className="mail-number-item">
-              <Input type="email" name="email" label="E-mail" />
-              <Input name="whatsapp" label="Whatsapp" />
+              <Input type="email" name="email" label="E-mail" value={email || ''}
+                     required onChange={(e) => setEmail(e.target.value)}  />
+              <Input name="whatsapp" label="Whatsapp" type="tel"
+                  accept="number" pattern="^\+(?:[0-9] ?){6,14}[0-9]"
+                  value={whatsapp || ''}
+                  onChange={(e) => setWhatsapp(e.target.value)} />
             </div>
 
             <Textarea
-              name="bio"
+              name="bio" maxLength={300}
               label="Biografia (Máximo 300 caracteres)"
-              maxLength={300}
+              value={bio || ''}
+              onChange={(e) => setBio(e.target.value)}
             />
           </fieldset>
 
@@ -155,12 +213,17 @@ function handleSubmit(e: FormEvent) {
                   label="Matéria"
                   value={subject}
                   onChange={e => setSubject(e.target.value)}
-                  options={[
-                      {id: "Artes", value:"Artes"},
-                      {id: "Física", value:"Física"},
-                      {id: "Biologia", value:"Biologia"},
-                      {id: "Matemática", value:"Matemática"}
-                  ]} >                            
+                  options={subjects} 
+
+
+                  
+                  // options={[
+                  //     {id: "Artes", value:"Artes"},
+                  //     {id: "Física", value:"Física"},
+                  //     {id: "Biologia", value:"Biologia"},
+                  //     {id: "Matemática", value:"Matemática"}
+                  // ]} 
+                  >                            
               </Select> 
               <Input
                 name="cost"
@@ -173,7 +236,7 @@ function handleSubmit(e: FormEvent) {
           <fieldset>
             <legend>Horários disponíveis</legend>
 
-            {schedules?.map((schedule, index) => {
+            {schedules.map((schedule, index) => {
               return (
                 <div key={index}>
                   <div className="schedule-item">
@@ -200,7 +263,7 @@ function handleSubmit(e: FormEvent) {
                             name="from"
                             label="Das"
                             type="time"
-                            value={schedule.from}
+                            value={formatTime(schedule.from)}
                             required
                             onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
                             />
@@ -209,7 +272,7 @@ function handleSubmit(e: FormEvent) {
                         name="to"
                         label="Até"
                         type="time"
-                        value={schedule.to}
+                        value={formatTime(schedule.to)}
                         required
                         onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
                         />

@@ -3,20 +3,19 @@ import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../contexts/auth';
 import signout from '../../assets/images/icons/signout.svg';
+import leaveIcon from '../../assets/images/icons/leave.svg'
 // import { PowerOff } from '@styled-icons/boxicons-regular';
 // import { User } from '@styled-icons/fa-solid';
 
 import './styles.css';
 
 const LandingHeader: React.FC = () => {
-const { user, signOut } = useAuth();
+  const { user, signOut } = useAuth();
   
   const history = useHistory();
 
   const handleProfile = () => {
-    history.push('/profile', {
-      user,
-    });
+    history.push('/profile');
   };
 
   return (
@@ -33,29 +32,20 @@ const { user, signOut } = useAuth();
               ) : (
                 <div className="default-image">
                   <div className="user-icon"></div>
-                  {/* <User className="user-icon" /> */}
                 </div>
               )}
             </section>
             <span className="logged-as">
                 {user ? user.name : 'Guest'} 
-                <div  className="options">
-                  <div onClick={signOut}>
-                    <img src={signout} alt="Sign Out"/>
-                  </div>
-                </div>
             </span>          
           </main>
         )}
 
-        {/* <div className="options">
-          <div onClick={signOut} className="eye">
-              <img src={signout} alt="Sign Out"/>
-          </div>
+        <div  className="options">
           <div onClick={signOut}>
-            <PowerOff className="logout-icon" />
+            <img src={leaveIcon} alt="Sign Out"/>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

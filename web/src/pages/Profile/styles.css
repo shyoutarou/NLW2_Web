@@ -146,6 +146,10 @@
   cursor: pointer;
 }
 
+#page-profile .schedule-time {
+  display: contents;
+}
+
 #page-profile main footer {
   padding: 4rem 2.4rem;
   background: var(--color-box-footer);

@@ -32,7 +32,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
   useEffect(() => {
     async function loadSchedule(): Promise<void> {
       const schedule = await api.get<Schedule[]>(
-        `classes/schedules/${teacher.id}`,
+        `showSchedules/${teacher.id}`,
       );
 
       setSchedule(schedule.data);

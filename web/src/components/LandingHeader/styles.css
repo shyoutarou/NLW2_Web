@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
 
-  padding: 1rem 4rem 1rem 0.5rem;
+  padding: 1rem 1rem 1rem 0.5rem;
   border-radius: 0.5rem;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .options div img {
-  width: 2.2rem;
+  width: 2.7rem;
 }
 
 .options div:hover {

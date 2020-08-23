@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import logoimg from '../../assets/images/logo.svg';
 import backicon from '../../assets/images/icons/back.svg';
 import rocket from '../../assets/images/icons/rocket.svg'
 import smile from '../../assets/images/icons/smile.svg'
-import { Teacher } from '../../components/TeacherItem';
 import api from '../../services/api';
 
 interface PageHeaderProps {
@@ -17,15 +16,17 @@ interface PageHeaderProps {
   
 const PageHeader: React.FC<PageHeaderProps> = (propriedade) => 
 {
-    const [teachers, setTeachers] = useState<Teacher[]>([]);
+    const [teachers, setTeachers] = useState(0);
+    const history = useHistory()
 
     useEffect(() => {
       async function loadteachers(): Promise<void> {
-        const schedule = await api.get<Teacher[]>(
-          `classes/teachers/`,
-        );
-  
-        setTeachers(schedule.data);
+        const teachers = await api.get(
+          `allteachers`,
+        ).then(res => {
+          const {total} = res.data; 
+          setTeachers(total);
+        }).catch(e => history.push('/loginerror'))
       }
       loadteachers();
     }, []);
@@ -49,7 +50,7 @@ const PageHeader: React.FC<PageHeaderProps> = (propriedade) =>
                         alt={propriedade.icon == "smile" ? "smile" : "rocket" }/>
                         {propriedade.icon == "smile" ? 
                             <h4>
-                              Nós temos {teachers.length} <br /> professores.
+                              Nós temos {teachers} <br /> professores.
                             </h4>
                             :
                             <h4>Prepare-se! Vai ser o máximo</h4>

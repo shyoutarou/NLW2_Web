@@ -122,6 +122,17 @@
 }
 
 
+#page-teacher-form main .about-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1.6rem;
+  }
+
+  #page-teacher-form main .about-item .input-block {
+    margin-top: 0 !important;
+  }
+
+
 @media(min-width: 700px){
     #page-teacher-form{
         max-width: 100vw;
