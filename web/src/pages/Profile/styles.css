@@ -23,8 +23,8 @@
 #page-profile .profile-image {
   position: relative;
 
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
 
   background-color: var(--color-line-in-white);
   border-radius: 50%;
@@ -57,13 +57,11 @@
 #page-profile .profile-main-info h3 {
   color: var(--color-box-base);
   font: 600 3.6rem Archivo;
-  margin-top: 2rem;
 }
 
 #page-profile .profile-main-info h2 {
   color: var(--color-box-base);
   font: 400 2rem Poppins;
-  margin-top: 1rem;
 }
 
 #page-profile main {

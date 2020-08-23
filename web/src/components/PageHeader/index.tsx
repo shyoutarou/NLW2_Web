@@ -10,6 +10,7 @@ import api from '../../services/api';
 interface PageHeaderProps {
     title: string;
     description?: string;
+    uppertitle?: string;
     logo?: boolean;
     icon?: string;
   }
@@ -33,11 +34,14 @@ const PageHeader: React.FC<PageHeaderProps> = (propriedade) =>
     
     return (
         <header className="page-header">
-            <div className="top-bar-container">
-              <Link to="/">
-                <img src={backicon} alt="Voltar" />
-              </Link>
-              <img src={logoimg} alt="Proffy" />
+            <div className={`holder-top-bar ${propriedade.uppertitle && 'holder-dark'}`}>
+              <div className="top-bar-container">
+                <Link to="/">
+                  <img src={backicon} alt="Voltar" />
+                </Link>
+                {propriedade.uppertitle? <p>{propriedade.uppertitle}</p> : null}
+                <img src={logoimg} alt="Proffy" />
+              </div>
             </div>
             <div className="header-content">
               {propriedade.logo? <p><img src={logoimg} alt="Proffy"/></p> : null}

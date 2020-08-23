@@ -34,6 +34,93 @@
     font: 400 1.2rem Poppins;
 }
 
+
+
+
+ .form-password {
+    margin: 1.5em 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-complement);
+    font-size: 1.3rem;
+  }
+  
+ .form-password a {
+    cursor: pointer;
+    color: var(--color-text-complement);
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  
+ .form-password a:hover {
+    color: var(--color-text-base);
+  }
+  
+ .form-password label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 2.3rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form-password label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .form-password label span {
+    display: block;
+    position: absolute;
+    top: 0.1rem;
+    left: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--color-box-footer);
+    border: 1px solid var(--color-line-in-white);
+    border-radius: 0.5rem;
+  }
+  
+  .form-password label input + span {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background-color: var(--color-text-complement);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .form-password label input:hover + span {
+ 
+    background: var(--color-text-base);
+  }
+  
+  .form-password label input:checked + span {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    transition: all 0;
+  }
+  
+  .form-password label input:checked + span:after {
+    display: block;
+    content: '';
+    position: absolute;
+    left: calc(50% - 0.4rem + 1px);
+    top: calc(50% - 0.8rem + 1px);
+    width: 0.4rem;
+    height: 0.8rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+
+
 .login-tools{
     display: flex;
     justify-content: space-between;
@@ -103,9 +190,6 @@
     font: 400 1.4rem Poppins;
     color: var(--color-text-complement);
 }
-
-
-
 
 @media (min-width: 900px) {
 

@@ -10,10 +10,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-text-int-primary);
+    color: var(--color-title-in-primary);
     padding: 1.6rem 0;
   }
   
+  .holder-top-bar.holder-dark {
+    background: var(--color-primary-dark);
+  }
+
   .page-header .top-bar-container a {
     height: 3.2rem;
     transition: opacity 0.2s;

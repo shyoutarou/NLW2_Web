@@ -54,7 +54,7 @@ const Profile: React.FC = () => {
       if(sessiontoken) {
           
           api.defaults.headers.authorization = `Bearer ${sessiontoken}`
-          
+          console.log(api.defaults.headers.authorization)
 
               setName(user.name as string)
               setSurname(user.surname as string)
@@ -67,11 +67,12 @@ const Profile: React.FC = () => {
               // setSchedules(user.schedules as Schedule[])
               // setSubjects(user.subjects as Subjects[])
 
+              console.log(user.id)
               api.get(
                 `showSubjects/${user.id}`,
               ).then(res => {
                 setSubjects(res.data)
-              }).catch(e => history.push('/loginerror'))
+              }).catch(e => { console.log(e); history.push('/loginerror')})
 
               api.get(
                 `showSchedules/${user.id}`,
@@ -149,7 +150,7 @@ const Profile: React.FC = () => {
 
   return (
     <div id="page-profile" className="container">
-      <PageHeader title="" description="">
+      <PageHeader title="" uppertitle="Meu Perfil" description="">
         <div className="profile-main-info">
           <div className="profile-image">
             <img
@@ -214,19 +215,11 @@ const Profile: React.FC = () => {
                   value={subject}
                   onChange={e => setSubject(e.target.value)}
                   options={subjects} 
-
-
-                  
-                  // options={[
-                  //     {id: "Artes", value:"Artes"},
-                  //     {id: "Física", value:"Física"},
-                  //     {id: "Biologia", value:"Biologia"},
-                  //     {id: "Matemática", value:"Matemática"}
-                  // ]} 
                   >                            
               </Select> 
               <Input
                 name="cost"
+                type="number" min="0.00" max="10000.00" step="10.00"
                 label="Custo da sua hora por aula"
                 placeholder="R$"
               ></Input>

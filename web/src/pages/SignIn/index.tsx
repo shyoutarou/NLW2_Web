@@ -15,17 +15,31 @@ function SignIn() {
 
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
-  
+  const [rememberPassword, setRemember] = useState(false);
+
   const { signed, user, signIn, handleToggleRemember } = useAuth();
   const history = useHistory();
 
   useEffect(() => {
-      const token = localStorage.getItem('@proffy:token');
+    try {
+      const localtoken = localStorage.getItem('@proffy:token');
+      const localuser = localStorage.getItem('@proffy:user');
 
-      if (token) {
-          api.defaults.headers.common['Authorization'] = token;
-          history.push('/study');
+      if (localtoken) {
+          sessionStorage.setItem('@proffy:token', localtoken);
+          sessionStorage.setItem('@proffy:user', JSON.stringify(localuser));
+
+          console.log(user)
+          handleToggleRemember(localtoken,  JSON.parse(localuser as string));
+
+          console.log(user)
+
+          history.push('/');
       }
+    }
+    catch (err) {
+        return
+    }
   }, [])
 
   async function handleSignIn(e: FormEvent) {
@@ -34,7 +48,7 @@ function SignIn() {
     try {
       if (isAble()) {
 
-        const response = await signIn( email, password);
+        const response = await signIn( email, password, rememberPassword);
       }
     } catch (err) {
         toast.error('Ocorreu um erro ao fazer login, cheque as credenciais');
@@ -66,25 +80,42 @@ function SignIn() {
                   setEmail(e.target.value)
                 }}
               />
-                <div className="form-input">    
-                    <Input
-                      name="password"
-                      eye="true"
-                      placeholder="Senha"
-                      // stacked={true}
-                      value={String(password)}
-                      onChange={(e) => {
-                        setPassword(e.target.value)
-                      }}
-                    />
-                </div>    
-                <div className="login-tools">
+              <div className="form-input">    
+                  <Input
+                    name="password"
+                    eye="true"
+                    placeholder="Senha"
+                    // stacked={true}
+                    value={String(password)}
+                    onChange={(e) => {
+                      setPassword(e.target.value)
+                    }}
+                  />
+              </div>    
+
+              <section className="form-password">
                 <div>
-                    <input onChange={handleToggleRemember} type="checkbox" name="remember"/>
+                  <label>
+                    Lembrar-me
+                      <input
+                        type="checkbox"
+                        checked={rememberPassword}
+                        onChange={() => setRemember(!rememberPassword)}
+                      />
+                    <span></span>
+                  </label>
+                </div>
+                <Link to="/forgot-password">Esqueci minha senha</Link>
+              </section>              
+              {/* <div className="login-tools">
+                <div>
+                    <input type="checkbox" name="remember"
+                          checked={rememberPassword}
+                          onChange={() => setRemember(!rememberPassword)} />
                     <label htmlFor="remember">Remember</label>
                 </div>
                 <Link to="/forgot-password">Esqueci minha senha</Link>
-              </div>
+              </div> */}
               <button
                 className={`login-submit ${isAble() && 'login-submit-active'}`}
                 disabled={!isAble()}

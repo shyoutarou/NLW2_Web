@@ -40,54 +40,50 @@ interface AuthContextData {
     signed: boolean;
     user: User;
     loading: boolean;
-    signIn(email: string, password :string): Promise<void>;
+    signIn(email: string, password :string, remember: boolean): Promise<void>;
     signOut(): void;
     updateUser(user: User): Promise<void>;
-    handleToggleRemember(): void;
+    handleToggleRemember(token: string, user: User): void;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FunctionComponent = ({ children }) => {
  
-    const [remember, setRemember] = useState(false);
     const [loading, setLoading] = useState(true);
 
     const [data, setData] = useState<AuthState>(() => {
-        let token = localStorage.getItem('@Proffy:token');
+        let token = localStorage.getItem('@proffy:token');
     
         if (!token) {
-          token = sessionStorage.getItem('@Proffy:token');
+          token = sessionStorage.getItem('@proffy:token');
         }
     
-        let user = localStorage.getItem('@Proffy:user');
+        let Storageduser = localStorage.getItem('@proffy:user');
     
-        if (!user) {
-          user = sessionStorage.getItem('@Proffy:user');
+        if (!Storageduser) {
+            Storageduser = sessionStorage.getItem('@proffy:user');
         }
     
-        if (token && user) {
+        if (token && Storageduser) {
           api.defaults.headers.authorization = `Bearer ${token}`;
     
-          return { token, user: JSON.parse(user) };
+          return { token, user: JSON.parse(Storageduser) };
         }
     
         return {} as AuthState;
     });
 
-    function handleToggleRemember(){
-        setRemember(!remember);
+    function handleToggleRemember(token: string, user: User){
+        setData({ token, user });
     }
 
-    async function signIn(email: string, password: string) {
-
- 
+    async function signIn(email: string, password: string, remember: boolean) {
 
         const login = await api.post('auth', {
             email,
             password,
           });
-
 
         const { token, user } = login.data;
         setLoading(true);
@@ -104,9 +100,15 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
         if (remember) {
             localStorage.setItem('@proffy:token', token);
             localStorage.setItem('@proffy:user', JSON.stringify(user));
+
+            console.log("localStoragetoken" + token)
+            console.log("localStorageuser" + JSON.stringify(user))
         } else {
             sessionStorage.setItem('@proffy:token', token);
             sessionStorage.setItem('@proffy:user', JSON.stringify(user));
+
+            console.log("sessionStoragetoken" + token)
+            console.log("sessionStorageuser" + JSON.stringify(user))
         }
     
         setData({ token, user });
@@ -114,13 +116,10 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
     }
 
     function signOut() {
-
         localStorage.clear();
         sessionStorage.clear();
         setData({} as AuthState);
-        // setUser(null);
         setLoading(true);
-        
     }
 
     async function updateUser (user: User) {

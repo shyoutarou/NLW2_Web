@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import SelectWeekday from '../../components/SelectWeekday';
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
@@ -44,22 +45,42 @@ function TeacherForm()
         { week_day: 0, from: '', to: ''},
       ]);
     
-    function addNewScheduleItem() {
-        setScheduleItems([...scheduleItems,
-          { week_day: 0, from: '', to: '' }
-        ]);
-      }
+    function addNewScheduleItem () {
 
-    const setScheduleItemValue = useCallback(
-        (scheduleIndex: number, field: string, value: string) => {
-            setSchedules(state => {
-            return state.map((item, index) =>
-                index === scheduleIndex ? { ...item, [field]: value } : item,
-            );
-            });
-        },
-        [],
-    );
+        if (scheduleItems.length > 0)
+            setScheduleItems([...scheduleItems, { week_day: 0, from: '', to: '' }])
+        else
+            setScheduleItems([{ week_day: 0, from: '', to: '' }])
+    }
+
+    // function addNewScheduleItem() {
+    //     setScheduleItems([...scheduleItems,
+    //       { week_day: 0, from: '', to: '' }
+    //     ]);
+    //   }
+
+    function setScheduleItemValue(position: number, field: string, value: string) {
+        const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
+            if (index === position) {
+                return { ...scheduleItem, [field]: value }
+            }
+
+            return scheduleItem
+        })
+
+        setScheduleItems(updatedScheduleItems)
+    }
+
+    // const setScheduleItemValue = useCallback(
+    //     (scheduleIndex: number, field: string, value: string) => {
+    //         setSchedules(state => {
+    //         return state.map((item, index) =>
+    //             index === scheduleIndex ? { ...item, [field]: value } : item,
+    //         );
+    //         });
+    //     },
+    //     [],
+    // );
     
     function handleCreateClass(e: FormEvent) {
         e.preventDefault();
@@ -107,38 +128,56 @@ function TeacherForm()
                         label="Biografia"
                         value={user?.bio}
                         />
-                    </fieldset>
+                    </fieldset>                
                     <fieldset>
-                        <legend>Sobre a aulas</legend>
+                        <legend>Sobre a aula</legend>
+
                         <div className="about-item">
-                            <Select
-                                name="subject" 
-                                label="Matéria"
-                                value={subject}
-                                onChange={e => setSubject(e.target.value)}
-                                options={[
-                                    {id: "Artes", value:"Artes"},
-                                    {id: "Física", value:"Física"},
-                                    {id: "Biologia", value:"Biologia"},
-                                    {id: "Matemática", value:"Matemática"}
-                                ]} >                            
-                            </Select>                    
-                            <Input  
-                            name="cost" 
-                            label="Custo da hora por aula" 
+                        <Select
+                            name="subject" 
+                            label="Matéria"
+                            value={subject}
+                            onChange={e => setSubject(e.target.value)}
+                            options={[
+                                {id: "Artes", value:"Artes"},
+                                {id: "Física", value:"Física"},
+                                {id: "Biologia", value:"Biologia"},
+                                {id: "Matemática", value:"Matemática"}
+                            ]} >                            
+                        </Select> 
+                        <Input
+                            name="cost"
+                            type="number" min="0.00" max="10000.00" step="10.00"
+                            label="Custo da hora por aula"
                             placeholder="R$"
-                            value={cost}
-                            onChange={e => setCost(e.target.value)}
-                            ></Input>
+                        ></Input>
                         </div>
-                    </fieldset>
+                    </fieldset>                    
                     <fieldset>
                         <legend>
                             Horários Disponíveis
                             <button type="button" onClick={addNewScheduleItem}> + Novo horário
                             </button>
                         </legend>
-                        {scheduleItems.map((scheduleItem, index) => (
+
+                        { scheduleItems.map((scheduleItem, index) => {
+                            return (
+                                <div key={scheduleItem.week_day} className="schedule-item">
+
+                                    <SelectWeekday value={scheduleItem.week_day}
+                                    onChange={(e: any) => setScheduleItemValue(index, 'week_day', e.target.value)} />
+
+                                    <Input name="from" label="Das" type="time" value={scheduleItem.from}
+                                    onChange={e => setScheduleItemValue(index, 'from', e.target.value)}></Input>
+
+                                    <Input name="to" label="Até" type="time" value={scheduleItem.to}
+                                    onChange={e => setScheduleItemValue(index, 'to', e.target.value)}></Input>
+
+                                </div>
+                            )
+                        }) }
+
+                        {/* {scheduleItems.map((scheduleItem, index) => (
                             <div key={scheduleItem.week_day} className="schedule-item">
                                 <Select
                                 name="week-day"
@@ -177,7 +216,7 @@ function TeacherForm()
      
                             </div>
                             
-                        ))}
+                        ))} */}
                     </fieldset>
                     <footer>
                         <p>
