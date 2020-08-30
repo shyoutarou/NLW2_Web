@@ -21,15 +21,12 @@ const PageHeader: React.FC<PageHeaderProps> = (propriedade) =>
     const history = useHistory()
 
     useEffect(() => {
-      async function loadteachers(): Promise<void> {
-        const teachers = await api.get(
-          `allteachers`,
-        ).then(res => {
-          const {total} = res.data; 
-          setTeachers(total);
-        }).catch(e => history.push('/loginerror'))
-      }
-      loadteachers();
+
+      const isAuth = !!localStorage.getItem("token");
+      if (isAuth) {
+        history.push('/loginerror')
+      }    
+
     }, []);
     
     return (
