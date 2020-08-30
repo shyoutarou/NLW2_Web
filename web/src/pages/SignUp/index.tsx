@@ -33,12 +33,14 @@ function SignUp() {
           email,
           password
           })
+
+          history.push('/signup-success')
       } catch(e) {
-        toast.error('Ocorreu um erro ao fazer o cadastro');
+
+        console.log(JSON.stringify(e))
+
+        toast.error(e.success + e.message + 'Ocorreu um erro ao fazer o cadastro');
       }
-
-      history.push('/signup-success')
-
     }
   }
 

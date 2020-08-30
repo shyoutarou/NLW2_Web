@@ -24,14 +24,14 @@ function ForgotPassword() {
     e.preventDefault()
 
     try {
-        await api.post('/resetpassword', {
+        await api.post('/forgotPassword', {
             email
         })
-    } catch(e) {
-      toast.error('Email inexistente!');
-    }
 
-      history.push('/forgot-password-success')
+        history.push('/forgot-password-success')
+    } catch(e) {
+      toast.error(e.message + 'Email inexistente!');
+    }
   }
 
   return (

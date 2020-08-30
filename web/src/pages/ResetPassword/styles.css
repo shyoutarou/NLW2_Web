@@ -1,0 +1,87 @@
+#page-signup .top-bar-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-int-primary);
+    padding: 1.6rem 0;
+}
+
+#page-signup .top-bar-container a {
+    height: 3.2rem;
+    transition: opacity 0.2s;
+}
+
+#page-signup .top-bar-container a:hover {
+    opacity: 0.6;
+}
+
+.signup-container {
+      width: 100%;
+      background: var(--color-background);
+      /* display: flex; */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      font-family: Poppins;
+      color: var(--color-text-title);
+}
+
+.signup-container > form {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.signup-container form fieldset {
+    border: 0;
+    width: 80%;
+}
+
+.signup-container form fieldset legend p {
+    color: var(--color-text-title);
+    font: 700 3.2rem Poppins;
+}
+
+.signup-container form fieldset legend + span {
+    font-size: 1.2rem;
+}
+
+.signup-submit,
+.signup-submit-active {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    padding: 1.6rem 0;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-line-in-white);
+    color: var(--color-text-complement);
+    border: 0;
+    outline: 0;
+    transition: 0.2s;
+    border-radius: 0.8rem;
+    cursor: not-allowed;
+}
+
+.signup-submit-active {
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    cursor: pointer;
+}
+
+.signup-submit-active:hover {
+    background: var(--color-secondary-dark);
+    color: var(--color-button-text);
+}
+
+@media (min-width: 900px) {
+
+    .signup-container form fieldset legend a {
+        display: none;
+    }
+}
+  

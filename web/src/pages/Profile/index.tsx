@@ -67,7 +67,6 @@ const Profile: React.FC = () => {
               // setSchedules(user.schedules as Schedule[])
               // setSubjects(user.subjects as Subjects[])
 
-              console.log(user.id)
               api.get(
                 `showSubjects/${user.id}`,
               ).then(res => {
