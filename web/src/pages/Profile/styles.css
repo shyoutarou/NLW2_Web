@@ -20,6 +20,12 @@
   background-position: center;
 }
 
+#page-profile .profile-image-profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
 #page-profile .profile-image {
   position: relative;
 

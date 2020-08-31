@@ -1,13 +1,13 @@
 import React from 'react'
 import Success from '../../components/Success'
 
-const ForgotPasswordSuccess = () => {
+const ResetPasswordSucces = () => {
     return (
         <Success navigate="/" 
         button="Voltar ao login" 
-        description="Boa, agora é só checar o e-mail que foi enviado para você redefinir sua senha e aproveitar os estudos." 
-        title="Redefinição enviada!" />
+        description="Sua nova senha já pode ser usada!" 
+        title="Reset de senha concluído!" />
     )
 }
 
-export default ForgotPasswordSuccess
+export default ResetPasswordSucces

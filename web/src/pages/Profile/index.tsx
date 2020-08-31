@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, FormEvent, useEffect } from 'react';
+import React, { useCallback, useState, FormEvent, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import Input from '../../components/Input';
@@ -6,6 +6,7 @@ import PageHeader from '../../components/PageHeader';
 import Select from '../../components/Select';
 import Textarea from '../../components/Textarea';
 
+import avatardefault from '../../assets/images/avatar.jpg';
 import warningIcon from '../../assets/images/icons/warning.svg';
 import cameraIcon from '../../assets/images/icons/camera.svg'
 import { useAuth } from '../../contexts/auth';
@@ -24,7 +25,7 @@ interface Schedule {
 }
 
 interface Subjects {
-  id: string;
+  id: number;
   value: string;
   cost: string;
 }
@@ -48,13 +49,11 @@ const Profile: React.FC = () => {
 
   useEffect(() => {
 
-      // console.log(user)
       const sessiontoken = sessionStorage.getItem('@proffy:token')
    
       if(sessiontoken) {
           
           api.defaults.headers.authorization = `Bearer ${sessiontoken}`
-          console.log(api.defaults.headers.authorization)
 
               setName(user.name as string)
               setSurname(user.surname as string)
@@ -71,7 +70,7 @@ const Profile: React.FC = () => {
                 `showSubjects/${user.id}`,
               ).then(res => {
                 setSubjects(res.data)
-              }).catch(e => { console.log(e); history.push('/loginerror')})
+              }).catch(e => { history.push('/loginerror')})
 
               api.get(
                 `showSchedules/${user.id}`,
@@ -82,7 +81,7 @@ const Profile: React.FC = () => {
       } else {
           history.push('/')
       }
-  }, [])
+  }, [history, user])
 
 
 
@@ -131,7 +130,7 @@ const Profile: React.FC = () => {
       formData.append('avatar', file);
       
       try {
-        const response = await api.put(
+         await api.put(
           `/profiles/avatar/1`,
           formData,
         );
@@ -152,11 +151,20 @@ const Profile: React.FC = () => {
       <PageHeader title="" uppertitle="Meu Perfil" description="">
         <div className="profile-main-info">
           <div className="profile-image">
-            <img
-              src={user?.avatar}
-              alt="user"
-              className="profile-image-picture"
-            />
+              {user && user.avatar ? (
+                  
+                  <img src={user?.avatar} 
+                  alt="avatar" 
+                  className="profile-image-profile"/>
+
+              ) : (
+
+                  <img
+                  src={avatardefault}
+                  alt="Avatar"
+                  className="profile-image-profile"/>
+
+              )}
           <div className="image-upload">
             <label htmlFor="file" className="change-image">
               <img src={cameraIcon}
@@ -240,13 +248,13 @@ const Profile: React.FC = () => {
                         setScheduleItemValue(index, 'week_day', e.target.value)
                       }
                       options={[
-                        { id: '0', value: 'Domingo' },
-                        { id: '1', value: 'Segunda-Feira' },
-                        { id: '2', value: 'Terça-Feira' },
-                        { id: '3', value: 'Quarta-Feira' },
-                        { id: '4', value: 'Quinta-Feira' },
-                        { id: '5', value: 'Sexta-Feira' },
-                        { id: '6', value: 'Sabado' },
+                        { id: 0, value: 'Domingo' },
+                        { id: 1, value: 'Segunda-Feira' },
+                        { id: 2, value: 'Terça-Feira' },
+                        { id: 3, value: 'Quarta-Feira' },
+                        { id: 4, value: 'Quinta-Feira' },
+                        { id: 5, value: 'Sexta-Feira' },
+                        { id: 6, value: 'Sabado' },
                       ]}
                       disabled
                     ></Select>

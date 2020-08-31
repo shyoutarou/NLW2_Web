@@ -5,7 +5,7 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement>  {
     name: string;
     label: string;
     options: Array<{
-        id: string, value: string
+        id: number, value: string
     }>;
   }
 
@@ -16,12 +16,7 @@ const Select: React.FC<SelectProps> = ({label, name, options, ...rest}) =>
     return (
         <div className="select-block">
             <label htmlFor={name}>{label}</label>
-
-            <select 
-                id={name} 
-                {...rest}
-                defaultValue=""
-                ref={inputRef} > 
+            <select id={name} {...rest}> 
                 <option value="" disabled hidden >
                     Selecione um opção
                 </option>

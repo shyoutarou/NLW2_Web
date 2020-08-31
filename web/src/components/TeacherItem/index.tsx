@@ -3,6 +3,7 @@ import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 import './styles.css';
 import api from '../../services/api';
 import TeacherItemTime from '../TeacherItemTime';
+import formatValue from '../../utils/formatValue';
 
 export interface Teacher {
   id: number;
@@ -65,12 +66,13 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         <footer>
           <p>
             Preço/Hora
-            <strong>R$ {teacher.cost}</strong>
+            <strong>{formatValue(teacher.cost)}</strong>
           </p>
           <a
             onClick={handleCreateNewConnection}
             href={`https://wa.me/${teacher.whatsapp}`}
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img src={whatsappIcon} alt="Whatsapp"/>
             Entrar em contato

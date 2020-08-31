@@ -7,7 +7,6 @@ import landingimg from '../../assets/images/landing.svg';
 import studyicon from '../../assets/images/icons/study.svg';
 import giveClassesicon from '../../assets/images/icons/give-classes.svg';
 import purplehearticon from '../../assets/images/icons/purple-heart.svg';
-import { useAuth } from '../../contexts/auth';
 
 import api from '../../services/api';
 import './styles.css';
@@ -16,20 +15,11 @@ import LandingHeader from '../../components/LandingHeader';
 function Landing() {
 
     const [totalConnections, setTotalConnections] = useState(0);
-    const [userName, setUserName] = useState<string| undefined>('')
-    const { user, signOut } = useAuth();
-
-    function handleSignOut() {
-        signOut();
-    }
 
     useEffect(() => {
         api.get('connections').then(response => {
             setTotalConnections(response.data.total);
         });
-        
-        setUserName(user?.name);
-
       }, []);
 
     return (

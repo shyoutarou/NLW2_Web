@@ -1,11 +1,10 @@
-import React, { FormEvent, useContext, useState, useEffect } from 'react'
+import React, { FormEvent, useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import WrapperContent from '../../components/WrapperContent'
 import LogoContainer from '../../components/LogoContainer'
 import Input from '../../components/Input'
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
 import { useAuth } from '../../contexts/auth'
-import api from '../../services/api'
 import { toast } from 'react-toastify'
 
 import './styles.css'
@@ -17,7 +16,7 @@ function SignIn() {
   const [password, setPassword] = useState<string>('')
   const [rememberPassword, setRemember] = useState(false);
 
-  const { signed, user, signIn, handleToggleRemember } = useAuth();
+  const { signIn, handleToggleRemember } = useAuth();
   const history = useHistory();
 
   useEffect(() => {
@@ -29,10 +28,7 @@ function SignIn() {
           sessionStorage.setItem('@proffy:token', localtoken);
           sessionStorage.setItem('@proffy:user', JSON.stringify(localuser));
 
-          console.log(user)
           handleToggleRemember(localtoken,  JSON.parse(localuser as string));
-
-          console.log(user)
 
           history.push('/');
       }
@@ -40,15 +36,14 @@ function SignIn() {
     catch (err) {
         return
     }
-  }, [])
+  }, [handleToggleRemember, history])
 
   async function handleSignIn(e: FormEvent) {
     e.preventDefault()
 
     try {
       if (isAble()) {
-
-        const response = await signIn( email, password, rememberPassword);
+        await signIn( email, password, rememberPassword);
       }
     } catch (err) {
         toast.error('Ocorreu um erro ao fazer login, cheque as credenciais');
@@ -74,7 +69,6 @@ function SignIn() {
                 name="email"
                 type="email"
                 placeholder="E-mail"
-                // stacked={true}
                 value={String(email)}
                 onChange={(e) => {
                   setEmail(e.target.value)
@@ -85,7 +79,6 @@ function SignIn() {
                     name="password"
                     eye="true"
                     placeholder="Senha"
-                    // stacked={true}
                     value={String(password)}
                     onChange={(e) => {
                       setPassword(e.target.value)
@@ -107,15 +100,6 @@ function SignIn() {
                 </div>
                 <Link to="/forgot-password">Esqueci minha senha</Link>
               </section>              
-              {/* <div className="login-tools">
-                <div>
-                    <input type="checkbox" name="remember"
-                          checked={rememberPassword}
-                          onChange={() => setRemember(!rememberPassword)} />
-                    <label htmlFor="remember">Remember</label>
-                </div>
-                <Link to="/forgot-password">Esqueci minha senha</Link>
-              </div> */}
               <button
                 className={`login-submit ${isAble() && 'login-submit-active'}`}
                 disabled={!isAble()}

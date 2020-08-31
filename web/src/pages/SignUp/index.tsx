@@ -1,4 +1,4 @@
-import React, { FormEvent, useContext, useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
 import Input from '../../components/Input'
@@ -10,10 +10,7 @@ import './styles.css'
 import api from '../../services/api'
 import { toast } from 'react-toastify'
 
-// import { AuthContext } from '../../contexts/auth'
-
 function SignUp() {
-//   const { register } = useContext(AuthContext)
 
   const [name, setName] = useState<string>('')
   const [surname, setSurname] = useState<string>('')
@@ -37,9 +34,7 @@ function SignUp() {
           history.push('/signup-success')
       } catch(e) {
 
-        console.log(JSON.stringify(e))
-
-        toast.error(e.success + e.message + 'Ocorreu um erro ao fazer o cadastro');
+        toast.error('Ocorreu um erro ao fazer o cadastro');
       }
     }
   }

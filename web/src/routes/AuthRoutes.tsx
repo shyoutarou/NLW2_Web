@@ -6,6 +6,7 @@ import SignUpSuccess from '../pages/SignUpSuccess';
 import ForgotPassword from '../pages/ForgotPassword';
 import ForgotPasswordSuccess from '../pages/ForgotPasswordSucces';
 import ResetPassword from '../pages/ResetPassword';
+import ResetPasswordSucces from '../pages/ResetPasswordSucces';
 
 const AuthRoutes: React.FC = () => (
     <BrowserRouter>
@@ -15,7 +16,7 @@ const AuthRoutes: React.FC = () => (
         <Route path="/signup" component={SignUp}/>
         <Route path='/signup-success' exact component={SignUpSuccess}  />
         <Route path="/reset-password/:id/:token" component={ResetPassword} />
-        <Route path="/reset-password-success" exact component={ForgotPasswordSuccess} />
+        <Route path="/reset-password-success" exact component={ResetPasswordSucces} />
         <Route path="/forgot-password" exact component={ForgotPassword} />
         <Route path='/forgot-password-success' exact component={ForgotPasswordSuccess} />
         <Redirect to="/" />

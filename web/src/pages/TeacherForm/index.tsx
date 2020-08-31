@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useEffect, useCallback } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import SelectWeekday from '../../components/SelectWeekday';
@@ -7,15 +7,17 @@ import Input from '../../components/Input';
 import Select from '../../components/Select';
 import Textarea from '../../components/Textarea';
 import warningicon from '../../assets/images/icons/warning.svg';
-
+import avatar from '../../assets/images/avatar.jpg';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
 
 import './styles.css';
 import { useAuth } from '../../contexts/auth';
+import SelectSubjects from '../../components/SelectSubjects';
 
 interface Schedule {
-    week_day: number;
+    id?: number
+    week_day: string
     from: string;
     to: string;
   }
@@ -24,40 +26,81 @@ function TeacherForm()
 {
     const [subject, setSubject] = useState('');
     const [cost, setCost] = useState('');
-
+    const [summary, setSummary] = useState('')
     const history = useHistory();
 
-    const [schedules, setSchedules] = useState<Schedule[]>([
-        { week_day: 0, from: '', to: '' },
-    ])
-
     const { user } = useAuth();
+    const sessiontoken = sessionStorage.getItem('@proffy:token')
 
     useEffect(() => {
-        const token = sessionStorage.getItem('@proffy:token');
 
-        if (!token) {
+        api.defaults.headers.authorization = `Bearer ${sessiontoken}`
+        api.get(`classes/${user.id}`).catch((err) => {
+
+            console.log(err.response.status);
+
+
+            if (err.response.status === 401) {
+                toast.error('Você não tem permissão para acessar essa página.')
+                history.push('/')
+            } else if (err.response.status === 404) {
+                toast.error('O conteúdo desta página não foi encontrado.')
+                history.push('/')
+            }
+        });
+
+        if (!sessiontoken) {
             history.push('/loginerror')
         }
-    }, [])
+    }, [history, user, sessiontoken])
 
-    const [scheduleItems, setScheduleItems] = useState([
-        { week_day: 0, from: '', to: ''},
-      ]);
+    function validForm() {
+        if (subject === '') return false
+        if (cost === '' || Number(cost) < 0) return false
+        for (let index in scheduleItems) {
+          let scheduleItem = scheduleItems[index]
+          if (scheduleItem.from >= scheduleItem.to) {
+            return false
+          }
+        }
+        return true
+      }
+
+    const [scheduleItems, setScheduleItems] = useState<Schedule[]>([
+    { week_day: '', from: '', to: '' },
+    ])
+
     
-    function addNewScheduleItem () {
+    // function addNewScheduleItem () {
 
-        if (scheduleItems.length > 0)
-            setScheduleItems([...scheduleItems, { week_day: 0, from: '', to: '' }])
-        else
-            setScheduleItems([{ week_day: 0, from: '', to: '' }])
-    }
+    //     if (scheduleItems.length > 0)
+    //         setScheduleItems([...scheduleItems, { week_day: 0, from: '', to: '' }])
+    //     else
+    //         setScheduleItems([{ week_day: 0, from: '', to: '' }])
+    // }
 
-    // function addNewScheduleItem() {
-    //     setScheduleItems([...scheduleItems,
-    //       { week_day: 0, from: '', to: '' }
-    //     ]);
-    //   }
+
+    async function addNewScheduleItem() {
+        // if (!!classID) {
+        //   return api
+        //     .post('/class-schedule', {
+        //       class_id: classID,
+        //     })
+        //     .then((response) => {
+        //       const scheduleItem = response.data
+        //       return setScheduleItems([scheduleItem, ...scheduleItems])
+        //     })
+        //     .catch(() => {
+        //       emitMessage('Não foi possível adicionar um novo horário.', 'error')
+        //     })
+        // }
+    
+        return setScheduleItems([
+          { week_day: '', from: '', to: '' },
+          ...scheduleItems,
+        ])
+      }
+
 
     function setScheduleItemValue(position: number, field: string, value: string) {
         const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
@@ -81,19 +124,26 @@ function TeacherForm()
     //     },
     //     [],
     // );
-    
+
+
     function handleCreateClass(e: FormEvent) {
         e.preventDefault();
 
-        api.post('classes/', {  subject, cost: Number(cost), schedule: scheduleItems,
+        if (!validForm()) {
+            toast.error('Seu formulário de cadastro está incorreto!')
+          }
+
+        api.defaults.headers.authorization = `Bearer ${sessiontoken}`
+        api.post('classes/', { user_id: user.id,  
+            subject_id: subject, 
+            cost: Number(cost), 
+            schedule: scheduleItems,
         }).then(() => {
 
-            toast.success(
-                'Cadastro realizado com sucesso!',
-              );
-
-            history.push('/register-class-success');
+            toast.success('Classe cadastrada com sucesso');
+            history.push('/give-classes');
         }).catch((err) => {
+
             toast.error('Ocorreu um erro ao fazer o cadastro');
         });
     }
@@ -112,7 +162,19 @@ function TeacherForm()
                         <legend>Seus Dados</legend>
                         <div className="page-teacher-info">
                             <div className="page-teacher-info-user">
-                                <img src={user?.avatar} alt="avatar" className="page-teacher-profile"/>
+                                {user && user.avatar ? (
+                                    
+                                    <img src={user?.avatar} 
+                                    alt="avatar" 
+                                    className="page-teacher-profile"/>
+
+                                ) : (
+
+                                    <img
+                                    src={avatar}
+                                    alt="Avatar"/>
+
+                                )}
                                 <h3>{user?.name}</h3>
                             </div>
 
@@ -120,59 +182,84 @@ function TeacherForm()
                             name="whatsapp"
                             label="Whatsapp"
                             width="300px"
-                            value={user?.whatsapp}
+                            readOnly
+                            value={user.whatsapp}
                             />
                         </div>
                         <Textarea 
                         name="bio" 
                         label="Biografia"
-                        value={user?.bio}
+                        readOnly
+                        value={user.bio}
                         />
                     </fieldset>                
                     <fieldset>
                         <legend>Sobre a aula</legend>
 
                         <div className="about-item">
-                        <Select
-                            name="subject" 
-                            label="Matéria"
+
+                        <SelectSubjects 
                             value={subject}
-                            onChange={e => setSubject(e.target.value)}
-                            options={[
-                                {id: "Artes", value:"Artes"},
-                                {id: "Física", value:"Física"},
-                                {id: "Biologia", value:"Biologia"},
-                                {id: "Matemática", value:"Matemática"}
-                            ]} >                            
-                        </Select> 
+                            required
+                            onChange={(e: any) => setSubject(e.target.value)} />
+                        
                         <Input
                             name="cost"
-                            type="number" min="0.00" max="10000.00" step="10.00"
+                            value={cost}
+                            onChange={e => setCost(e.target.value)}
+                            type="number" min="0.00" max="10000.00" step="5.00"
                             label="Custo da hora por aula"
                             placeholder="R$"
                         ></Input>
+
                         </div>
+
+                        <Textarea
+                            label="Sumário"
+                            name="summary"
+                            value={summary}
+                            required
+                            onChange={(e) => {
+                                setSummary(e.target.value)
+                            }}
+                            />
                     </fieldset>                    
                     <fieldset>
                         <legend>
                             Horários Disponíveis
-                            <button type="button" onClick={addNewScheduleItem}> + Novo horário
+                            <button type="button" onClick={addNewScheduleItem}> 
+                            + Novo horário
                             </button>
                         </legend>
 
                         { scheduleItems.map((scheduleItem, index) => {
                             return (
-                                <div key={scheduleItem.week_day} className="schedule-item">
+                                <div key={index} 
+                                className="schedule-item">
 
-                                    <SelectWeekday value={scheduleItem.week_day}
+
+                                <SelectWeekday 
+                                    name="week_day"
+                                    label="Dia da Semana"
+                                    value={scheduleItem.week_day}
+                                    required
                                     onChange={(e: any) => setScheduleItemValue(index, 'week_day', e.target.value)} />
 
-                                    <Input name="from" label="Das" type="time" value={scheduleItem.from}
-                                    onChange={e => setScheduleItemValue(index, 'from', e.target.value)}></Input>
+                                <Input
+                                    name="from"
+                                    label="Das"
+                                    type="time"
+                                    value={scheduleItem.from}
+                                    onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
+                                    />
 
-                                    <Input name="to" label="Até" type="time" value={scheduleItem.to}
-                                    onChange={e => setScheduleItemValue(index, 'to', e.target.value)}></Input>
-
+                                    <Input
+                                    name="to"
+                                    label="Até"
+                                    type="time"
+                                    value={scheduleItem.to}
+                                    onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
+                                    />                                
                                 </div>
                             )
                         }) }

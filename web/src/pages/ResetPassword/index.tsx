@@ -1,5 +1,5 @@
-import React, { FormEvent, useContext, useState } from 'react'
-import { Link, useHistory, useLocation, useParams } from 'react-router-dom'
+import React, { FormEvent, useState } from 'react'
+import { Link, useHistory, useParams } from 'react-router-dom'
 
 import Input from '../../components/Input'
 import WrapperContent from '../../components/WrapperContent'
@@ -13,13 +13,8 @@ import { toast } from 'react-toastify'
 
 function ResetPassword() {
 
-  // function useQuery() {
-  //   return new URLSearchParams(useLocation().search)
-  // }
-  
   const history = useHistory();
   const { id, token } = useParams();
-  // const [token, setToken] = useState<string>(useQuery().get('token') || '')
   const [password, setPassword] = useState<string>('')
   const [confirmPassword, setConfirmPassword] = useState<string>('')
   
@@ -28,22 +23,14 @@ function ResetPassword() {
 
     if (isAble() && password === confirmPassword) {
 
-console.log(id)
-console.log(password)
-console.log(token)
-
         api.post(`resetPassword/${id}`, {
           password,
           token,
         }).then(() => {
-
-            toast.success(
-                "Sua senha acaba de ser redefinida.",
-              );
-              
+             
               history.push('/reset-password-success')
         }).catch((error) =>{
-            toast.error(error.message + 'Ocorreu um erro ao fazer a alteração');
+            toast.error('Ocorreu um erro ao fazer a alteração');
         })
     } else {
       toast.error("Suas senhas não batem.")

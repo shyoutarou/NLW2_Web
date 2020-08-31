@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logoimg from '../../assets/images/logo.svg';
 import backicon from '../../assets/images/icons/back.svg';
 import rocket from '../../assets/images/icons/rocket.svg'
@@ -18,16 +18,18 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = (propriedade) => 
 {
     const [teachers, setTeachers] = useState(0);
-    const history = useHistory()
+    const sessiontoken = sessionStorage.getItem('@proffy:token')
 
     useEffect(() => {
 
-      const isAuth = !!localStorage.getItem("token");
-      if (isAuth) {
-        history.push('/loginerror')
-      }    
+      if(sessiontoken && propriedade.icon === "smile") {
 
-    }, []);
+          api.get('allteachers').then(response => {
+            setTeachers(response.data.total);
+          });
+        }    
+
+    }, [sessiontoken, propriedade.icon]);
     
     return (
         <header className="page-header">
@@ -47,9 +49,9 @@ const PageHeader: React.FC<PageHeaderProps> = (propriedade) =>
                 {propriedade.description? <p>{propriedade.description}</p> : null}
                 {propriedade.icon? 
                   <div className="message-header">
-                    <img src={propriedade.icon == "smile" ? smile : rocket } 
-                        alt={propriedade.icon == "smile" ? "smile" : "rocket" }/>
-                        {propriedade.icon == "smile" ? 
+                    <img src={propriedade.icon === "smile" ? smile : rocket } 
+                        alt={propriedade.icon === "smile" ? "smile" : "rocket" }/>
+                        {propriedade.icon === "smile" ? 
                             <h4>
                               Nós temos {teachers} <br /> professores.
                             </h4>

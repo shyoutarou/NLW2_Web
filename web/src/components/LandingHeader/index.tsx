@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../contexts/auth';
-import signout from '../../assets/images/icons/signout.svg';
+import avatar from '../../assets/images/avatar.jpg';
 import leaveIcon from '../../assets/images/icons/leave.svg'
-// import { PowerOff } from '@styled-icons/boxicons-regular';
-// import { User } from '@styled-icons/fa-solid';
 
 import './styles.css';
 
@@ -30,9 +28,12 @@ const LandingHeader: React.FC = () => {
                   alt="Avatar"
                 />
               ) : (
-                <div className="default-image">
-                  <div className="user-icon"></div>
-                </div>
+
+                <img
+                  src={avatar}
+                  alt="Avatar"
+                />
+
               )}
             </section>
             <span className="logged-as">

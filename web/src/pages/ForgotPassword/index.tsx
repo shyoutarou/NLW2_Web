@@ -30,7 +30,7 @@ function ForgotPassword() {
 
         history.push('/forgot-password-success')
     } catch(e) {
-      toast.error(e.message + 'Email inexistente!');
+      toast.error('Email inexistente!');
     }
   }
 

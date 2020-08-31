@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import api from '../services/api';
 
 interface User {
@@ -39,7 +39,6 @@ interface AuthState {
 interface AuthContextData {
     signed: boolean;
     user: User;
-    loading: boolean;
     signIn(email: string, password :string, remember: boolean): Promise<void>;
     signOut(): void;
     updateUser(user: User): Promise<void>;
@@ -50,8 +49,6 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FunctionComponent = ({ children }) => {
  
-    const [loading, setLoading] = useState(true);
-
     const [data, setData] = useState<AuthState>(() => {
         let token = localStorage.getItem('@proffy:token');
     
@@ -86,7 +83,6 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
           });
 
         const { token, user } = login.data;
-        setLoading(true);
 
         api.defaults.headers.authorization = `Bearer ${token}`;
 
@@ -101,14 +97,9 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
             localStorage.setItem('@proffy:token', token);
             localStorage.setItem('@proffy:user', JSON.stringify(user));
 
-            console.log("localStoragetoken" + token)
-            console.log("localStorageuser" + JSON.stringify(user))
         } else {
             sessionStorage.setItem('@proffy:token', token);
             sessionStorage.setItem('@proffy:user', JSON.stringify(user));
-
-            console.log("sessionStoragetoken" + token)
-            console.log("sessionStorageuser" + JSON.stringify(user))
         }
     
         setData({ token, user });
@@ -119,7 +110,6 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
         localStorage.clear();
         sessionStorage.clear();
         setData({} as AuthState);
-        setLoading(true);
     }
 
     async function updateUser (user: User) {
@@ -144,7 +134,7 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
 
     return(
 
-        <AuthContext.Provider value={{signed: !!data.token,user: data.user, loading, signIn, signOut, updateUser, handleToggleRemember}}>
+        <AuthContext.Provider value={{signed: !!data.token,user: data.user, signIn, signOut, updateUser, handleToggleRemember}}>
             {children}
         </AuthContext.Provider>
     );
@@ -159,6 +149,5 @@ function useAuth() {
       
     return context;
 }
-
 
 export {AuthProvider, useAuth} ;
