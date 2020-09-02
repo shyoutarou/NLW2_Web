@@ -1644,7 +1644,7 @@ Por fim, alteramos a página TeacherList.tsx para ficar assim:
 Ao realizar a filtragem:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/eliasgab.png" />
+    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teacherfilter.png" />
     <br>
 </h1>
 
