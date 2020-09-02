@@ -121,6 +121,31 @@
     color: #32264D;
 }
 
+#page-teacher-form main .delete-schedule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  
+#page-teacher-form main .delete-schedule hr {
+    grid-column: 4fr;
+    margin-top: 20px;
+    background-color: var(--color-form-error);
+    width: 100%;
+}
+  
+#page-teacher-form main .delete-schedule h4 {
+    color: var(--color-form-error);
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 22px;
+    background-color: white;
+    cursor: pointer;
+}
+  
 @media(min-width: 700px){
     #page-teacher-form{
         max-width: 100vw;

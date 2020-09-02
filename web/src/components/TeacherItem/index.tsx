@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 import './styles.css';
 import api from '../../services/api';
@@ -11,8 +11,10 @@ export interface Teacher {
   bio: string;
   cost: number;
   name: string;
+  surname: string;
   subject: string;
   whatsapp: string;
+  schedules: Schedule[];
 }
 
 export interface Schedule {
@@ -28,19 +30,6 @@ interface TeacherItemProps {
 
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
 
-  const [schedule, setSchedule] = useState<Schedule[]>([]);
-  
-  useEffect(() => {
-    async function loadSchedule(): Promise<void> {
-      const schedule = await api.get<Schedule[]>(
-        `showSchedules/${teacher.id}`,
-      );
-
-      setSchedule(schedule.data);
-    }
-    loadSchedule();
-  }, [teacher.id]);
-
   function handleCreateNewConnection() {
     api.post('connections', { user_id: teacher.id });
   }
@@ -50,7 +39,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         <header>
           <img src={teacher.avatar} alt={teacher.name} />
           <div>
-            <strong>{teacher.name}</strong>
+            <strong>{teacher.name + " " + teacher.surname}</strong>
             <span>{teacher.subject}</span>
           </div>
         </header>
@@ -59,7 +48,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
 
 
         <div className="schedules">
-          <TeacherItemTime schedule={schedule} />
+          <TeacherItemTime schedule={teacher.schedules} />
         </div>
 
 

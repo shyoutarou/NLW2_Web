@@ -54,9 +54,7 @@ function ForgotPassword() {
                   placeholder="E-mail" 
                   type="email"
                   value={String(email)}
-                  onChange={(e) => {
-                    setEmail(e.target.value)
-                  }}
+                  onChange={(e) => { setEmail(e.target.value)}}
                 />
                 <button
                   className={`forgot-submit ${isAble() && 'forgot-submit-active'}`}

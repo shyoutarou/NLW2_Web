@@ -25,7 +25,7 @@ const LandingHeader: React.FC = () => {
               {user && user.avatar ? (
                 <img
                   src={user.avatar}
-                  alt="Avatar"
+                  alt={user.avatar}
                 />
               ) : (
 

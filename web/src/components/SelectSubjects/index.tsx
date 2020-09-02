@@ -1,14 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, SelectHTMLAttributes } from 'react';
 import Select from '../Select';
 import api from '../../services/api';
 
-const SelectSubjects = ({ ...rest }) => {
+interface Subjects {
+    id: number;
+    value: string;
+    cost: string;
+}
 
-    interface Subjects {
-        id: number;
-        value: string;
-        cost: string;
-    }
+interface SelectSubjectsProps extends SelectHTMLAttributes<HTMLSelectElement>  {
+    options?: Array<{
+        id: number, value: string, cost: string;
+    }>;
+  }
+
+const SelectSubjects: React.FC<SelectSubjectsProps> = ({ options, ...rest}) => 
+{  
+
+// const SelectSubjects = ({ ...rest }) => {
 
     const [subjects, setSubjects] = useState<Subjects[]>([])
 
@@ -21,8 +30,8 @@ const SelectSubjects = ({ ...rest }) => {
     }, []);
 
     return (
-        <Select name="subject" label="Matéria" {...rest}                      
-        options={subjects} />
+        <Select name="subject" label="Matéria" {...rest}   
+        options={options? options  : subjects}   />
     )
 }
 

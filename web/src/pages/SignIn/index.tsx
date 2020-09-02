@@ -12,8 +12,8 @@ import './styles.css'
 
 function SignIn() {
 
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
+  const [email, setEmail] = useState<string>('ric@shik.com')
+  const [password, setPassword] = useState<string>('123')
   const [rememberPassword, setRemember] = useState(false);
 
   const { signIn, handleToggleRemember } = useAuth();
@@ -70,9 +70,7 @@ function SignIn() {
                 type="email"
                 placeholder="E-mail"
                 value={String(email)}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                }}
+                onChange={(e) => {setEmail(e.target.value) }}
               />
               <div className="form-input">    
                   <Input
@@ -80,9 +78,7 @@ function SignIn() {
                     eye="true"
                     placeholder="Senha"
                     value={String(password)}
-                    onChange={(e) => {
-                      setPassword(e.target.value)
-                    }}
+                    onChange={(e) => { setPassword(e.target.value)}}
                   />
               </div>    
 

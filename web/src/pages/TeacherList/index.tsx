@@ -4,7 +4,6 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import './styles.css';
-import Select from '../../components/Select';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
 import SelectWeekday from '../../components/SelectWeekday';
@@ -13,7 +12,7 @@ import SelectSubjects from '../../components/SelectSubjects';
 function TeacherList()
 {
     const [teachers, setTeachers] = useState([]);
-
+    // const [teachers, setTeachers] = useState([]);
     const [subject, setSubject] = useState('');
     const [week_day, setWeek_day] = useState('');
     const [time, setTime] = useState('');
@@ -23,6 +22,7 @@ function TeacherList()
         e.preventDefault();
         try {
 
+            console.log(subject)
             const response = await api.get('classes', {
             params: {
                 subject,
@@ -30,7 +30,12 @@ function TeacherList()
                 time,
             }
             });
-        
+            console.log(week_day)
+            // if(Array(response.data).length == 0)
+            // {
+            //     toast.error('Nenhum proffy encontrado...');
+            // }
+
             setTeachers(response.data);
 
         } catch (err) {
@@ -57,7 +62,6 @@ function TeacherList()
                     <Input
                         type="time"
                         name="time"
-                        required
                         label="Hora"
                         value={time}
                         onChange={e => setTime(e.target.value)}

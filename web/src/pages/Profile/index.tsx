@@ -15,9 +15,12 @@ import api from '../../services/api';
 import formatTime from '../../utils/formatTime';
 
 import './styles.css';
+import SelectWeekday from '../../components/SelectWeekday';
+import SelectSubjects from '../../components/SelectSubjects';
 
 interface Schedule {
-  class_id: number
+  class_id: number,
+  subject_id: number
   subject: string;
   week_day: number;
   from: number;
@@ -45,6 +48,7 @@ const Profile: React.FC = () => {
   const [subject, setSubject] = useState('');
   const [cost, setCost] = useState('');
   const [schedules, setSchedules] = useState<Schedule[]>([])
+  const [usersschedules, setusersschedules] = useState<Schedule[]>([])
   const [subjects, setSubjects] = useState<Subjects[]>([])
 
   useEffect(() => {
@@ -70,24 +74,23 @@ const Profile: React.FC = () => {
                 `showSubjects/${user.id}`,
               ).then(res => {
                 setSubjects(res.data)
+
+                console.log(res.data)
+
               }).catch(e => { history.push('/loginerror')})
 
               api.get(
                 `showSchedules/${user.id}`,
               ).then(res => {
-                setSchedules(res.data)
+
+                setusersschedules(res.data)
+
               }).catch(e => history.push('/loginerror'))
 
       } else {
           history.push('/')
       }
   }, [history, user])
-
-
-
-  // const [schedules, setSchedules] = useState<Schedule[]>([
-  //     { week_day: 0, from: '', to: '' },
-  // ])
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -130,56 +133,66 @@ const Profile: React.FC = () => {
       formData.append('avatar', file);
       
       try {
-         await api.put(
-          `/profiles/avatar/1`,
-          formData,
-        );
+          await api.put(`/profiles/avatar/1`,formData,
+          );
 
-        toast.success('Avatar atualizado');
+          toast.success('Avatar atualizado');
       } catch (e) {
-
-        alert(e.message);
-        // alert('Erro ao atualizar sua imagem');
+        toast.error('Erro ao atualizar sua imagem');
       }
     },
     [],
   );
 
+  
+  async function handleSubjects(value: string) {
+
+    setSubject(value)
+    console.log(value)
+    const filteredschedules = usersschedules.filter((scheduleItem, scheduleIndex) => {
+      return scheduleItem.subject_id === Number(value);
+    });
+
+    const filteredsubjects = subjects.filter((subjectItem, subjectIndex) => {
+      return subjectItem.id === Number(value);
+    });
+    
+
+    setSchedules(filteredschedules)
+    setCost(filteredsubjects[0].cost)
+
+    try {
+      // if (isAble()) {
+      //   await signIn( email, password, rememberPassword);
+      // }
+    } catch (err) {
+        toast.error('Ocorreu um erro ao fazer login, cheque as credenciais');
+    }
+  }
 
   return (
     <div id="page-profile" className="container">
       <PageHeader title="" uppertitle="Meu Perfil" description="">
         <div className="profile-main-info">
           <div className="profile-image">
-              {user && user.avatar ? (
-                  
-                  <img src={user?.avatar} 
-                  alt="avatar" 
-                  className="profile-image-profile"/>
-
-              ) : (
-
-                  <img
-                  src={avatardefault}
-                  alt="Avatar"
-                  className="profile-image-profile"/>
-
-              )}
-          <div className="image-upload">
-            <label htmlFor="file" className="change-image">
-              <img src={cameraIcon}
-                  alt="Ícone Camera"
-                  className="camera-icon"/>
-            </label>
-            <input id="file" type="file" hidden
-                  onChange={e => {
-                    if (e.target.files) {
-                      handleImageUpdate(e.target.files[0]);
-                    }
-                  }} />
-          </div>            
+            <img src={user && user.avatar ? user?.avatar : avatardefault} 
+            alt="Avatar" 
+            className="profile-image-profile"/>
+            <div className="image-upload">
+              <label htmlFor="file" className="change-image">
+                <img src={cameraIcon}
+                    alt="Ícone Camera"
+                    className="camera-icon"/>
+              </label>
+              <input id="file" type="file" hidden
+                    onChange={e => {
+                      if (e.target.files) {
+                        handleImageUpdate(e.target.files[0]);
+                      }
+                    }} />
+            </div>            
           </div>
-          <h3>{name}</h3>
+          <h3>{name + " " + surname}</h3>
           {email && <h2>{email}</h2>}
         </div>
       </PageHeader>
@@ -216,17 +229,16 @@ const Profile: React.FC = () => {
             <legend>Sobre a aula</legend>
 
             <div className="about-item">
-               <Select
-                  name="subject" 
-                  label="Matéria"
+              <SelectSubjects 
                   value={subject}
-                  onChange={e => setSubject(e.target.value)}
-                  options={subjects} 
-                  >                            
-              </Select> 
+                  required
+                  onChange={(e) => handleSubjects(e.target.value)}
+                  options={subjects}  />
+                                       
               <Input
                 name="cost"
-                type="number" min="0.00" max="10000.00" step="10.00"
+                value={cost}
+                type="number" min="0.00" max="10000.00" step="5.00"
                 label="Custo da sua hora por aula"
                 placeholder="R$"
               ></Input>
@@ -236,34 +248,24 @@ const Profile: React.FC = () => {
           <fieldset>
             <legend>Horários disponíveis</legend>
 
-            {schedules.map((schedule, index) => {
+            {schedules.map((scheduleItem, index) => {
               return (
                 <div key={index}>
                   <div className="schedule-item">
-                    <Select
-                      name={`schedule[${index}].week_day`}
-                      label="Dia da semana"
-                      defaultValue={schedule.week_day}
-                      onChange={e =>
-                        setScheduleItemValue(index, 'week_day', e.target.value)
-                      }
-                      options={[
-                        { id: 0, value: 'Domingo' },
-                        { id: 1, value: 'Segunda-Feira' },
-                        { id: 2, value: 'Terça-Feira' },
-                        { id: 3, value: 'Quarta-Feira' },
-                        { id: 4, value: 'Quinta-Feira' },
-                        { id: 5, value: 'Sexta-Feira' },
-                        { id: 6, value: 'Sabado' },
-                      ]}
-                      disabled
-                    ></Select>
+
+                    <SelectWeekday 
+                            name="week_day"
+                            label="Dia da Semana"
+                            value={scheduleItem.week_day}
+                            required
+                            onChange={(e: any) => setScheduleItemValue(index, 'week_day', e.target.value)} />
+
                     <div className="schedule-time">                                   
                         <Input
                             name="from"
                             label="Das"
                             type="time"
-                            value={formatTime(schedule.from)}
+                            value={formatTime(scheduleItem.from)}
                             required
                             onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
                             />
@@ -272,7 +274,7 @@ const Profile: React.FC = () => {
                         name="to"
                         label="Até"
                         type="time"
-                        value={formatTime(schedule.to)}
+                        value={formatTime(scheduleItem.to)}
                         required
                         onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
                         />
@@ -282,7 +284,7 @@ const Profile: React.FC = () => {
                     <hr></hr>
                     <h4
                       onClick={() =>
-                        handleDeleteSchedule(index, schedule.week_day)
+                        handleDeleteSchedule(index, scheduleItem.week_day)
                       }
                       className="delete-schedule"
                     >

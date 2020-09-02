@@ -69,18 +69,14 @@ function ResetPassword() {
                 placeholder="Senha"
                 eye="true"
                 value={String(password)}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                }}
+                onChange={(e) => {setPassword(e.target.value)}}
               />
               <Input
                   name="confirm-password"
                   placeholder="Confirme a senha"
                   eye="true"
                   value={String(confirmPassword)}
-                  onChange={(e) => {
-                  setConfirmPassword(e.target.value)
-                  }}
+                  onChange={(e) => {setConfirmPassword(e.target.value)}}
               />              
               <button
                 className={`signup-submit ${isAble() && 'signup-submit-active'}`}

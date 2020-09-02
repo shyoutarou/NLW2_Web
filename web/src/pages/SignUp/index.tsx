@@ -70,9 +70,7 @@ function SignUp() {
 
                 // stacked={true}
                 value={String(name)}
-                onChange={(e) => {
-                  setName(e.target.value)
-                }}
+                onChange={(e) => {setName(e.target.value)}}
               />
               <Input
                 name="surname"
@@ -80,9 +78,7 @@ function SignUp() {
                 placeholder="Sobrenome"
                 // stacked={true}
                 value={String(surname)}
-                onChange={(e) => {
-                  setSurname(e.target.value)
-                }}
+                onChange={(e) => { setSurname(e.target.value)}}
               />
               <Input
                 name="email"
@@ -90,9 +86,7 @@ function SignUp() {
                 type="email"
                 // stacked={true}
                 value={String(email)}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                }}
+                onChange={(e) => {setEmail(e.target.value)}}
               />
               <Input
                 name="password"
@@ -100,9 +94,7 @@ function SignUp() {
                 eye="true"
                 // stacked={true}
                 value={String(password)}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                }}
+                onChange={(e) => { setPassword(e.target.value)}}
               />
               <button
                 className={`signup-submit ${isAble() && 'signup-submit-active'}`}

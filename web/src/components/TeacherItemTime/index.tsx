@@ -2,8 +2,6 @@ import React from 'react';
 
 import arrowIcon from '../../assets/images/icons/arrowTime.svg';
 
-import formatTime from '../../utils/formatTime';
-
 import { Schedule } from '../TeacherItem';
 
 import './styles.css';
@@ -24,7 +22,7 @@ const TeacherItemTime: React.FC<TeacherItemTimeProps> = ({ schedule }) => {
       return 0;
     }
 
-    return formatTime(item.from, false);
+    return item.from;
   }
 
   function getFinalHour(day: number) {
@@ -34,7 +32,7 @@ const TeacherItemTime: React.FC<TeacherItemTimeProps> = ({ schedule }) => {
       return 0;
     }
 
-    return formatTime(item.to, false);
+    return item.to;
   }
 
   return (
