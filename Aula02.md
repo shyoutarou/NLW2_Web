@@ -3,6 +3,35 @@
 - [Voltar a Aula 1](Aula01.md)
 - [Voltar as README.md](README.md)
 
+<details>
+ <summary>Videos Youtube</summary>
+
+2. Trilha OmniStack
+[Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=AC7fGkJRYNw)
+[Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=TjUO72eAtog)
+[Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=ytVJxv0OPEA)
+
+</details>
+
+<details>
+ <summary>Wikis</summary>
+
+[Wiki Home](https://github.com/shyoutarou/NLW2_Web/wiki)
+1. [Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web)
+2. [Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
+3. [Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
+
+</details>
+
+<details>
+ <summary>GitHub Pages</summary>
+
+1. [Web](https://shyoutarou.github.io/NLW2_Web/)
+2. [Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
+
+</details>
+
+
 ## 📌 Index
 - [FLUXO DESENVOLVIMENTO REACT](#fluxo-desenvolvimento-react)
     - [API (Application Programming Interface)](#api-application-programming-interface)
@@ -26,7 +55,7 @@
 É explicado o fluxo normal de aplicações, as funções Front e Back-End. A diferença do modelo MVC (carregava tudo a cada Refresh) e o modelo SPA (Single Page Application). Explicado que está se utilizando o Node.js pois permite utilizar a mesma linguagem, Typescript e React, para escrever o Front o Back e o mobile.
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/fluxo_react.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/fluxo_react.png" />
     <br>
 </h1>
 
@@ -71,14 +100,14 @@ yarn init -y
 O parâmetro “-y” serve para pular as perguntas iniciais como nome e autor do projeto. Após isso abra o VS Code e foi criado a dependências da aplicação (packages.json)
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/dependencias.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/dependencias.png" />
     <br>
 </h1>
 
 Crie uma pasta src e um arquivo server.ts
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/serverfile.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/serverfile.png" />
     <br>
 </h1>
 
@@ -87,7 +116,7 @@ Abra um terminal no VS Code e instale a biblioteca typescript com o comando:
 yarn add typescript –D
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/addtypescript.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addtypescript.png" />
     <br>
 </h1>
 
@@ -97,14 +126,14 @@ Gere o arquivo de configuração do Typescript com o comando:
 yarn tsc –init
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/typescriptsonfig.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/typescriptsonfig.png" />
     <br>
 </h1>
 
 
 Definimos a versão do ECMAScript para es2017 pois é a versão que o Node.js entende. Se fosse uma versão de browser como o IE teria que ser uma versão mais antiga. Instalamos a também a dependência:
 <h1 align="center">
-    <img alt="Missing Image" src=".github/addnodedev.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addnodedev.png" />
     <br>
 </h1>
 
@@ -113,7 +142,7 @@ Que executa o servidor Node, fazendo ele entender Typescript, e monitora se teve
 Para testar o serviço, altere o arquivo packages.json e crie uma seção scripts e no arquivo server.ts uma mensagem console.log genérica:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/testestart.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/testestart.png" />
     <br>
 </h1>
 
@@ -122,7 +151,7 @@ Observe que esta configuração "start": "ts-node-dev src/server.ts" poderia ser
 yarn start OU npm start
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/runserver.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/runserver.png" />
     <br>
 </h1>
 
@@ -144,14 +173,14 @@ No script do   iremos inserir algumas flags e ficará assim:
 Abaixo um comparativo das saídas de usando o flag respawn, exemplificando que ele continua rodando...
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/respawn.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/respawn.png" />
     <br>
 </h1>
 
 Outro exemplo é que se alterar a saída, ele atualiza automaticamente:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/respawnupdate.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/respawnupdate.png" />
     <br>
 </h1>
 
@@ -161,14 +190,14 @@ yarn add express
 yarn add express
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/addexporess.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addexporess.png" />
     <br>
 </h1>
 
 
 O express é micro-framework que traz algumas funcionalidades prontas que evitam ficar fazendo configurações. Ao importar o express no arquivo server.ts dá um erro de dependência já visto anteriormente
 <h1 align="center">
-    <img alt="Missing Image" src=".github/expresserror.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/expresserror.png" />
     <br>
 </h1>
 
@@ -178,14 +207,14 @@ Quando estamos trabalhando com typescript, alguns pacotes adicionados são tamb�
 npm install @types/express –D
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/expresstypes.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/expresstypes.png" />
     <br>
 </h1>
 
 
 Executando o método get acima, já temos a comunicação da aplicação mas os resultados não saem no navegador.
 <h1 align="center">
-    <img alt="Missing Image" src=".github/CannotGET.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/CannotGET.png" />
     <br>
 </h1>
 
@@ -205,7 +234,7 @@ app.listen(3333);
 
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/start3333.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/start3333.png" />
     <br>
 </h1>
 
@@ -229,20 +258,20 @@ app.get("/users", (request, response) =>{
 app.listen(3333);
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/startJSON.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/startJSON.png" />
     <br>
 </h1>
 
 Para visualizarmos melhor os resultados podemos instalar um plugin no navegador Chrome, JSON Viewer:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/JSONViewer.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/JSONViewer.png" />
     <br>
 </h1>
 
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/JSONViewerformat.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/JSONViewerformat.png" />
     <br>
 </h1>
 
@@ -253,7 +282,7 @@ Cada endereço é uma rota (Ex.: http://localhost:3333/users ou http://localhost
 Insonmnia (https://insomnia.rest/download/)
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/insomniacreate.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insomniacreate.png" />
     <br>
 </h1>
 
@@ -261,7 +290,7 @@ Insonmnia (https://insomnia.rest/download/)
 Depois criamos uma nova requisição CriarUsuario pelo método POST:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/userrequest.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/userrequest.png" />
     <br>
 </h1>
 
@@ -269,12 +298,12 @@ Depois criamos uma nova requisição CriarUsuario pelo método POST:
 Depois de alterarmos o método de GET para POST conseguimos obter o resultado desejado:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/GETtoPOST.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/GETtoPOST.png" />
     <br>
 </h1>
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/GETtoPOSTresult.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/GETtoPOSTresult.png" />
     <br>
 </h1>
 
@@ -290,7 +319,7 @@ Depois de alterarmos o método de GET para POST conseguimos obter o resultado de
 Se colocarmos um request.body no método POST:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/RequestPOST.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/RequestPOST.png" />
     <br>
 </h1>
 
@@ -298,7 +327,7 @@ Se colocarmos um request.body no método POST:
 E no Insomnia enviarmos um novo registro de usuário e colocamos método POST:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/createuserPOT.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/createuserPOT.png" />
     <br>
 </h1>
 
@@ -309,12 +338,12 @@ app.use(express.json());
 ```
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/servermodule.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/servermodule.png" />
     <br>
 </h1>
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/servermoduleresult.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/servermoduleresult.png" />
     <br>
 </h1>
 
@@ -323,7 +352,7 @@ app.use(express.json());
 Se colocarmos um request.params no método DELETE:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/routeparams.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeparams.png" />
     <br>
 </h1>
 
@@ -334,14 +363,14 @@ http://localhost:3333/users/1
 ```
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/routeparamsdelete.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeparamsdelete.png" />
     <br>
 </h1>
 
 No terminal retorna
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/routeparamsdeletereturn.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeparamsdeletereturn.png" />
     <br>
 </h1>
 
@@ -351,7 +380,7 @@ No terminal retorna
 Se colocarmos um request.query no método GET:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/routequery.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routequery.png" />
     <br>
 </h1>
 
@@ -362,14 +391,14 @@ http://localhost:3333/users?page=20&name=Bob
 ```
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/routequeryinsomnia.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routequeryinsomnia.png" />
     <br>
 </h1>
 
 No terminal retorna
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/routequeryreturn.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routequeryreturn.png" />
     <br>
 </h1>
 
@@ -382,7 +411,7 @@ No terminal retorna
 - Rota para listar o total de conexões realizadas
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/rotaconections.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/rotaconections.png" />
     <br>
 </h1>
 
@@ -391,7 +420,7 @@ No terminal retorna
 - Armazenamento interno do Mobile dos Professores favoritos
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/rotazap.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/rotazap.png" />
     <br>
 </h1>
 
@@ -400,7 +429,7 @@ No terminal retorna
 - Rota para criar uma aula;
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/rotacriarclass.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/rotacriarclass.png" />
     <br>
 </h1>
 
@@ -408,7 +437,7 @@ No terminal retorna
     - Filtra por matéria, dia da semana e horário
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/rotalistarclass.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/rotalistarclass.png" />
     <br>
 </h1>
 
@@ -424,14 +453,14 @@ yarn add knex sqlite3
 ```
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/addsqllite.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addsqllite.png" />
     <br>
 </h1>
 
 Adicione uma pasta dentro de src com um arquivo connections.ts:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/connetionsrtx.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/connetionsrtx.png" />
     <br>
 </h1>
 
@@ -443,7 +472,7 @@ A função path.resolve é útil pois não precisamos colocar as barras do camin
 Como o knex só entende Javascript e não Typescript precisamos criar um arquivo na raiz do projeto chamado knexfile.ts:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/knexfilets.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/knexfilets.png" />
     <br>
 </h1>
 
@@ -451,7 +480,7 @@ Como o knex só entende Javascript e não Typescript precisamos criar um arquivo
 Depois incluímos um script no arquivo packages.json, que faz o redirecionamento dos comando knex através do arquivo anterior. Para cada comando que a gente tiver necessidade de usar pelo Typescript, podemos declarar neste script.
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/knexredirect.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/knexredirect.png" />
     <br>
 </h1>
 
@@ -464,7 +493,7 @@ Controlam as versões dentro do banco de dados, similar ao Git. Por isso que vam
 Poderíamos utilizar um comando knex que cria a Migrations tudo em Javascript (???), mas como estamos utilizando Typescript vamos cria-los manualmente. Primeiro, é interessante nomear os arquivos com número, pois isso definirá uma ordem de execução do Migrations. Crie uma pasta migrations dentro de database com os seguintes arquivos para gerar os objetos do DB:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/migrationsfiles.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/migrationsfiles.png" />
     <br>
 </h1>
 
@@ -478,14 +507,14 @@ Rodando o comando adaptado para criar a tabela de usuários:
 yarn knex:migrate OU npx knex migrate:latest
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/knexmigration.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/knexmigration.png" />
     <br>
 </h1>
 
 Para visualizar os dados gravados em database.sqlite precisamos instalar a Extensão abaixo. (OBS.: Essa extensão dá muitos problemas na hora de visualizar os dados e **tem que ficar dando RELOAD no VS Code e reiniciando o yarn start)**
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/sqlliteerrror.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/sqlliteerrror.png" />
     <br>
 </h1>
 
@@ -493,7 +522,7 @@ Para visualizar os dados gravados em database.sqlite precisamos instalar a Exten
 Ao clicar com o botão direito no arquivo database.sqlite, podemos abrir uma nova janela com nossa conexão sqlite com a tabela gerada. As outras tabelas migrations são as que guardam o histórico de alterações desse BD. Se outro desenvolvedor executar o comando yarn knex:migrate executará só as migrações não executadas.
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/tableusers.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/tableusers.png" />
     <br>
 </h1>
 
@@ -502,7 +531,7 @@ Se algo der errado, o mais fácil e deletar o arquivo database.sqlite e tentar g
 yarn knex:migrate OU npx knex migrate:latest
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/yarnmigrate.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarnmigrate.png" />
     <br>
 </h1>
 
@@ -514,21 +543,21 @@ Por critério de organização iremos criar um arquivo routes.ts para retirar o 
 
 Como está em um arquivo separado utilizamos express.Router() (anteriormente as rotas eram construídas diretamente através de express). Isso possibilita as rotas serem chamadas e utilizadas em diversas partes do projeto. Para testar as alterações voltamos ao Insomnia e fazemos as seguintes alterações:
 <h1 align="center">
-    <img alt="Missing Image" src=".github/changeservertoroutes.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/changeservertoroutes.png" />
     <br>
 </h1>
 
 
 Como está em um arquivo separado utilizamos express.Router() (anteriormente as rotas eram construídas diretamente através de express). Isso possibilita as rotas serem chamadas e utilizadas em diversas partes do projeto. Para testar as alterações voltamos ao Insomnia e fazemos as seguintes alterações:
 <h1 align="center">
-    <img alt="Missing Image" src=".github/testchanges.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/testchanges.png" />
     <br>
 </h1>
 
 
 Ao enviar temos a resposta no terminal:
 <h1 align="center">
-    <img alt="Missing Image" src=".github/testchangesresult.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/testchangesresult.png" />
     <br>
 </h1>
 
@@ -553,13 +582,13 @@ Agora altramos os dados do objeto para cadastrar uma classe:
 Fazemos as alterações abaixo no arquivo routes.ts para testar a gravação n tabela users:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/insertusers.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insertusers.png" />
     <br>
 </h1>
 
 Para inserir classes o mesmo procedimentos, só temos que recuperar o user_id ao salvar um usuário:
 <h1 align="center">
-    <img alt="Missing Image" src=".github/insertclass.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insertclass.png" />
     <br>
 </h1>
 
@@ -568,7 +597,7 @@ Para habilitar as operações em transações e commit igual no SQL declaramos u
 const trx = await db.transaction();
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/transactions.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/transactions.png" />
     <br>
 </h1>
 
@@ -577,7 +606,7 @@ E substituímos por toda ocorrência de db que havia antes. No final damos o com
 trx.commit();
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/commits.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/commits.png" />
     <br>
 </h1>
 
@@ -603,41 +632,41 @@ catch (error)
  Foi feito um refatoramento de código, retirando tudo que estava em route.ts (que gravava no BD) e deixado somente o que é relativo a rotas neste arquivo. Repare que já foi adicionado a rota do método GET que será usado na página de filtragem.
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/listpage.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/listpage.png" />
     <br>
 </h1>
 
 As partes de código de gravação e filtragem estão agora em outra pasta chamada controllers que segue o modelo MVC e que foi visto uma implementação similar quando vimos a parte de componentes anteriormente. Foi criado o arquivo ClassesController.ts e codificado um teste para página de filtro utilizando o método GET:
 
 <h1 align="center">
-    <img alt="Missing Image" src=".github/classcontrolles.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/classcontrolles.png" />
     <br>
 </h1>
 
 Para testar no Insomnia, crie o 3 parâmetros utilizados (week_day, subject, time) com o auxílio da interface e clique Enviar
 <h1 align="center">
-    <img alt="Missing Image" src=".github/tresparams.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/tresparams.png" />
     <br>
 </h1>
 
 
 Se retornar o valor dos minutos no terminal está tudo OK:
 <h1 align="center">
-    <img alt="Missing Image" src=".github/minutes.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/minutes.png" />
     <br>
 </h1>
 
 
 Adicionando a filtragem e retornando um objeto JSON:
 <h1 align="center">
-    <img alt="Missing Image" src=".github/filtragemJSON.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/filtragemJSON.png" />
     <br>
 </h1>
 
 
 Testando no Insomnia:
 <h1 align="center">
-    <img alt="Missing Image" src=".github/filterInsomnia.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/filterInsomnia.png" />
     <br>
 </h1>
 
@@ -647,11 +676,76 @@ Para finalizar, adicionamos o pacote cors, que permite que aplicações em ender
 yarn add cors
 ```
 <h1 align="center">
-    <img alt="Missing Image" src=".github/addcors.png" />
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addcors.png" />
     <br>
 </h1>
 
-- [Voltar a Aula 1](Aula01.md)
-- [Continuar a Aula 3](Aula03.md)
-- [Voltar as README.md](README.md)
+## ROTA LISTAR O TOTAL DE CONEXÕES REALIZADAS 
+
+Para a criação de uma conexão, foi criado um arquivo ConnectionControler.ts e adicionadas duas funções, uma GET e outra. A POST somente insere o id do usuário na tabela connections: 
+
+### GET
+
+**'/connections'**: Retorna o total de possíveis conexões já realizadas pela plataforma.
+
+- Parâmetros: Nenhum.
+- Retorno: Um objeto com o total de conexões, no seguinte formato:
+
+```bash
+  {
+    total: NUMBER - Total de conexões realizadas.
+  }
+```
+
+### POST
+
+**'/connections'**: Cria uma nova conexão.
+
+- Corpo: O identificador do professor a ser contactado:
+
+```bash
+  {
+    user_id: STRING - Identificador do professor
+  }
+```
+- Retorno: Código 201 de criação efetuada.
+
+<h1 align="center">
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/createconnections.png" />
+    <br>
+</h1>
+
+E para pegarmos as conexões fazemos um count de todos os registros da tabela. No retorno é feito uma desestruturação dos da primeira posição do array:
+
+<h1 align="center">
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/listconnections.png" />
+    <br>
+</h1>
+
+No arquivo routes.ts incluímos a importação do ConnectionsController e adicionamos as novas rotas GET e outra POST.
+
+<h1 align="center">
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesconnections.png" />
+    <br>
+</h1>
+
+Foi feita uma correção no arquivo de criação da tabela connections no campo da data de criação do registro:
+
+<h1 align="center">
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/timestamp.png" />
+    <br>
+</h1>
+
+No Insomnia foi dado uma dica de sempre criarmo pastas para separarmos em categorias os nossos Requests:
+
+<h1 align="center">
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insomniafolders.png" />
+    <br>
+</h1>
+
+Foi criado a Request GET para recuperar o número de conexões e no POST de criação precisou criar no corpo da Requisição o parâmetro user_id.
+
+- [Voltar a Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web)
+- [Continuar a Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
+- [Voltar a Wiki Home](https://github.com/shyoutarou/NLW2_Web/wiki)
     

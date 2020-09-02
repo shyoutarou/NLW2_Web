@@ -2,6 +2,34 @@
 
 [Voltar as README.md](README.md)
 
+<details>
+ <summary>Videos Youtube</summary>
+
+2. Trilha OmniStack
+[Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=AC7fGkJRYNw)
+[Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=TjUO72eAtog)
+[Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=ytVJxv0OPEA)
+
+</details>
+
+<details>
+ <summary>Wikis</summary>
+
+[Wiki Home](https://github.com/shyoutarou/NLW2_Web/wiki)
+1. [Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web)
+2. [Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
+3. [Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
+
+</details>
+
+<details>
+ <summary>GitHub Pages</summary>
+
+1. [Web](https://shyoutarou.github.io/NLW2_Web/)
+2. [Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
+
+</details>
+
 ## 📌 Index
 - [INSTALAÇÕES](#instalações-node-e-npm)
     - [Windows](#windows)
@@ -20,7 +48,7 @@ O primeiro passo para podermos utilizar a Omnistack (Node.js, ReactJS e React Na
 Como você já deve ter visto, na página principal do Node são apresentadas duas versões: LTS e Current.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/node_download.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_download.png" />
     <br>
 </h1>
 
@@ -31,7 +59,7 @@ Escolhida a versão LTS do Node, precisamos decidir o método de instalação. �
 Não só pelo fato de facilitar possíveis desinstalações e atualizações do Node, mas também por serem muito úteis para trabalhar com diversos outros pacotes. Pronto dev, agora que já sabemos que iremos instalar a versão LTS do Node.js utilizando um gerenciador de pacote, bora para o passo-a-passo de cada sistema operacional.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/node_versao.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_versao.png" />
     <br>
 </h1>
 
@@ -96,14 +124,14 @@ Após tentar algumas soluções alternativas para resolver estas questões, algu
 Até o lançamento do Yarn, o npm realizava as instalações das dependências de forma não determinística, ou seja, a estrutura da pasta node_modules poderia ser diferente de uma pessoa para outra, causando aquele velho problema do “Mas na minha máquina funciona!”. Para contornar este problema, o Yarn faz uso de arquivos de lock (yarn.lock) e de um algoritmo de instalação determinístico. No arquivo de lock a versão exata da dependência é armazenada, garantindo que todas as instalações são iguais. Apesar de o npm já possuir uma opção para gerar arquivos de lock, o Yarn gera seu arquivo de lock automaticamente. Abaixo o arquivo de lock gerado automaticamente pelo npm e o yarn.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/npm_lock.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/npm_lock.png" />
     <br>
 </h1>
 
 E no Yarn:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/yarn_lock.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_lock.png" />
     <br>
 </h1>
 
@@ -133,7 +161,7 @@ Alterada a permissão, basta instalar o Chocolatey com o comando:
 > Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/choco_install.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/choco_install.png" />
     <br>
 </h1>
 
@@ -144,7 +172,7 @@ Após o fim da instalação, feche e abra o Powershell como administrador novame
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/choco_versao.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/choco_versao.png" />
     <br>
 </h1>
 
@@ -157,14 +185,14 @@ E escolha a opção `[A]ll - yes to all`. Após o fim da instalação, feche e a
 > node –v
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/node_power_versao.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_power_versao.png" />
     <br>
 </h1>
 
 Caso retorne as versões do Node e npm, sua instalação foi um sucesso. Para atualizar o NodeJS, basta ir ao nodejs.org e fazer o download do instalador mais recente (MSI). 
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/node_update.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_update.png" />
     <br>
 </h1>
 
@@ -185,7 +213,7 @@ E escolha a opção `[A]ll - yes to all`.  Feche e abra o terminal novamente, em
 > yarn --version
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/yarn_version.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_version.png" />
     <br>
 </h1>
 
@@ -254,7 +282,7 @@ Depois do Node.js ou Yarn instalado. Execute um dos seguintes comandos:
     * npx create-react-app web --template typescript
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/create_project.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/create_project.png" />
     <br>
 </h1>
 
@@ -263,7 +291,7 @@ Esse comando, na minha máquina, durou uns 10 min... Na demonstração demorava 
 Abra o VS Code e habilite o Toggle Terminal (Crtl + ‘ )  
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/abra_terminal.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/abra_terminal.png" />
     <br>
 </h1>
 
@@ -277,7 +305,7 @@ OU
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/yarn_start.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_start.png" />
     <br>
 </h1>
 
@@ -287,21 +315,21 @@ Caso o projeto tenha sido clonado do GitHub está sem o node_modulos e precisa i
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/npm_install.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/npm_install.png" />
     <br>
 </h1>
 
 Vai pedir permissão de acesso pois estará abrindo a aplicação no localhost :3000
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/permissao.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/permissao.png" />
     <br>
 </h1>
 
 E já inicia o aplicativo
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/react_App.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/react_App.png" />
     <br>
 </h1>
 
@@ -311,7 +339,7 @@ Para teste remotamente no celular você pode consultar o IPv4 da máquina que es
 > ipconfig
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/ip_config.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/ip_config.png" />
     <br>
 </h1>
 
@@ -333,7 +361,7 @@ Do template criado pelo React foram apagados os seguintes arquivos do diretório
 Depois da exclusão ocorre alguns erros de referências, mas e só excluí-los e temos uma aplicação limpa para desenvolvimento. Analisando um pouco o arquivo packages.json:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/packagesjson.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/packagesjson.png" />
     <br>
 </h1>
 
@@ -343,7 +371,7 @@ Depois da exclusão ocorre alguns erros de referências, mas e só excluí-los e
 As duas partes principal do projeto são a pasta public e src. No public encontra-se apenas o arquivo index.html foi deixada da seguinte forma:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/public_src.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/public_src.png" />
     <br>
 </h1>
 
@@ -356,7 +384,7 @@ Apesar de não ter nenhum componente na tag:
 O React cuida disso, renderizando os componentes a partir do Javascript em tempo de execução. Se o Javascript estiver desabilitado no navegador não aparecerá nada. O arquivo que faz a interface fica no src e se chama index.tsx. O React.StricMode injeta HTML dentro do elemento encontrado pelo método getElement(“root”).
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/getelement.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/getelement.png" />
     <br>
 </h1>
 
@@ -366,7 +394,7 @@ Nos arquivos extensão TSX (Typescript com XML) coloca-se as funções que irá 
 import React from 'react';
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/importreact.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/importreact.png" />
     <br>
 </h1>
 
@@ -375,14 +403,14 @@ Crie uma pasta assets dentro de src e coloque a pasta imagens fornecida pelo tre
 Podendo ser apenas imagem fixa ou animação, o SVG pode ser trabalhado junto ao JavaScript para manipular eventos de imagem. O formato SVG permite três tipos de objetos gráficos, sendo eles imagens, textos ou formas geométricas vetoriais. Crie também uma pasta style e um arquivo global.css. O height 100vh corresponde a sempre 100% da tela.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/globalstyle.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/globalstyle.png" />
     <br>
 </h1>
 
 Para associar fontes ao projeto só precisa ir no site do Google Fonts(https://fonts.google.com/)
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/archivofont.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/archivofont.png" />
     <br>
 </h1>
 
@@ -392,35 +420,35 @@ Depois de selecionar as fontes abaixo, clicamos em Embedd e copiamos o link e co
 - poppins Regular 400
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/embeddedfonts.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/embeddedfonts.png" />
     <br>
 </h1>
 
 Depois de incluirmos as fontes podemos definir o tamanho delas responsivo com o unidade de medida rem: 
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/fontsstyle.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/fontsstyle.png" />
     <br>
 </h1>
 
 O 1.6 significa que a fonte desses elementos será 60% maior do que o tamanho padrão da fonte (16px) para dar mais destaque. Esse ajuste é criado, pois como no início do style havia sido definido font-size de 60% (16 x 0.60 = 9.6px). E o rem é utilizado para caso futuramente precisasse aumentar a fonte, só será necessário alterar o valor do root. 
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/remsize.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/remsize.png" />
     <br>
 </h1>
 
 Próximo passo, criamos uma página Landing, e a importamos na página App.tsx, substituindo o html estático com Hello Word e o botão que havia.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/landingpage.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/landingpage.png" />
     <br>
 </h1>
 
 Repare que a referência de arquivos dentro da aplicação deve estar sempre precedido por ./ ou ../ senão o React confunde com pacotes e não consegue encontrar os arquivos.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/referencefiles.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/referencefiles.png" />
     <br>
 </h1>
 
@@ -428,7 +456,7 @@ Repare que a referência de arquivos dentro da aplicação deve estar sempre pre
 É possível acelerar a codificação de páginas agora com a sintaxe abreviada Emmet que utiliza com padrões de sintaxe do css para gera o id, class, e outros atributos como uma engenharia reversa:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/emmetshort.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/emmetshort.png" />
     <br>
 </h1>
 
@@ -440,7 +468,7 @@ Essa habilidade foi ativada no início da aula no arquivo settings.json com os p
 	Se essas configurações não tiverem ativadas você pode ir por Workspace Settings
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/enableemett.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/enableemett.png" />
     <br>
 </h1>
 
@@ -449,14 +477,14 @@ Repare que as classes são definidas pelo atributo classname e não mais somente
 yarn add react-router-dom OU npm install react-router-dom
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/addrouterdom.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addrouterdom.png" />
     <br>
 </h1>
 
 Incluímos um arquivo routes.tsx para configurar as rotas e na hora de importar emite um aviso para instalar outro pacote, 
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/routestsx.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routestsx.png" />
     <br>
 </h1>
 
@@ -466,7 +494,7 @@ yarn add @types/react-router-dom –D  OU  npm install @types/react-router-dom -
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/addtypesrouterdom.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addtypesrouterdom.png" />
     <br>
 </h1>
 
@@ -475,42 +503,42 @@ Depois de instalarmos esse pacote aparece o Inteligesense quando digitamos:
 O código da função Routes ficará assim:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/routesinitial.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesinitial.png" />
     <br>
 </h1>
 
 Repare na primeira rota que navega para raiz tem uma propriedade exact. Isso é para diferenciar das outras rotas que também contém a barra para frente, então a página inicial apareceria em todas as outras páginas. Se alterarmos agora a página inicial App.tsx e a página Landing.tsx as rotas já estarão funcionando.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/routesexact.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesexact.png" />
     <br>
 </h1>
 
 Porém de formos em Network do browser podemos ver que a cada navegação está havendo o Refresh e carregamento da página inteira (css, scripts) e não queremos isso.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/routesreflesh.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesreflesh.png" />
     <br>
 </h1>
 
 Para resolver isso temos que importar de react-router-dom o componente Link e substitui-lo pelas anchor tags do HTML.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/routesLink.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesLink.png" />
     <br>
 </h1>
 
 E invés de href fica to:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/routeshref.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeshref.png" />
     <br>
 </h1>
 
 Ao salvar e testar não está recarregando mais nada ao mudar de página. Esse é o conceito de SPA (Single Page Application). Não tem que ficar recarregando recursos compartilhados da mesma aplicação.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/noreflesh.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/noreflesh.png" />
     <br>
 </h1>
 
@@ -521,7 +549,7 @@ Um recurso interessante que foi ativado no settings.json no começo dessa aula c
 Isso ativa a possibilidade de importar as referência de outros objetos enquanto estamos digitando ou clicando na palavra e teclando Ctrl + .(ponto)
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/ctrlponto.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/ctrlponto.png" />
     <br>
 </h1>
 
@@ -546,7 +574,7 @@ interface PageHeaderProps
 Se fosse permitido nulos no parâmetro title teria que colocar um sinal de interrogação após o nome (title?). Além disso, é necessário transformar a função em um objeto constante ficando como abaixo:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/objetocontatne.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/objetocontatne.png" />
     <br>
 </h1>
 
@@ -555,13 +583,13 @@ O React.FC é uma abreviação de React.FuncionalComponent. As duas formas são 
 O props.children refere-se a um propriedade que todos os componentes possuem. E significa que tudo que você colocar dentro de um componente será considerado como “children” e será renderizado se você chamar props.children.Na página TeacherList ficaria assim:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/children.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/children.png" />
     <br>
 </h1>
 
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/childrenfilters.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/childrenfilters.png" />
     <br>
 </h1>
 
@@ -569,17 +597,17 @@ O props.children refere-se a um propriedade que todos os componentes possuem. E 
 Para a listagem dos professores foi criado um componente TeacherItem e feita a estilização como abaixo:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/teacherliststyle.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teacherliststyle.png" />
     <br>
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/itemList.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/itemList.png" />
     <br>
 </h1>
 
 
-- [Continuar com a Aula 2](Aula02.md)
-- [Voltar ao README.md](README.md)
+- [Continuar com a Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
+- [Voltar a Wiki Home](https://github.com/shyoutarou/NLW2_Web/wiki)
     
 

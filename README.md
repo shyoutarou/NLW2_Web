@@ -27,9 +27,16 @@
 [Trilha OmniStack Aula 5](https://www.youtube.com/watch?v=EvRAXJuQrFE)
 
 
-
 </details>
 
+
+<details>
+ <summary>GitHub Pages</summary>
+
+1. [Web](https://shyoutarou.github.io/NLW2_Web/)
+2. [Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
+
+</details>
 
 <h1 align="center">
     <img alt="NextLevelWeek" title="#NextLevelWeek" style="object-fit: cover; width:250px; height:250px;" src=".github/nlw.gif"  />

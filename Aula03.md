@@ -4,6 +4,34 @@
 - [Voltar a Aula 2](Aula02.md)
 - [Voltar as README.md](README.md)
 
+<details>
+ <summary>Videos Youtube</summary>
+
+2. Trilha OmniStack
+[Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=AC7fGkJRYNw)
+[Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=TjUO72eAtog)
+[Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=ytVJxv0OPEA)
+
+</details>
+
+<details>
+ <summary>Wikis</summary>
+
+[Wiki Home](https://github.com/shyoutarou/NLW2_Web/wiki)
+1. [Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web)
+2. [Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
+3. [Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
+
+</details>
+
+<details>
+ <summary>GitHub Pages</summary>
+
+1. [Web](https://shyoutarou.github.io/NLW2_Web/)
+2. [Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
+
+</details>
+
 ## 📌 Index
 - [CADASTRO](#cadastro)
     - [TextArea e Caixa de Seleção](#textarea-e-caixa-de-seleção)
@@ -18,7 +46,7 @@
 Voltamos ao projeto Front-End, na página Formulário de Cadastro da classe que ficou faltando da aula 1. Como já foi mencionado, é possível criar uma propriedade nula no componente.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/cadastronull.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/cadastronull.png" />
     <br>
 </h1>
 
@@ -29,28 +57,28 @@ Para renderizar condicionalmente essa informa��es no componente PageHeader t
 Crie na pasta componentes uma pasta input com os arquivos padr�o index.tsx e styles.css. Para extender todos atributos de um componente padr�o para o seu componente tem que aplicar heran�a (extends) da classe InutHTMLAttributes do React, como abaixo:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/HTMLAttributes.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/HTMLAttributes.png" />
     <br>
 </h1>
 
 Depois recorte e cole a css do input que estava no css da p�gina TeacheList no css desse componente.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/TeacheListstyle.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacheListstyle.png" />
     <br>
 </h1>
 
 Importando o componente e substituindo os input da página TeacherList.tsx:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/TeacheListform.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacheListform.png" />
     <br>
 </h1>
 
 Testando a herança do componente:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/filtertest.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/filtertest.png" />
     <br>
 </h1>
 
@@ -63,52 +91,65 @@ Testando a herança do componente:
 O TextArea teve pequenas mudanças de estilo em relação ao componente Input.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/textararcompo.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/textararcompo.png" />
     <br>
 </h1>
 
 A caixa de seleção poderia ser estilizada usando uma biblioteca externa como o React-Select (https://react-select.com/home):
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/reactselect.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/reactselect.png" />
     <br>
 </h1>
 
 Para criar os items da caixa de seleção siga o exemplo abaixo no arquivo index.tsx do componente Select
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/combobox.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/combobox.png" />
     <br>
 </h1>
 
 E na págima TeacherForm.tsx:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/comboboxitens.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxitens.png" />
     <br>
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/comboboxitenstest.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxitenstest.png" />
     <br>
 </h1>
 
 Porém no Inspect >> Console indica que houve erro:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/comboboxerror.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxerror.png" />
     <br>
 </h1>
 
 Isso por que não colocamos o key, que deve ser único para o primeiro elemento da lista. Ajuda o React a identificar os elementos na hora de listar na tela. Foi incluído também um option default.
 
 ```bash
-<select id={name} {...rest} >
-    <option value="" disabled hidden >Selecione um opção</option>
-    {options.map(option => {
-        return <option key={option.id} value={option.id}>{option.value}</option>
-    })}
-</select>
+const Select: React.FC<SelectProps> = ({label, name, options, ...rest}) => 
+{  
+    const inputRef = useRef(null);
+
+    return (
+        <div className="select-block">
+            <label htmlFor={name}>{label}</label>
+            <select id={name} {...rest}> 
+                <option value="" disabled hidden >
+                    Selecione um opção
+                </option>
+                {options.map(option => {
+                    return <option key={option.id} value={option.id}>{option.value}</option>
+                })}
+            </select>
+        </div>
+    )
+}
+
 ```
 
 ## CONCEITO DE ESTADOS
@@ -121,7 +162,7 @@ Isso por que não colocamos o key, que deve ser único para o primeiro elemento 
 No Javascript, para colocar elementos iterativos repetitivos, tinha que inserir HTML (Com algum InnerHTML) para obter o seguinte resultado:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/horarios.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/horarios.png" />
     <br>
 </h1>
 
@@ -136,14 +177,29 @@ const scheduleItems = [
 Repare que sempre que usarmos map na tela, tem que setar a propriedade key. 
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/propkey.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/propkey.png" />
     <br>
 </h1>
+
+Sempre que adicionarmos novos itens, um problema de key no mapa acontece, pois o índice inicial 0 é repetitdo para cada elemento incluso. 
+
+<h1 align="center">
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboerroragain.png" />
+    <br>
+</h1>
+
+Para resolver isso, setamos o key para o index, que é incremental a cada elemento criado:
+
+<h1 align="center">
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/keyindex.png" />
+    <br>
+</h1>
+
 
  Para ativar o estados no React, precisamos importar o módulo, e alterar o array para que aceite os estados, assim:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/usestate.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/usestate.png" />
     <br>
 </h1>
 
@@ -162,14 +218,14 @@ A função setScheduleItems que o usa para copiar o array:
 Para recuperar o valor selecionado da caixa de seleção, precisamos atribuir o método Onchange:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/onchangestate.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/onchangestate.png" />
     <br>
 </h1>
 
 A função utilizada ficará como a seguir:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/setschedule.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/setschedule.png" />
     <br>
 </h1>
 
@@ -191,16 +247,10 @@ index = 0
 Irá fazer a comparação if (index === position) e, sendo 0 === 0, retorna um objeto array return {...scheduleItem, [field]: value }; O valor de field é "week_day" que vai sobreescrever o valor do campo weekday do objeto array. Testando na aplicação;
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/inserthorario.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/inserthorario.png" />
     <br>
 </h1>
 
-Porém ao adicionarmos itens aquele problema de key no mapa acontece, pois o índice inicial 0 é repetitdo para cada elemento incluso. É um Issue que precisa ser corrigido.
-
-<h1 align="center">
-    <img alt="Create Project" src=".github/comboerroragain.png" />
-    <br>
-</h1>
 
 ## INTEGRANDO BACK E FRONT
 
@@ -211,14 +261,14 @@ Porém ao adicionarmos itens aquele problema de key no mapa acontece, pois o ín
 yarn start
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/yarnstartcad.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarnstartcad.png" />
     <br>
 </h1>
 
 Às vezes, dá erro ao carregar e não reconhecer o cors e tem que reinstalar. Para confirmar que está funcionando vá ao Insomnia e teste em qualquer dos métodos criado anteriormente:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/insomniatest.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insomniatest.png" />
     <br>
 </h1>
 
@@ -229,33 +279,33 @@ Axios é um cliente HTTP, que funciona tanto no browser quanto em node.js. A bib
 yarn add axios
 ```
 <h1 align="center">
-    <img alt="Create Project" src=".github/addaxios.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addaxios.png" />
     <br>
 </h1>
 
 Criamos uma nova pasta services com um arquivo api.tx com o seguinte código:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/servicefolder.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/servicefolder.png" />
     <br>
 </h1>
 
 Obrigatório colocar o URL de baseURL em maiúsculas e indicar a base do endereço. Vamos adicionar as informações primeiro na página Landing, vamos precisar novamente utilizar dos Estados. Para facilitar a inclusão das referências é possível teclar Crtl + . (ponto):
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/baseURL.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/baseURL.png" />
     <br>
 </h1>
  
 Se quiser que o useEffect atualizasse os valores a cada mudança e não apenas no carregamento da página, teríamos que criar uma variável inclui-la no “Array de Dependências”. Se a variável alterar indica a função quando deve ser executada. O useEffect utiliza o método GET para obter os dados, e se colocássemos um console.log na função poderíamos analisar o retorno:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/useEffectGET.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/useEffectGET.png" />
     <br>
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/connections.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/connections.png" />
     <br>
 </h1>
 
@@ -264,42 +314,42 @@ Se quiser que o useEffect atualizasse os valores a cada mudança e não apenas n
 Na página de TeacherForm.tsx vamos adicionar nossas variáveis de Estado e inicialixa-las:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/statevariables.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/statevariables.png" />
     <br>
 </h1>
 
 Depois relacionamos com o campo e adicionamos o método Onchange:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/inputname.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/inputname.png" />
     <br>
 </h1>
 
 A seguir, envolvemos todo o código do formulário com uma tag form e trocamos o tipo do botão para submit
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/tagform.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/tagform.png" />
     <br>
 </h1>
  
 Criamos o método handleCreateClass e para testa-lo emitimos um console.log com os dados da tela. O parâmetro e: FormEvent é necessário pois como a função está fora do HTML, precisamos dessa classe do React para especificar o tipo dos argumentos. O e.preventDefalt é colocado para interromper o POST de direcionamento da página que é o comportamento padrão do botão submit.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/preventDefalt.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/preventDefalt.png" />
     <br>
 </h1>
  
 Ao clicar o botão deve voltar os dados:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/returndata.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/returndata.png" />
     <br>
 </h1>
 
 Quando os dados estiverem retornando, podemos alterar a função para gravar a aula:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/createclass.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/createclass.png" />
     <br>
 </h1>
 
@@ -307,7 +357,7 @@ Quando os dados estiverem retornando, podemos alterar a função para gravar a a
 E verifique se está gravando com o Insomnia e o Request List Classes
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/requestlistclass.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/requestlistclass.png" />
     <br>
 </h1>
 
@@ -324,7 +374,7 @@ const history = useHistory();
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/usehistory.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/usehistory.png" />
     <br>
 </h1>
 
@@ -333,40 +383,40 @@ const history = useHistory();
 A parte de filtragem é feita da mesma forma que foi feito do POST do formulário, mas até agora os items listados nesta tela TescherList.tsx estão na forma HARD-CODE, ou seja, estático e precisamos trocar por variáveis.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/listhardcode.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/listhardcode.png" />
     <br>
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/teachritems.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teachritems.png" />
     <br>
 </h1>
 
 Para isso precisamos primeiro alterar o componente TeacherItem criando a interface para passar os dados na tela. E também criamos outra interface para definir um objeto, já que as informações que iremos passar não são de tipo primitivo:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/interfaceteacher.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/interfaceteacher.png" />
     <br>
 </h1>
 
 Lembra-se quando criamos uma interface e precisamos passar os dados, devemos chamar o React.FC é uma abreviação de React.FuncionalComponent, mesma coisa que foi feito no input. E substituímos os campos.
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/FuncionalComponent.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/FuncionalComponent.png" />
     <br>
 </h1>
 
 Por fim, alteramos a página TeacherList.tsx para ficar assim:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/TeacherListcompo.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacherListcompo.png" />
     <br>
 </h1>
 
 Ao realizar a filtragem:
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/eliasgab.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teacherfilter.png" />
     <br>
 </h1>
 
@@ -385,8 +435,11 @@ Ao clicar no botão:
 
 
 <h1 align="center">
-    <img alt="Create Project" src=".github/directlionk.png" />
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/directlionk.png" />
     <br>
 </h1>
 
-[Voltar as README.md](README.md)
+- [Voltar a Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
+- [Continuar a Aula 4](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-4-(06-08-2020)---Estruturando-app-mobile)
+- [Voltar a Wiki Home](https://github.com/shyoutarou/NLW2_Web/wiki)
+    
