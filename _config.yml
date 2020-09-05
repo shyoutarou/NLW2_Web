@@ -3,3 +3,9 @@ description: Next Level Week #2
 baseurl: /NLW2_Web
 github_username: https://github.com/shyoutarou
 theme: jekyll-theme-midnight
+
+
+locale: "pt-br"
+url: "https://shyoutarou.github.io/"
+logo: /images/your-logo.png
+skin: "/assets/css/skins/dark.css"
