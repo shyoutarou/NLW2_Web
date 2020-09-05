@@ -5,9 +5,9 @@
  <summary>Videos Youtube</summary>
 
 2. Trilha OmniStack
-[Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=AC7fGkJRYNw)
-[Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=TjUO72eAtog)
-[Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=ytVJxv0OPEA)
+- [Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=AC7fGkJRYNw)
+- [Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=TjUO72eAtog)
+- [Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=ytVJxv0OPEA)
 
 </details>
 
@@ -23,23 +23,6 @@ Resumo dos três primeiros dias da NLW da Rocketseat.
 3. [Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
 
 </details>
-
-
-Then, open the index.md file and change the code to include
-sections. For example, our code looks like this:# My Projects
-Here are a list of projects that I am have been working on:
-# My Interests
-I'm interested in teaching novice coders about computer science!
-# My Blog 4
-I'm really excited to blog my journey on GitHub.com.
-<ul>
-{% for post in site.posts %}
-<li>
-<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-</li>
-{% endfor %}
-</ul>
-
 
 [GitHub Pages: Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
 
