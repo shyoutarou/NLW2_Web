@@ -1,5 +1,3 @@
-<meta name="google-site-verification" content="sua string de verificação " />
-
 # Aula 1 (03/08/2020): Proffy-Web
 
 <ul>
