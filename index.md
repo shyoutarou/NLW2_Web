@@ -1378,7 +1378,13 @@ const Select: React.FC<SelectProps> = ({label, name, options, ...rest}) =>
 ## CONCEITO DE ESTADOS
 
 	Sempre que precisar manipular um ação dentro de um componente cria-se um estado para manipular o valor. Com o React, diferente do Javascript, estamos criando uma interface declarativa. Principios React no [site](https://reactjs.org/):
-	
+
+
+## CADASTRO
+
+Voltamos ao projeto Front-End, na página Formulário de Cadastro da classe que ficou faltando da aula 1. Como já foi mencionado, é possível criar uma propriedade nula no componente.
+
+
 - **Declarativo**: O React facilita a criação de UIs interativas. Crie visualizações simples para cada estado do aplicativo e o React atualizará e renderizará com eficiência os componentes certos quando os dados forem alterados. Exibições declarativas tornam seu código mais previsível e mais fácil de depurar.
 
 - **Baseado em componentes**: Crie componentes encapsulados que gerenciam seu próprio estado e os componha para criar UIs complexas. Como a lógica do componente é escrita em JavaScript, em vez de modelos, você pode passar facilmente dados ricos pelo aplicativo e manter o estado fora do DOM.
