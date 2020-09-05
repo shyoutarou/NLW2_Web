@@ -24,6 +24,23 @@ Resumo dos três primeiros dias da NLW da Rocketseat.
 
 </details>
 
+
+Then, open the index.md file and change the code to include
+sections. For example, our code looks like this:# My Projects
+Here are a list of projects that I am have been working on:
+# My Interests
+I'm interested in teaching novice coders about computer science!
+# My Blog
+I'm really excited to blog my journey on GitHub.com.
+<ul>
+{% for post in site.posts %}
+<li>
+<a href="{{ post.url }}">{{ post.title }}</a>
+</li>
+{% endfor %}
+</ul>
+
+
 [GitHub Pages: Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
 
 ## 📌 Index
