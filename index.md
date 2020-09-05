@@ -30,13 +30,12 @@ sections. For example, our code looks like this:# My Projects
 Here are a list of projects that I am have been working on:
 # My Interests
 I'm interested in teaching novice coders about computer science!
-# My Blog 3
+# My Blog 4
 I'm really excited to blog my journey on GitHub.com.
 <ul>
 {% for post in site.posts %}
 <li>
-<a href="{{ site.baseurl + post.url }}"> baseurl: {{ site.baseurl }} {{ post.title }}</a>
-<a href="{{ post.url }}">URL:{{ post.url }}   Title: {{ post.title }}</a>
+<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
 </li>
 {% endfor %}
 </ul>
