@@ -1,20 +1,15 @@
 # Aula 1 (03/08/2020): Proffy-Web
 
 
-<details>
- <summary>Videos Youtube</summary>
+### Videos Youtube
 
-2. Trilha OmniStack
+Trilha OmniStack
 - [Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=AC7fGkJRYNw)
 - [Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=TjUO72eAtog)
 - [Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=ytVJxv0OPEA)
 
-</details>
+### Wikis
 
-<details>
- <summary>Wikis</summary>
-
-Trilha OmniStack
 Resumo dos três primeiros dias da NLW da Rocketseat.
 
 [Wiki Home](https://github.com/shyoutarou/NLW2_Web/wiki)
@@ -22,8 +17,8 @@ Resumo dos três primeiros dias da NLW da Rocketseat.
 2. [Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
 3. [Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
 
-</details>
-
+### GitHub Pages
+ 
 [GitHub Pages: Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
 
 ## 📌 Index
@@ -1382,10 +1377,10 @@ const Select: React.FC<SelectProps> = ({label, name, options, ...rest}) =>
 
 ## CONCEITO DE ESTADOS
 
-	Sempre que precisar manipular um ação dentro de um componente cria-se um estado para manipular o valor. Com o React, diferente do Javascript, estamos criando uma interface declarativa. Principios React no [site](https://reactjs.org/):
-- **Declarativo**: O React facilita a criação de UIs interativas. Crie visualizações simples para cada estado do aplicativo e o React atualizará e renderizará com eficiência os componentes certos quando os dados forem alterados. Exibições declarativas tornam seu código mais previsível e mais fácil de depurar.
-- **Baseado em componentes**: Crie componentes encapsulados que gerenciam seu próprio estado e os componha para criar UIs complexas. Como a lógica do componente é escrita em JavaScript, em vez de modelos, você pode passar facilmente dados ricos pelo aplicativo e manter o estado fora do DOM.
--  **Aprenda uma vez, escreva em qualquer lugar**: Não fazemos suposições sobre o restante da sua pilha de tecnologia, para que você possa desenvolver novos recursos no React sem reescrever o código existente. O React também pode renderizar no servidor usando o Nó e ativar aplicativos móveis usando o React Native.
+	Sempre que precisar manipular um ação dentro de um componente cria-se um estado para manipular o valor. Com o React, diferente do Javascript, estamos criando uma interface declarativa. Principios React no site https://reactjs.org/:
+- Declarativo: O React facilita a criação de UIs interativas. Crie visualizações simples para cada estado do aplicativo e o React atualizará e renderizará com eficiência os componentes certos quando os dados forem alterados. Exibições declarativas tornam seu código mais previsível e mais fácil de depurar.
+- Baseado em componentes: Crie componentes encapsulados que gerenciam seu próprio estado e os componha para criar UIs complexas. Como a lógica do componente é escrita em JavaScript, em vez de modelos, você pode passar facilmente dados ricos pelo aplicativo e manter o estado fora do DOM.
+-  Aprenda uma vez, escreva em qualquer lugar: Não fazemos suposições sobre o restante da sua pilha de tecnologia, para que você possa desenvolver novos recursos no React sem reescrever o código existente. O React também pode renderizar no servidor usando o Nó e ativar aplicativos móveis usando o React Native.
 
 No Javascript, para colocar elementos iterativos repetitivos, tinha que inserir HTML (Com algum InnerHTML) para obter o seguinte resultado:
 
