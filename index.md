@@ -973,7 +973,7 @@ No terminal retorna
 
 ## CASOS DE USO
 
-	Identificando acessos de Back-End pelo layout Front-End:
+Identificando acessos de Back-End pelo layout Front-End:
 
 ### Conexões
 - Rota para listar o total de conexões realizadas
@@ -1596,7 +1596,7 @@ Para redirecionarmos a página inicial depois de completar o cadastro, precisamo
 import { useHistory } from 'react-router-dom';
 ```
 
-	Criamos uma constante e aplicamos no método.
+Criamos uma constante e aplicamos no método.
 
 ```bash
 const history = useHistory();
