@@ -210,7 +210,7 @@ E escolha a opção `[A]ll - yes to all`.  Feche e abra o terminal novamente, em
 
 Caso retorne a versão do Yarn (acima de 1.0, abaixo de 2.0), a instalação ocorreu com sucesso.
 
-EXPO
+### EXPO
 
 O Expo é uma ferramenta utilizada no desenvolvimento mobile com React Native que permite o fácil acesso às API’s nativas do dispositivo sem precisar instalar qualquer dependência ou alterar código nativo. Apesar de cumprir esse papel muito bem, o Expo possui algumas desvantagens, principalmente para programadores que estão migrando de um estágio iniciante para intermediário com React Native e por isso vamos analisar todas vantagens do Expo e pontos negativos nesse post.
 
@@ -877,7 +877,7 @@ Depois de alterarmos o método de GET para POST conseguimos obter o resultado de
 
 ## PARÂMETROS
 
-	Quando fazemos requisição existem 3 tipos de parâmetros:
+Quando fazemos requisição existem 3 tipos de parâmetros:
 - **RequestBody**: Para criar ou atualizar um registro, uma informação vem no corpo da requisição.
 - **Route Params**: Identifica um recusrso na nossa rota qunado for atualizar ou deletar um registro específico.
 - **Query Params**: Usados principalmente em listagens, para fazer filtros, paginação, ordenação, etc.
@@ -1197,7 +1197,7 @@ catch (error)
 
 ## ROTA PARA LISTAR AULAS
 	
- Foi feito um refatoramento de código, retirando tudo que estava em route.ts (que gravava no BD) e deixado somente o que é relativo a rotas neste arquivo. Repare que já foi adicionado a rota do método GET que será usado na página de filtragem.
+Foi feito um refatoramento de código, retirando tudo que estava em route.ts (que gravava no BD) e deixado somente o que é relativo a rotas neste arquivo. Repare que já foi adicionado a rota do método GET que será usado na página de filtragem.
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/listpage.png" />
@@ -1307,7 +1307,7 @@ Testando a herança do componente:
 
 ### TextArea e Caixa de Seleção
 
-	Basicamente, esses dois componentes é o mesmo procedimento do Input, entãom podemos copiar toda a pasta e arquivos e renomeie para o correto. Para renomear múltiplas ocorrências você pode utilizar os atalhos:
+Basicamente, esses dois componentes é o mesmo procedimento do Input, entãom podemos copiar toda a pasta e arquivos e renomeie para o correto. Para renomear múltiplas ocorrências você pode utilizar os atalhos:
 - **Crtl + D**: Para ir selecionando uma a uma as ocorrências de um texto selecionado.
 - **Crtl + Shift + L**: Para selecionar todas ocorrências de um texto selecionado.
 
