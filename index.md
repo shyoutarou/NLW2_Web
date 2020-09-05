@@ -1377,12 +1377,7 @@ const Select: React.FC<SelectProps> = ({label, name, options, ...rest}) =>
 
 ## CONCEITO DE ESTADOS
 
-	Sempre que precisar manipular um ação dentro de um componente cria-se um estado para manipular o valor. Com o React, diferente do Javascript, estamos criando uma interface declarativa. Principios React no [site](https://reactjs.org/):
-
-
-## CADASTRO
-
-Voltamos ao projeto Front-End, na página Formulário de Cadastro da classe que ficou faltando da aula 1. Como já foi mencionado, é possível criar uma propriedade nula no componente.
+Sempre que precisar manipular um ação dentro de um componente cria-se um estado para manipular o valor. Com o React, diferente do Javascript, estamos criando uma interface declarativa. Principios React no [site](https://reactjs.org/):
 
 
 - **Declarativo**: O React facilita a criação de UIs interativas. Crie visualizações simples para cada estado do aplicativo e o React atualizará e renderizará com eficiência os componentes certos quando os dados forem alterados. Exibições declarativas tornam seu código mais previsível e mais fácil de depurar.
@@ -1429,7 +1424,7 @@ Para resolver isso, setamos o key para o index, que é incremental a cada elemen
 </h1>
 
 
- Para ativar o estados no React, precisamos importar o módulo, e alterar o array para que aceite os estados, assim:
+Para ativar o estados no React, precisamos importar o módulo, e alterar o array para que aceite os estados, assim:
 
 <h1 align="center">
     <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/usestate.png" />
@@ -1489,7 +1484,8 @@ Irá fazer a comparação if (index === position) e, sendo 0 === 0, retorna um o
 
 ### Get de dados
 
-	Pelo terminal, navegue até a pasta do projeto server e digite:
+Pelo terminal, navegue até a pasta do projeto server e digite:
+
 ```bash
 yarn start
 ```
