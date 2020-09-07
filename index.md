@@ -610,6 +610,7 @@ Para a listagem dos professores foi criado um componente TeacherItem e feita a e
 
 Aula 2 (04/08/2020): Proffy Server
 
+
 ## 📌 Index
 - [FLUXO DESENVOLVIMENTO REACT](#fluxo-desenvolvimento-react)
     - [API (Application Programming Interface)](#api-application-programming-interface)
