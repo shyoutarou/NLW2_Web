@@ -602,7 +602,7 @@ Para a listagem dos professores foi criado um componente TeacherItem e feita a e
 
 <h1 align="center">
     <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/itemList.png" />
-    
+    <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/fluxo_react.png" />
 </h1>
 <h1 align="center">
     <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/itemList.png" />
