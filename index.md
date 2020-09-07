@@ -47,8 +47,8 @@ O primeiro passo para podermos utilizar a Omnistack (Node.js, ReactJS e React Na
 Como você já deve ter visto, na página principal do Node são apresentadas duas versões: LTS e Current.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_download.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_download.png" />
+    
 </h1>
 
 A primeira se refere à versão do Node que possui Long Term Support (LTS), são as mais confiáveis e é a que recomendamos utilizar na NLW. Já a segunda se refere à versão do Node mais atual e experimental, o que não é recomendada para desenvolvimento ainda.
@@ -58,7 +58,7 @@ Escolhida a versão LTS do Node, precisamos decidir o método de instalação. �
 Não só pelo fato de facilitar possíveis desinstalações e atualizações do Node, mas também por serem muito úteis para trabalhar com diversos outros pacotes. Pronto dev, agora que já sabemos que iremos instalar a versão LTS do Node.js utilizando um gerenciador de pacote, bora para o passo-a-passo de cada sistema operacional.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_versao.png" />
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_versao.png" />
 </h1>
 
 ### Windows
@@ -71,24 +71,24 @@ Para o Windows utilizaremos o gerenciador de pacotes [Chocolatey] (https://choco
 
 Busque no campo de busca do Windows por Windows Powershell, clique com o botão direito em cima do programa e escolha a opção “Executar como administrador”. O Powershell trabalha com um esquema de autorizações (conhecido como `Execution Policy`) para execução de scripts e, por isso, precisamos verificar se o presente no sistema está compatível com o que o Chocolatey precisa. Execute o seguinte comando:
 
-```bash
+```typescript
 > Get-ExecutionPolicy
 ```
 Caso ele retorne `Restricted`, execute o comando:
 
-```bash
+```typescript
 > Set-ExecutionPolicy RemoteSigned
 ```
 
 E escolha a opção `[A] Sim para Todos. Caso o comando acima apresente erro, tente usar:
 
-```bash
+```typescript
 > Set-ExecutionPolicy Bypass -Scope Process
 ```
 
 Verifique se alteração de permissão ocorreu com sucesso executando novamente o comando:
 
-```bash
+```typescript
 > Get-ExecutionPolicy
 ```
 
@@ -122,15 +122,15 @@ Após tentar algumas soluções alternativas para resolver estas questões, algu
 Até o lançamento do Yarn, o npm realizava as instalações das dependências de forma não determinística, ou seja, a estrutura da pasta node_modules poderia ser diferente de uma pessoa para outra, causando aquele velho problema do “Mas na minha máquina funciona!”. Para contornar este problema, o Yarn faz uso de arquivos de lock (yarn.lock) e de um algoritmo de instalação determinístico. No arquivo de lock a versão exata da dependência é armazenada, garantindo que todas as instalações são iguais. Apesar de o npm já possuir uma opção para gerar arquivos de lock, o Yarn gera seu arquivo de lock automaticamente. Abaixo o arquivo de lock gerado automaticamente pelo npm e o yarn.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/npm_lock.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/npm_lock.png" />
+    
 </h1>
 
 E no Yarn:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_lock.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_lock.png" />
+    
 </h1>
 
 Para acelerar a instalação, o Yarn consulta um diretório de cache global, que é usado tanto para evitar que o download seja feito, quanto para permitir a instalação enquanto estiver offline, o que não era possível realizar com o npm.
@@ -155,23 +155,23 @@ O Chocolatey entra na categoria de gerenciador de pacotes, mais precisamente par
 
 Alterada a permissão, basta instalar o Chocolatey com o comando:
 
-```bash
+```typescript
 > Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/choco_install.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/choco_install.png" />
+    
 </h1>
 
 Após o fim da instalação, feche e abra o Powershell como administrador novamente e execute:
 
-```bash
+```typescript
 > choco –v
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/choco_versao.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/choco_versao.png" />
+    
 </h1>
 
 Caso ele retorne a versão do Chocolatey, a instalação foi um sucesso. Para finalizar, basta instalar a versão LTS mais recente do Node com o seguinte comando:
@@ -179,40 +179,40 @@ cinst nodejs-lts
 
 E escolha a opção `[A]ll - yes to all`. Após o fim da instalação, feche e abra o Powershell como administrador novamente e execute:
 
-```bash
+```typescript
 > node –v
 ```
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_power_versao.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_power_versao.png" />
+    
 </h1>
 
 Caso retorne as versões do Node e npm, sua instalação foi um sucesso. Para atualizar o NodeJS, basta ir ao nodejs.org e fazer o download do instalador mais recente (MSI). 
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_update.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_update.png" />
+    
 </h1>
 
 Para atualizar os pacotes instalados:
-```bash
+```typescript
 > npm cache clean -f
 > npm update npm -g
 ```
 ### YARN 1 (Opcional)
 
 Para instalar o Yarn 1 no Windows com o choco siga os seguintes passos, execute o comando no Powershell (como admin):
-```bash
+```typescript
 > cinst yarn
 ```
 
 E escolha a opção `[A]ll - yes to all`.  Feche e abra o terminal novamente, em seguida rode o comando:
-```bash
+```typescript
 > yarn --version
 ```
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_version.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_version.png" />
+    
 </h1>
 
 Caso retorne a versão do Yarn (acima de 1.0, abaixo de 2.0), a instalação ocorreu com sucesso.
@@ -231,17 +231,17 @@ O ponto destacado acima, na minha opinião, tem dois lados. A vantagem é que ne
 - Você não tem interesse em publicar e manter aplicações mobile complexas (apenas criar apps simples).
 
 Para instalar o Expo é bem simples e o passo é o mesmo nos 3 sistemas operacionais.  Com o Node e Yarn instalados, abra o terminal (no Windows, sem ser como admin) e execute:
-```bash
+```typescript
 > yarn global add expo-cli
 ```
 
 Caso você prefira utilizar o npm, basta executar:
-```bash
+```typescript
 > npm install expo-cli --global
 ```
 
 Para verificar se a instalação ocorreu com sucesso, execute:
-```bash
+```typescript
 > expo –version
 ```
 
@@ -253,7 +253,7 @@ Para finalizar, vamos adicionar algumas configurações no Visual Studio Code. P
 
 É preciso tomar alguns cuidados ao realizar essas alterações. Verifique se a configuração adicionada já não existe no arquivo. Se sim, apenas atualize o valor.  Verifique também se a todas as linhas de configuração, exceto a última, terminam com vírgula, para não gerar erro.  Por fim, caso queira substituir completamente a sua configuração pela abaixo, envolva com chaves `{}` todo o código disponibilizado.
 
-```bash
+```typescript
   "workbench.startupEditor": "newUntitledFile",
   "explorer.compactFolders": false,
   "editor.renderLineHighlight": "gutter",
@@ -280,8 +280,8 @@ Depois do Node.js ou Yarn instalado. Execute um dos seguintes comandos:
     * npx create-react-app web --template typescript
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/create_project.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/create_project.png" />
+    
 </h1>
 
 Esse comando, na minha máquina, durou uns 10 min... Na demonstração demorava 22s. Dependendo da máquina e velocidade de download dos pacotes. Todos os comando yarn podem ser substituídos por um correspondente npm pois o yarn utiliza do npm para funcionar.
@@ -289,61 +289,61 @@ Esse comando, na minha máquina, durou uns 10 min... Na demonstração demorava 
 Abra o VS Code e habilite o Toggle Terminal (Crtl + ‘ )  
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/abra_terminal.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/abra_terminal.png" />
+    
 </h1>
 
 Inicie o yarn com ou npm:
-```bash
+```typescript
 > yarn start
 ```
 OU
-```bash
+```typescript
 > npm start
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_start.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarn_start.png" />
+    
 </h1>
 
 Caso o projeto tenha sido clonado do GitHub está sem o node_modulos e precisa instalá-los com:
-```bash
+```typescript
 > npm install
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/npm_install.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/npm_install.png" />
+    
 </h1>
 
 Vai pedir permissão de acesso pois estará abrindo a aplicação no localhost :3000
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/permissao.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/permissao.png" />
+    
 </h1>
 
 E já inicia o aplicativo
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/react_App.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/react_App.png" />
+    
 </h1>
 
 Para teste remotamente no celular você pode consultar o IPv4 da máquina que está executando indo na linha de comando e digitando:
 
-```bash
+```typescript
 > ipconfig
 ```
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/ip_config.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/ip_config.png" />
+    
 </h1>
 
 
 E no navegador do celular, se estiverem conectados na mesma rede Wifi, digite na URL do navegador o IP e a porta:
-```bash
+```typescript
 > http://192.168.X.XXX:3000
 ```
 
@@ -359,8 +359,8 @@ Do template criado pelo React foram apagados os seguintes arquivos do diretório
 Depois da exclusão ocorre alguns erros de referências, mas e só excluí-los e temos uma aplicação limpa para desenvolvimento. Analisando um pouco o arquivo packages.json:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/packagesjson.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/packagesjson.png" />
+    
 </h1>
 
 - **BabelJS** é um transpiler de JavaScript que transpila novos recursos em padrões antigos. Com isso, os recursos podem ser executados em navegadores antigos e novos, sem complicações. Babeljs vem com uma ampla gama de recursos na forma de plug-ins, predefinições, polyfills, etc. Resumindo, Babeljs é um conjunto de ferramentas que possui todas as ferramentas necessárias disponíveis com ele e que ajuda os desenvolvedores a usar todos os recursos atuais disponíveis no ECMA Script e ainda não se preocupam como será suportado nos navegadores.
@@ -369,31 +369,31 @@ Depois da exclusão ocorre alguns erros de referências, mas e só excluí-los e
 As duas partes principal do projeto são a pasta public e src. No public encontra-se apenas o arquivo index.html foi deixada da seguinte forma:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/public_src.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/public_src.png" />
+    
 </h1>
 
 Apesar de não ter nenhum componente na tag:
 
-```bash
+```typescript
 > <div id="root"></div>
 ```
 
 O React cuida disso, renderizando os componentes a partir do Javascript em tempo de execução. Se o Javascript estiver desabilitado no navegador não aparecerá nada. O arquivo que faz a interface fica no src e se chama index.tsx. O React.StricMode injeta HTML dentro do elemento encontrado pelo método getElement(“root”).
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/getelement.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/getelement.png" />
+    
 </h1>
 
 Nos arquivos extensão TSX (Typescript com XML) coloca-se as funções que irá renderizar os componentes. Um componente é basicamente uma função que retorna/injeta HTML. A sintaxe utilizada é chamada de JSX (Javascript com XML) e é neste arquivo onde ficará os componentes que poderá ser utilizado em várias partes do código.  Note que o nome da função deve estar em maiúscula. Note que se o nome da função fosse em minúscula, o React entenderia como se fosse tag HTML.E de que sempre devemos importar a biblioteca:
 
-```bash
+```typescript
 import React from 'react';
 ```
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/importreact.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/importreact.png" />
+    
 </h1>
 
 Crie uma pasta assets dentro de src e coloque a pasta imagens fornecida pelo treinamento. Criado pelo W3C o SVG (Scalable Vectorial Graphics) é nada mais que um arquivo XML que contém tags especificas para gerar uma imagem vetorizada na sua aplicação. Com tags bastante simples você consegue gerar imagens de alta qualidade vetorizadas que por mais que você altere as proporções na tela essa não perderá qualidade, por ser uma imagem vetorizada.
@@ -401,15 +401,15 @@ Crie uma pasta assets dentro de src e coloque a pasta imagens fornecida pelo tre
 Podendo ser apenas imagem fixa ou animação, o SVG pode ser trabalhado junto ao JavaScript para manipular eventos de imagem. O formato SVG permite três tipos de objetos gráficos, sendo eles imagens, textos ou formas geométricas vetoriais. Crie também uma pasta style e um arquivo global.css. O height 100vh corresponde a sempre 100% da tela.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/globalstyle.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/globalstyle.png" />
+    
 </h1>
 
 Para associar fontes ao projeto só precisa ir no site do Google Fonts(https://fonts.google.com/)
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/archivofont.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/archivofont.png" />
+    
 </h1>
 
 Depois de selecionar as fontes abaixo, clicamos em Embedd e copiamos o link e colamos em public/indez.html:
@@ -418,44 +418,44 @@ Depois de selecionar as fontes abaixo, clicamos em Embedd e copiamos o link e co
 - poppins Regular 400
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/embeddedfonts.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/embeddedfonts.png" />
+    
 </h1>
 
 Depois de incluirmos as fontes podemos definir o tamanho delas responsivo com o unidade de medida rem: 
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/fontsstyle.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/fontsstyle.png" />
+    
 </h1>
 
 O 1.6 significa que a fonte desses elementos será 60% maior do que o tamanho padrão da fonte (16px) para dar mais destaque. Esse ajuste é criado, pois como no início do style havia sido definido font-size de 60% (16 x 0.60 = 9.6px). E o rem é utilizado para caso futuramente precisasse aumentar a fonte, só será necessário alterar o valor do root. 
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/remsize.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/remsize.png" />
+    
 </h1>
 
 Próximo passo, criamos uma página Landing, e a importamos na página App.tsx, substituindo o html estático com Hello Word e o botão que havia.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/landingpage.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/landingpage.png" />
+    
 </h1>
 
 Repare que a referência de arquivos dentro da aplicação deve estar sempre precedido por ./ ou ../ senão o React confunde com pacotes e não consegue encontrar os arquivos.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/referencefiles.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/referencefiles.png" />
+    
 </h1>
 
 
 É possível acelerar a codificação de páginas agora com a sintaxe abreviada Emmet que utiliza com padrões de sintaxe do css para gera o id, class, e outros atributos como uma engenharia reversa:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/emmetshort.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/emmetshort.png" />
+    
 </h1>
 
 
@@ -466,34 +466,34 @@ Essa habilidade foi ativada no início da aula no arquivo settings.json com os p
 	Se essas configurações não tiverem ativadas você pode ir por Workspace Settings
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/enableemett.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/enableemett.png" />
+    
 </h1>
 
 Repare que as classes são definidas pelo atributo classname e não mais somente com o class. Isso por que o class é palavra reservada no React. Agora para navegar entre páginas temos que instalar:
-```bash
+```typescript
 yarn add react-router-dom OU npm install react-router-dom
 ```
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addrouterdom.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addrouterdom.png" />
+    
 </h1>
 
 Incluímos um arquivo routes.tsx para configurar as rotas e na hora de importar emite um aviso para instalar outro pacote, 
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routestsx.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routestsx.png" />
+    
 </h1>
 
 Colocamos o parâmetro –D para indicar que é uma dependência de desenvolvimento e não vai ser utilizada na produção
-```bash
+```typescript
 yarn add @types/react-router-dom –D  OU  npm install @types/react-router-dom -D
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addtypesrouterdom.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addtypesrouterdom.png" />
+    
 </h1>
 
 Depois de instalarmos esse pacote aparece o Inteligesense quando digitamos:
@@ -501,43 +501,43 @@ Depois de instalarmos esse pacote aparece o Inteligesense quando digitamos:
 O código da função Routes ficará assim:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesinitial.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesinitial.png" />
+    
 </h1>
 
 Repare na primeira rota que navega para raiz tem uma propriedade exact. Isso é para diferenciar das outras rotas que também contém a barra para frente, então a página inicial apareceria em todas as outras páginas. Se alterarmos agora a página inicial App.tsx e a página Landing.tsx as rotas já estarão funcionando.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesexact.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesexact.png" />
+    
 </h1>
 
 Porém de formos em Network do browser podemos ver que a cada navegação está havendo o Refresh e carregamento da página inteira (css, scripts) e não queremos isso.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesreflesh.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesreflesh.png" />
+    
 </h1>
 
 Para resolver isso temos que importar de react-router-dom o componente Link e substitui-lo pelas anchor tags do HTML.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesLink.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routesLink.png" />
+    
 </h1>
 
 E invés de href fica to:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeshref.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeshref.png" />
+    
 </h1>
 
 Ao salvar e testar não está recarregando mais nada ao mudar de página. Esse é o conceito de SPA (Single Page Application). Não tem que ficar recarregando recursos compartilhados da mesma aplicação.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/noreflesh.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/noreflesh.png" />
+    
 </h1>
 
 Um recurso interessante que foi ativado no settings.json no começo dessa aula com os parâmetros:
@@ -547,8 +547,8 @@ Um recurso interessante que foi ativado no settings.json no começo dessa aula c
 Isso ativa a possibilidade de importar as referência de outros objetos enquanto estamos digitando ou clicando na palavra e teclando Ctrl + .(ponto)
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/ctrlponto.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/ctrlponto.png" />
+    
 </h1>
 
 Para criar um componente é o mesmo processo de criar as páginas:
@@ -561,7 +561,7 @@ Para criar um componente é o mesmo processo de criar as páginas:
 Uma das diferenças é a criação personalizada de atributos que é feita adicionando uma interface, onde define-se o nome e tipo do atributo, como a seguir:
 interface PageHeaderProps 
 
-```bash
+```typescript
 interface PageHeaderProps 
 {
     title: string;
@@ -572,8 +572,8 @@ interface PageHeaderProps
 Se fosse permitido nulos no parâmetro title teria que colocar um sinal de interrogação após o nome (title?). Além disso, é necessário transformar a função em um objeto constante ficando como abaixo:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/objetocontatne.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/objetocontatne.png" />
+    
 </h1>
 
 O React.FC é uma abreviação de React.FuncionalComponent. As duas formas são aceitas, quando você passa a interface PageHeaderProps está declarando as propriedades que esse componente pode aceitar. Sempre quando se deseja inserir um objeto Javascript dentro do HTML coloca-se em chaves {props} ou {logimg}. O props refere-se a construção lambda, essa denominação é definida pelo programador.
@@ -581,27 +581,27 @@ O React.FC é uma abreviação de React.FuncionalComponent. As duas formas são 
 O props.children refere-se a um propriedade que todos os componentes possuem. E significa que tudo que você colocar dentro de um componente será considerado como “children” e será renderizado se você chamar props.children.Na página TeacherList ficaria assim:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/children.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/children.png" />
+    
 </h1>
 
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/childrenfilters.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/childrenfilters.png" />
+    
 </h1>
 
 
 Para a listagem dos professores foi criado um componente TeacherItem e feita a estilização como abaixo:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teacherliststyle.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teacherliststyle.png" />
+    
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/itemList.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/itemList.png" />
+    
 </h1>
 
 
@@ -631,7 +631,7 @@ Aula 2 (04/08/2020): Proffy Server
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/fluxo_react.png" />
-    <br>
+    
 </h1>
 
 Em aplicativos mobile (Kotlin, Swift, React, Flutter), não entendem HTML (body, table, etc.) para facilitar o consumo de dados por este tipo de dispositivos que tornou popular as API REST, pois retornam os dados em formato JSON e a tecnologia do Front-End que constrói o HTML, ele não retorna mais do servidor (modelo MVC). 
@@ -668,7 +668,7 @@ Existe uma certa confusão quanto aos termos REST e RESTful. Entretanto, ambos r
 
 Iremos agora criar uma Web API REST. Crie uma pasta server, abra o PowerShell. Para iniciar um projeto, entre na pasta onde o projeto será criado e dê o comando:
 
-```bash
+```typescript
 yarn init -y
 ```
 
@@ -676,40 +676,40 @@ O parâmetro “-y” serve para pular as perguntas iniciais como nome e autor d
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/dependencias.png" />
-    <br>
+    
 </h1>
 
 Crie uma pasta src e um arquivo server.ts
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/serverfile.png" />
-    <br>
+    
 </h1>
 
 Abra um terminal no VS Code e instale a biblioteca typescript com o comando:
-```bash
+```typescript
 yarn add typescript –D
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addtypescript.png" />
-    <br>
+    
 </h1>
 
 
 Gere o arquivo de configuração do Typescript com o comando:
-```bash
+```typescript
 yarn tsc –init
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/typescriptsonfig.png" />
-    <br>
+    
 </h1>
 
 
 Definimos a versão do ECMAScript para es2017 pois é a versão que o Node.js entende. Se fosse uma versão de browser como o IE teria que ser uma versão mais antiga. Instalamos a também a dependência:
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addnodedev.png" />
-    <br>
+    
 </h1>
 
 Que executa o servidor Node, fazendo ele entender Typescript, e monitora se teve alteração no Script. Se houver, ele restart automaticamente o servidor. Por padrão, sem a extensão, teríamos que parar e reiniciar o Node manualmente se houvesse alterações.
@@ -718,21 +718,21 @@ Para testar o serviço, altere o arquivo packages.json e crie uma seção script
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/testestart.png" />
-    <br>
+    
 </h1>
 
 Observe que esta configuração "start": "ts-node-dev src/server.ts" poderia ser abreviada como "start": "tsnd src/server.ts". Para executar no terminai digite:
-```bash
+```typescript
 yarn start OU npm start
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/runserver.png" />
-    <br>
+    
 </h1>
 
 No script do   iremos inserir algumas flags e ficará assim:
 
-```bash
+```typescript
 "scripts": {
     "dev": "tsnd -
             --transpile-only
@@ -749,54 +749,54 @@ Abaixo um comparativo das saídas de usando o flag respawn, exemplificando que e
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/respawn.png" />
-    <br>
+    
 </h1>
 
 Outro exemplo é que se alterar a saída, ele atualiza automaticamente:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/respawnupdate.png" />
-    <br>
+    
 </h1>
 
 Por causa dessa funcionalidade temos que abrir outro terminal para instalar outra dependência o express:
 yarn add express
-```bash
+```typescript
 yarn add express
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addexporess.png" />
-    <br>
+    
 </h1>
 
 
 O express é micro-framework que traz algumas funcionalidades prontas que evitam ficar fazendo configurações. Ao importar o express no arquivo server.ts dá um erro de dependência já visto anteriormente
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/expresserror.png" />
-    <br>
+    
 </h1>
 
 
 Quando estamos trabalhando com typescript, alguns pacotes adicionados são também em typescript e outros não. Os que não são a comunidade precisar criar esses pacotes de tipagem (com @type) que precisam ser instaladas também.
-```bash
+```typescript
 npm install @types/express –D
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/expresstypes.png" />
-    <br>
+    
 </h1>
 
 
 Executando o método get acima, já temos a comunicação da aplicação mas os resultados não saem no navegador.
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/CannotGET.png" />
-    <br>
+    
 </h1>
 
 
 Para dar a saída temos que incluir os 2 parâmetros que são injetados pelo método app.get: o request e o response. O request traz informações sobre a requisição (o cabeçalho e o corpo, o usuário, e-mail, senha, dados recebidos pelo Front-End). O response é a resposta da API para a aplicação. O código fica assim:
 
-```bash
+```typescript
 import express from 'express';
 
 const app = express();
@@ -810,13 +810,13 @@ app.listen(3333);
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/start3333.png" />
-    <br>
+    
 </h1>
 
 
 Porém como trabalhar com formato JSON precisamos fazer algumas alterações:
 
-```bash
+```typescript
 import express from 'express';
 
 const app = express();
@@ -834,20 +834,20 @@ app.listen(3333);
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/startJSON.png" />
-    <br>
+    
 </h1>
 
 Para visualizarmos melhor os resultados podemos instalar um plugin no navegador Chrome, JSON Viewer:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/JSONViewer.png" />
-    <br>
+    
 </h1>
 
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/JSONViewerformat.png" />
-    <br>
+    
 </h1>
 
 
@@ -858,7 +858,7 @@ Insonmnia (https://insomnia.rest/download/)
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insomniacreate.png" />
-    <br>
+    
 </h1>
 
 
@@ -866,7 +866,7 @@ Depois criamos uma nova requisição CriarUsuario pelo método POST:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/userrequest.png" />
-    <br>
+    
 </h1>
 
 
@@ -874,12 +874,12 @@ Depois de alterarmos o método de GET para POST conseguimos obter o resultado de
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/GETtoPOST.png" />
-    <br>
+    
 </h1>
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/GETtoPOSTresult.png" />
-    <br>
+    
 </h1>
 
 ## PARÂMETROS
@@ -895,7 +895,7 @@ Se colocarmos um request.body no método POST:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/RequestPOST.png" />
-    <br>
+    
 </h1>
 
 
@@ -903,23 +903,23 @@ E no Insomnia enviarmos um novo registro de usuário e colocamos método POST:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/createuserPOT.png" />
-    <br>
+    
 </h1>
 
 
 No terminal retorna undefined pois o express não entende JSON por padrão. Corrigimos isso adicionando no arquivo server.ts o módulo que interpreta o JSON:
-```bash
+```typescript
 app.use(express.json());
 ```
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/servermodule.png" />
-    <br>
+    
 </h1>
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/servermoduleresult.png" />
-    <br>
+    
 </h1>
 
 ### Route Params
@@ -928,25 +928,25 @@ Se colocarmos um request.params no método DELETE:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeparams.png" />
-    <br>
+    
 </h1>
 
 E no Insomnia enviarmos uma rota com a barra e um id e selecionamos método DELETE:
 
-```bash
+```typescript
 http://localhost:3333/users/1
 ```
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeparamsdelete.png" />
-    <br>
+    
 </h1>
 
 No terminal retorna
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routeparamsdeletereturn.png" />
-    <br>
+    
 </h1>
 
 
@@ -956,25 +956,25 @@ Se colocarmos um request.query no método GET:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routequery.png" />
-    <br>
+    
 </h1>
 
 
 E no Insomnia enviarmos uma rota com a query:
-```bash
+```typescript
 http://localhost:3333/users?page=20&name=Bob
 ```
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routequeryinsomnia.png" />
-    <br>
+    
 </h1>
 
 No terminal retorna
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/routequeryreturn.png" />
-    <br>
+    
 </h1>
 
 
@@ -987,7 +987,7 @@ Identificando acessos de Back-End pelo layout Front-End:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/rotaconections.png" />
-    <br>
+    
 </h1>
 
 
@@ -996,7 +996,7 @@ Identificando acessos de Back-End pelo layout Front-End:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/rotazap.png" />
-    <br>
+    
 </h1>
 
 ### Aulas/Classes
@@ -1005,7 +1005,7 @@ Identificando acessos de Back-End pelo layout Front-End:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/rotacriarclass.png" />
-    <br>
+    
 </h1>
 
 - Rota para listar aulas
@@ -1013,7 +1013,7 @@ Identificando acessos de Back-End pelo layout Front-End:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/rotalistarclass.png" />
-    <br>
+    
 </h1>
 
 ## ROTA PARA CRIAR UMA AULA
@@ -1023,20 +1023,20 @@ Identificando acessos de Back-End pelo layout Front-End:
 - Instalar 
     - knex (Query-Builer, escreve comando SQL em Javascript) 
     - sqlite3 (driver para que o Node consiga se conectar ao sqlite)
-```bash
+```typescript
 yarn add knex sqlite3
 ```
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addsqllite.png" />
-    <br>
+    
 </h1>
 
 Adicione uma pasta dentro de src com um arquivo connections.ts:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/connetionsrtx.png" />
-    <br>
+    
 </h1>
 
 
@@ -1048,7 +1048,7 @@ Como o knex só entende Javascript e não Typescript precisamos criar um arquivo
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/knexfilets.png" />
-    <br>
+    
 </h1>
 
 
@@ -1056,7 +1056,7 @@ Depois incluímos um script no arquivo packages.json, que faz o redirecionamento
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/knexredirect.png" />
-    <br>
+    
 </h1>
 
 
@@ -1069,7 +1069,7 @@ Poderíamos utilizar um comando knex que cria a Migrations tudo em Javascript (?
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/migrationsfiles.png" />
-    <br>
+    
 </h1>
 
 - **Up**: Executa o especificado (pelo parâmetro config.name) ou a próxima migração cronológica que ainda não foi executada.
@@ -1078,19 +1078,19 @@ Poderíamos utilizar um comando knex que cria a Migrations tudo em Javascript (?
 Para maiores informações de implementação desses objetos pode ser obtida na documentação oficial [aqui] (http://knexjs.org/#Migrations-API)
 
 Rodando o comando adaptado para criar a tabela de usuários:
-```bash
+```typescript
 yarn knex:migrate OU npx knex migrate:latest
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/knexmigration.png" />
-    <br>
+    
 </h1>
 
 Para visualizar os dados gravados em database.sqlite precisamos instalar a Extensão abaixo. (OBS.: Essa extensão dá muitos problemas na hora de visualizar os dados e **tem que ficar dando RELOAD no VS Code e reiniciando o yarn start)**
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/sqlliteerrror.png" />
-    <br>
+    
 </h1>
 
 
@@ -1098,16 +1098,16 @@ Ao clicar com o botão direito no arquivo database.sqlite, podemos abrir uma nov
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/tableusers.png" />
-    <br>
+    
 </h1>
 
 Se algo der errado, o mais fácil e deletar o arquivo database.sqlite e tentar gerar novamente tudo. No código abaixo, podemos ver a implementação de tabelas relacionadas e Trigger em Cascade para Deletar e Fazer update das tabelas. A cada alteração do banco, para atualizar o arquivo database.sqlite precisamos rodar o comando:
-```bash
+```typescript
 yarn knex:migrate OU npx knex migrate:latest
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarnmigrate.png" />
-    <br>
+    
 </h1>
 
 
@@ -1119,26 +1119,26 @@ Por critério de organização iremos criar um arquivo routes.ts para retirar o 
 Como está em um arquivo separado utilizamos express.Router() (anteriormente as rotas eram construídas diretamente através de express). Isso possibilita as rotas serem chamadas e utilizadas em diversas partes do projeto. Para testar as alterações voltamos ao Insomnia e fazemos as seguintes alterações:
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/changeservertoroutes.png" />
-    <br>
+    
 </h1>
 
 
 Como está em um arquivo separado utilizamos express.Router() (anteriormente as rotas eram construídas diretamente através de express). Isso possibilita as rotas serem chamadas e utilizadas em diversas partes do projeto. Para testar as alterações voltamos ao Insomnia e fazemos as seguintes alterações:
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/testchanges.png" />
-    <br>
+    
 </h1>
 
 
 Ao enviar temos a resposta no terminal:
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/testchangesresult.png" />
-    <br>
+    
 </h1>
 
 
 Agora altramos os dados do objeto para cadastrar uma classe:
-```bash
+```typescript
 {
 	"name": "Shyoutaou Shyou",
 	"avatar": "https://image",
@@ -1158,36 +1158,36 @@ Fazemos as alterações abaixo no arquivo routes.ts para testar a gravação n t
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insertusers.png" />
-    <br>
+    
 </h1>
 
 Para inserir classes o mesmo procedimentos, só temos que recuperar o user_id ao salvar um usuário:
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insertclass.png" />
-    <br>
+    
 </h1>
 
 Para habilitar as operações em transações e commit igual no SQL declaramos uma constante:
-```bash
+```typescript
 const trx = await db.transaction();
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/transactions.png" />
-    <br>
+    
 </h1>
 
 E substituímos por toda ocorrência de db que havia antes. No final damos o commit: 
-```bash
+```typescript
 trx.commit();
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/commits.png" />
-    <br>
+    
 </h1>
 
 Para tratar erro com try-catch pode ser feito assim:
 
-```bash
+```typescript
 const trx = await db.transaction();
 try 
 {
@@ -1208,51 +1208,51 @@ Foi feito um refatoramento de código, retirando tudo que estava em route.ts (qu
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/listpage.png" />
-    <br>
+    
 </h1>
 
 As partes de código de gravação e filtragem estão agora em outra pasta chamada controllers que segue o modelo MVC e que foi visto uma implementação similar quando vimos a parte de componentes anteriormente. Foi criado o arquivo ClassesController.ts e codificado um teste para página de filtro utilizando o método GET:
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/classcontrolles.png" />
-    <br>
+    
 </h1>
 
 Para testar no Insomnia, crie o 3 parâmetros utilizados (week_day, subject, time) com o auxílio da interface e clique Enviar
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/tresparams.png" />
-    <br>
+    
 </h1>
 
 
 Se retornar o valor dos minutos no terminal está tudo OK:
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/minutes.png" />
-    <br>
+    
 </h1>
 
 
 Adicionando a filtragem e retornando um objeto JSON:
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/filtragemJSON.png" />
-    <br>
+    
 </h1>
 
 
 Testando no Insomnia:
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/filterInsomnia.png" />
-    <br>
+    
 </h1>
 
 
 Para finalizar, adicionamos o pacote cors, que permite que aplicações em endereços diferentes, no caso,  nosso Front-End esteja no localhost:3000 e seja acessado pela API Back End em localhost:3333. Por padrão, só permite o acesso de aplicações no mesmo endereço a API.
-```bash
+```typescript
 yarn add cors
 ```
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addcors.png" />
-    <br>
+    
 </h1>
 
 
@@ -1276,8 +1276,8 @@ Aula 3 (05/08/2020): Front e Back End Web
 Voltamos ao projeto Front-End, na página Formulário de Cadastro da classe que ficou faltando da aula 1. Como já foi mencionado, é possível criar uma propriedade nula no componente.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/cadastronull.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/cadastronull.png" />
+    
 </h1>
 
 Para renderizar condicionalmente essa informa��es no componente PageHeader temos duas sintaxe poss�veis:
@@ -1287,29 +1287,29 @@ Para renderizar condicionalmente essa informa��es no componente PageHeader t
 Crie na pasta componentes uma pasta input com os arquivos padr�o index.tsx e styles.css. Para extender todos atributos de um componente padr�o para o seu componente tem que aplicar heran�a (extends) da classe InutHTMLAttributes do React, como abaixo:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/HTMLAttributes.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/HTMLAttributes.png" />
+    
 </h1>
 
 Depois recorte e cole a css do input que estava no css da p�gina TeacheList no css desse componente.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacheListstyle.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacheListstyle.png" />
+    
 </h1>
 
 Importando o componente e substituindo os input da página TeacherList.tsx:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacheListform.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacheListform.png" />
+    
 </h1>
 
 Testando a herança do componente:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/filtertest.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/filtertest.png" />
+    
 </h1>
 
 ### TextArea e Caixa de Seleção
@@ -1321,46 +1321,46 @@ Basicamente, esses dois componentes é o mesmo procedimento do Input, entãom po
 O TextArea teve pequenas mudanças de estilo em relação ao componente Input.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/textararcompo.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/textararcompo.png" />
+    
 </h1>
 
 A caixa de seleção poderia ser estilizada usando uma biblioteca externa como o React-Select (https://react-select.com/home):
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/reactselect.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/reactselect.png" />
+    
 </h1>
 
 Para criar os items da caixa de seleção siga o exemplo abaixo no arquivo index.tsx do componente Select
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/combobox.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/combobox.png" />
+    
 </h1>
 
 E na págima TeacherForm.tsx:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxitens.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxitens.png" />
+    
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxitenstest.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxitenstest.png" />
+    
 </h1>
 
 Porém no Inspect >> Console indica que houve erro:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxerror.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboboxerror.png" />
+    
 </h1>
 
 Isso por que não colocamos o key, que deve ser único para o primeiro elemento da lista. Ajuda o React a identificar os elementos na hora de listar na tela. Foi incluído também um option default.
 
-```bash
+```typescript
 const Select: React.FC<SelectProps> = ({label, name, options, ...rest}) => 
 {  
     const inputRef = useRef(null);
@@ -1397,13 +1397,13 @@ Sempre que precisar manipular um ação dentro de um componente cria-se um estad
 No Javascript, para colocar elementos iterativos repetitivos, tinha que inserir HTML (Com algum InnerHTML) para obter o seguinte resultado:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/horarios.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/horarios.png" />
+    
 </h1>
 
 No React, só precisamos iterar por um array. Porém, o React não fará isso automaticamente por padrão, mas pelo conceito de estados:
 
-```bash
+```typescript
 const scheduleItems = [
 	{week_day: 0, from: "8:00 AM", to: "16:00 PM"},
     {week_day: 1, from: "10:00 AM", to: "6:00 PM"},
@@ -1412,35 +1412,35 @@ const scheduleItems = [
 Repare que sempre que usarmos map na tela, tem que setar a propriedade key. 
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/propkey.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/propkey.png" />
+    
 </h1>
 
 Sempre que adicionarmos novos itens, um problema de key no mapa acontece, pois o índice inicial 0 é repetitdo para cada elemento incluso. 
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboerroragain.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/comboerroragain.png" />
+    
 </h1>
 
 Para resolver isso, setamos o key para o index, que é incremental a cada elemento criado:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/keyindex.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/keyindex.png" />
+    
 </h1>
 
 
 Para ativar o estados no React, precisamos importar o módulo, e alterar o array para que aceite os estados, assim:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/usestate.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/usestate.png" />
+    
 </h1>
 
 As variáveis depois que criadas pelo React pelo conceito de estado são imutáveis, por isso foi colocado este formato:
 
-```bash
+```typescript
 { week_day: 0, from: '', to: ''}
 ```
 
@@ -1453,20 +1453,20 @@ A função setScheduleItems que o usa para copiar o array:
 Para recuperar o valor selecionado da caixa de seleção, precisamos atribuir o método Onchange:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/onchangestate.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/onchangestate.png" />
+    
 </h1>
 
 A função utilizada ficará como a seguir:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/setschedule.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/setschedule.png" />
+    
 </h1>
 
 Que tem o seguinte funcionamento:
 
-```bash
+```typescript
 const [scheduleItems, setScheduleItems] = useState([
 	{ week_day: 0, from: '', to: ''},
 ]);
@@ -1474,7 +1474,7 @@ const [scheduleItems, setScheduleItems] = useState([
 
 Na função setScheduleItemValue(position: number, field: string, value: string), se tiver os valores iniciais como setScheduleItemValue(0, "week_day", '2'), quando passar por scheduleItems.map((scheduleItem, index) terá como valores:
 
-```bash
+```typescript
 scheduleItem = { week_day: 0, from: '', to: ''},
 index = 0
 ```
@@ -1482,8 +1482,8 @@ index = 0
 Irá fazer a comparação if (index === position) e, sendo 0 === 0, retorna um objeto array return {...scheduleItem, [field]: value }; O valor de field é "week_day" que vai sobreescrever o valor do campo weekday do objeto array. Testando na aplicação;
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/inserthorario.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/inserthorario.png" />
+    
 </h1>
 
 
@@ -1493,56 +1493,56 @@ Irá fazer a comparação if (index === position) e, sendo 0 === 0, retorna um o
 
 Pelo terminal, navegue até a pasta do projeto server e digite:
 
-```bash
+```typescript
 yarn start
 ```
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarnstartcad.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/yarnstartcad.png" />
+    
 </h1>
 
 Às vezes, dá erro ao carregar e não reconhecer o cors e tem que reinstalar. Para confirmar que está funcionando vá ao Insomnia e teste em qualquer dos métodos criado anteriormente:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insomniatest.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/insomniatest.png" />
+    
 </h1>
 
 Precisamos instalar outra biblioteca que facilita o consumo de API externas pela aplicação. Quase todo projeto precisa fazer interface com uma API REST em algum estágio. Axios é um cliente HTTP leve baseado no serviço $ http em Angular.js v1.x e semelhante à API Fetch.
 
 Axios é um cliente HTTP, que funciona tanto no browser quanto em node.js. A biblioteca é basicamente uma API que sabe interagir tanto com XMLHttpRequest quanto com a interface http do node. Isso significa que o mesmo código utilizado para fazer requisições ajax no browser também funciona no servidor. Além disso, as requisições feitas através da biblioteca retornam uma promise, compatível com a nova versão do JavaScript - ES6 e, portanto, podemos aproveitar as vantagens do assíncrono e aguardar por um código assíncrono mais legível. Também podemos interceptar e cancelar solicitações, e há proteção integrada do lado do cliente contra falsificação de solicitação entre sites.
-```bash
+```typescript
 yarn add axios
 ```
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addaxios.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/addaxios.png" />
+    
 </h1>
 
 Criamos uma nova pasta services com um arquivo api.tx com o seguinte código:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/servicefolder.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/servicefolder.png" />
+    
 </h1>
 
 Obrigatório colocar o URL de baseURL em maiúsculas e indicar a base do endereço. Vamos adicionar as informações primeiro na página Landing, vamos precisar novamente utilizar dos Estados. Para facilitar a inclusão das referências é possível teclar Crtl + . (ponto):
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/baseURL.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/baseURL.png" />
+    
 </h1>
  
 Se quiser que o useEffect atualizasse os valores a cada mudança e não apenas no carregamento da página, teríamos que criar uma variável inclui-la no “Array de Dependências”. Se a variável alterar indica a função quando deve ser executada. O useEffect utiliza o método GET para obter os dados, e se colocássemos um console.log na função poderíamos analisar o retorno:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/useEffectGET.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/useEffectGET.png" />
+    
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/connections.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/connections.png" />
+    
 </h1>
 
 ### POST no Formulário
@@ -1550,68 +1550,68 @@ Se quiser que o useEffect atualizasse os valores a cada mudança e não apenas n
 Na página de TeacherForm.tsx vamos adicionar nossas variáveis de Estado e inicialixa-las:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/statevariables.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/statevariables.png" />
+    
 </h1>
 
 Depois relacionamos com o campo e adicionamos o método Onchange:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/inputname.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/inputname.png" />
+    
 </h1>
 
 A seguir, envolvemos todo o código do formulário com uma tag form e trocamos o tipo do botão para submit
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/tagform.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/tagform.png" />
+    
 </h1>
  
 Criamos o método handleCreateClass e para testa-lo emitimos um console.log com os dados da tela. O parâmetro e: FormEvent é necessário pois como a função está fora do HTML, precisamos dessa classe do React para especificar o tipo dos argumentos. O e.preventDefalt é colocado para interromper o POST de direcionamento da página que é o comportamento padrão do botão submit.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/preventDefalt.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/preventDefalt.png" />
+    
 </h1>
  
 Ao clicar o botão deve voltar os dados:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/returndata.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/returndata.png" />
+    
 </h1>
 
 Quando os dados estiverem retornando, podemos alterar a função para gravar a aula:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/createclass.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/createclass.png" />
+    
 </h1>
 
 
 E verifique se está gravando com o Insomnia e o Request List Classes
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/requestlistclass.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/requestlistclass.png" />
+    
 </h1>
 
 Para redirecionarmos a página inicial depois de completar o cadastro, precisamos importar o módulo history:
 
-```bash
+```typescript
 import { useHistory } from 'react-router-dom';
 ```
 
 Criamos uma constante e aplicamos no método.
 
-```bash
+```typescript
 const history = useHistory();
 ```
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/usehistory.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/usehistory.png" />
+    
 </h1>
 
 ### GET Lista de Classes
@@ -1619,41 +1619,41 @@ const history = useHistory();
 A parte de filtragem é feita da mesma forma que foi feito do POST do formulário, mas até agora os items listados nesta tela TescherList.tsx estão na forma HARD-CODE, ou seja, estático e precisamos trocar por variáveis.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/listhardcode.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/listhardcode.png" />
+    
 </h1>
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teachritems.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teachritems.png" />
+    
 </h1>
 
 Para isso precisamos primeiro alterar o componente TeacherItem criando a interface para passar os dados na tela. E também criamos outra interface para definir um objeto, já que as informações que iremos passar não são de tipo primitivo:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/interfaceteacher.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/interfaceteacher.png" />
+    
 </h1>
 
 Lembra-se quando criamos uma interface e precisamos passar os dados, devemos chamar o React.FC é uma abreviação de React.FuncionalComponent, mesma coisa que foi feito no input. E substituímos os campos.
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/FuncionalComponent.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/FuncionalComponent.png" />
+    
 </h1>
 
 Por fim, alteramos a página TeacherList.tsx para ficar assim:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacherListcompo.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/TeacherListcompo.png" />
+    
 </h1>
 
 Ao realizar a filtragem:
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teacherfilter.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/teacherfilter.png" />
+    
 </h1>
 
 Por fim, temos que ativar o botão de contato do Whatsapp que utilizará o procedimento “Como usar a conversa em um clique”
@@ -1671,6 +1671,6 @@ Ao clicar no botão:
 
 
 <h1 align="center">
-    <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/directlionk.png" />
-    <br>
+    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/directlionk.png" />
+    
 </h1>
