@@ -604,7 +604,9 @@ Para a listagem dos professores foi criado um componente TeacherItem e feita a e
     <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/itemList.png" />
     
 </h1>
-
+<h1 align="center">
+    <img alt="Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/itemList.png" />
+</h1>
 
 Aula 2 (04/08/2020): Proffy Server
 
@@ -632,7 +634,6 @@ Aula 2 (04/08/2020): Proffy Server
 
 <h1 align="center">
     <img alt="Missing Image" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/fluxo_react.png" />
-    
 </h1>
 
 Em aplicativos mobile (Kotlin, Swift, React, Flutter), não entendem HTML (body, table, etc.) para facilitar o consumo de dados por este tipo de dispositivos que tornou popular as API REST, pois retornam os dados em formato JSON e a tecnologia do Front-End que constrói o HTML, ele não retorna mais do servidor (modelo MVC). 
