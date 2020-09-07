@@ -28,6 +28,7 @@ Resumo dos três primeiros dias da NLW da Rocketseat.
 ### GitHub Pages
  
 [GitHub Pages: Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
+[GitHub Pages Web](https://shyoutarou.github.io/NLW2_Web/)
 
 ## 📌 Index
 - [INSTALAÇÕES](#instalações-node-e-npm)
