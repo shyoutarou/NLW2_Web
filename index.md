@@ -59,7 +59,6 @@ Não só pelo fato de facilitar possíveis desinstalações e atualizações do 
 
 <h1 align="center">
     <img alt="Create Project" src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_versao.png" />
-    <br>
 </h1>
 
 ### Windows
