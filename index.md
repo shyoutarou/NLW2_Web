@@ -1,14 +1,5 @@
 # Aula 1 (03/08/2020): Proffy-Web
 
-<ul>
-{% for post in site.posts %}
-<li>
-<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-</li>
-{% endfor %}
-</ul>
-
-
 ### Videos Youtube
 
 Trilha OmniStack
@@ -27,8 +18,8 @@ Resumo dos três primeiros dias da NLW da Rocketseat.
 
 ### GitHub Pages
  
-[GitHub Pages: Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
-[GitHub Pages Web](https://shyoutarou.github.io/NLW2_Web/)
+- [GitHub Pages: Mobile](https://shyoutarou.github.io/NLW2_Mobile/)
+- [GitHub Pages Web](https://shyoutarou.github.io/NLW2_Web/)
 
 ## 📌 Index
 - [INSTALAÇÕES](#instalações-node-e-npm)
@@ -39,20 +30,6 @@ Resumo dos três primeiros dias da NLW da Rocketseat.
     - [YARN](#yarn-1-opcional)
     - [VS-Code](#visual-studio-code)
 - [CRIAR-PROJETO](#criar-projeto)
-
-## INSTALAÇÕES - Node E NPM 
-
-O primeiro passo para podermos utilizar a Omnistack (Node.js, ReactJS e React Native) é instalar o Node.js, que vem acompanhado do NPM. Para visualizar o site do Node.js e suas versões:
-    * https://nodejs.org/en/
-
-Como você já deve ter visto, na página principal do Node são apresentadas duas versões: LTS e Current.
-
-<h1 align="center">
-    <img alt=“Image” src="https://raw.githubusercontent.com/shyoutarou/NLW2_Web/master/.github/node_download.png" />
-    
-</h1>
-
-A primeira se refere à versão do Node que possui Long Term Support (LTS), são as mais confiáveis e é a que recomendamos utilizar na NLW. Já a segunda se refere à versão do Node mais atual e experimental, o que não é recomendada para desenvolvimento ainda.
 
 ## INSTALAÇÕES - Node E NPM 
 
