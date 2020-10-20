@@ -1,4 +1,4 @@
-# NLW-Next-Level-Week #2
+# NLW-Next-Level-Week #2 - Web
 
 
 <details>
@@ -53,28 +53,68 @@
 
 
 ## 📌 Index
-<p align="center">
-  <a href="#-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-motivo">Motivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-days-e-techs">Days e Techs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-desenvolvimento">Desenvolvimento</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-instalação-e-start">Instalação e Start</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-extra-chalenges">Extra chalenges</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-issues">Issues</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-contribuições">Contribuições</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-license">License</a> 
-</p>
 
+- [NLW-Next-Level-Week #2 - Web](#nlw-next-level-week-2---web)
+  - [📌 Index](#-index)
+  - [❔ Sobre o projeto](#-sobre-o-projeto)
+  - [🧐 Motivo](#-motivo)
+  - [THE EXTRAMILE - Proffy 2.0](#the-extramile---proffy-20)
+  - [📸 Screenshots](#-screenshots)
+    - [Web Responsive Interface  para Desktop com ReactJS](#web-responsive-interface-para-desktop-com-reactjs)
+    - [***Utilitários***](#utilitários)
+    - [🛠 Days e Techs](#-days-e-techs)
+    - [Desenvolvimento NLW2_Web wiki!](#desenvolvimento-nlw2_web-wiki)
+  - [⚙ Instalação e Start](#-instalação-e-start)
+    - [Comandos para instalar no MAC](#comandos-para-instalar-no-mac)
+    - [Comandos para instalar no Windows PowerShell](#comandos-para-instalar-no-windows-powershell)
+    - [Clonagem](#clonagem)
+    - [Como executar o projeto](#como-executar-o-projeto)
+    - [💻 Executar Projeto Web](#-executar-projeto-web)
+    - [📦 Executar Server API REST](#-executar-server-api-rest)
+  - [🐛 Issues](#-issues)
+  - [🤝 Contribuições](#-contribuições)
+  - [***:star2: AGRADECIMENTOS***](#star2-agradecimentos)
+  - [***:books: REFERÊNCIAS***](#books-referências)
+  - [📜 License](#-license)
+  
+  
 ## ❔ Sobre o projeto
 
 Durante o evento Next Level Week #2, foi desenvolvido a projeto Proffy, que é uma plataforma de estudos online, conectando alunos com professores para aulas online, tendo um calendário para o professro com seus horários disponíveis para que os alunos possam entrar em contato, não engloba vídeo. Trazendo uma representação e homenagem para o dia nacional do profissional da educação, que é comemorado no dia 06 de agosto.
 
 O projeto está sendo desenvolvido na [Next Level Week 2](https://nextlevelweek.com/episodios/omnistack/1/edicao/2). Uma plataforma de estudos online que visa conectar alunos e professores de forma rápida e fácil.
 
+Este projeto é uma parte de uma trilogia: 
+- [NLW2_Server](https://github.com/shyoutarou/NLW2_Server)
+- [NLW2_Web](https://github.com/shyoutarou/NLW2_Web)
+- [NLW2_Mobile](https://github.com/shyoutarou/NLW2_Mobile)
+
 ## 🧐 Motivo
 
-Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
+Desenvolvimento apartir do projeto [Next Level Week 2](https://github.com/shyoutarou/NLW-Next-Level-Week-2), visa atender os Desafios lançados no final na semana NLW#2, desenvolvido pela [Rocketseat](https://rocketseat.com.br/).
+  
+## THE EXTRAMILE - Proffy 2.0
+
+<h2 align="left"> 📥 Figma layout available for download at: </h2>
+
+- [Instruções](https://www.notion.so/Layout-Proffy-3d5f45f54ec54ef9b2103565b7cce4e1)
+- [Protótipo](https://whimsical.com/4Ug5pJLABvCj2NWQXyuK38)
+- [Proffy-Web](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web)
+
+- [x] Autenticação
+  - [x] Login / Logout 
+  - [x] Permanecer logado - Token
+  - [x] Recuperar senha
+- [x] Manutenção de Perfil do usuário
+- [x] Adicionar e remover os Horários no cadastro das Aulas 
+- [ ] Deploy
+ 
+## 📸 Screenshots
+
+### Web Responsive Interface  para Desktop com ReactJS
+<p align="center">
+  <img src=".github/appweb.gif" alt="Study Page in Mobile" width="100%" />
+</p>
 
 ### ***Utilitários***
 
@@ -84,7 +124,7 @@ Desenvolvimento do projeto Next Level Week, desenvolvido pela Rocketseat.
 - Commit Conventional: **[Commitlint](https://github.com/conventional-changelog/commitlint)**
 - Teste de API: **[Insomnia](https://insomnia.rest/)**
 - Ícones: **[Feather Icons](https://feathericons.com/)**, **[Font Awesome](https://fontawesome.com/)**
-- Fontes: **[Archivo](https://fonts.google.com/specimen/Archivo)**, **[Poopins](https://fonts.google.com/specimen/Poppins)**
+- Fontes: **[Archivo](https://fonts.google.com/specimen/Archivo)**, Poppins)**
 
 ### 🛠 Days e Techs
 
@@ -103,19 +143,6 @@ Resumo dos três primeiros dias da NLW da Rocketseat.
 1. [Aula 1](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-1-(03-08-2020):-Proffy-Web)
 2. [Aula 2](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-2-(04-08-2020):-Proffy-Server)
 3. [Aula 3](https://github.com/shyoutarou/NLW2_Web/wiki/Aula-3-(05-08-2020):-Front-e-Back-End-Web)
-
-## 📸 Screenshots
-
-### Web Responsive Interface  para Desktop com ReactJS
-<p align="center">
-  <img src=".github/appweb.gif" alt="Study Page in Mobile" width="100%" />
-</p>
-
-<h2 align="left"> 📥 Figma layout available for download at: </h2>
-
-- [Instruções](https://www.notion.so/Layout-Proffy-3d5f45f54ec54ef9b2103565b7cce4e1)
-- [Protótipo](https://whimsical.com/4Ug5pJLABvCj2NWQXyuK38)
-- [Proffy-Web](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web)
 
 ## ⚙ Instalação e Start
 
@@ -145,7 +172,7 @@ Para instalar e startar a plataforma Proffy, use `npm` ou `yarn`:
 Primeiro, clone o repositório para seu ambiente:
 
 ```bash
-> git clone https://github.com/shyoutarou/proffy.git 
+> git clone https://github.com/shyoutarou/NLW2_Web.git 
 ```
 
 Depois, entre no repositório clonado e no diretório correspondente ao que quer testar (web, server).
@@ -163,7 +190,7 @@ Back End (pasta server) Front End (pasta web) Mobile (pasta mobile)
 
 ```bash
 # Entra no diretório "web"
-> cd ./proffy/web
+> cd ./web
 
 # Instala todas as dependências
 > yarn install or npm install
@@ -177,7 +204,7 @@ Back End (pasta server) Front End (pasta web) Mobile (pasta mobile)
 
 ```bash
 # Entra no diretório "server"
-> cd ./proffy/server
+> cd ./server
 
 # Instala todas as dependências
 > yarn install or npm install
@@ -190,16 +217,6 @@ Back End (pasta server) Front End (pasta web) Mobile (pasta mobile)
 
 # Será startado em `http://localhost:3333`
 ```
-
-## Extra chalenges in App Version 2.0
-
-- [x] Autenticação
-  - [x] Login / Logout 
-  - [x] Permanecer logado - Token
-  - [x] Recuperar senha
-- [x] Manutenção do Perfil do usuário
-- [x] Adicionar e remover os Horários no cadastro das Aulas 
-- [ ] Deploy
  
 <h2 align="left"> 📥 Figma layout available for download at: </h2>
 
