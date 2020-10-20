@@ -18,19 +18,19 @@
 - [Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=dQejdNMUIIs)
 - [Trilha OmniStack Aula 4](https://www.youtube.com/watch?v=fMd6Dnl08FQ)
 - [Trilha OmniStack Aula 5](https://www.youtube.com/watch?v=L5UfFYwFs8c)
-
+- 
 - [Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=Joc--gM3v38)
 - [Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=5sE63gIQdEI)
 - [Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=qIA6Ggu4Qto)
 - [Trilha OmniStack Aula 4](https://www.youtube.com/watch?v=EP5y-MznodY)
 - [Trilha OmniStack Aula 5](https://www.youtube.com/watch?v=upE15aksrd0)
-
+- 
 - [Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=5sMFlyLPBNY)
 - [Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=i08M1RIy8vw)
 - [Trilha OmniStack Aula 3](https://www.youtube.com/watch?v=ccErBt6lQ1Y)
 - [Trilha OmniStack Aula 4](https://www.youtube.com/watch?v=ZTqVu3dksfM)
 - [Trilha OmniStack Aula 5](https://www.youtube.com/watch?v=7PJ1VKSv2a4)
-
+- 
 1. NWL#3
 - [Trilha OmniStack Aula 1](https://www.youtube.com/watch?v=Cea4EN35T3I)
 - [Trilha OmniStack Aula 2](https://www.youtube.com/watch?v=NJULy1-creQ)
@@ -119,9 +119,9 @@ Desenvolvimento apartir do projeto [Next Level Week 2](https://github.com/shyout
 
 <h2 align="left"> 📥 Figma layout available for download at: </h2>
 
-- [Instruções](https://www.notion.so/Layout-Proffy-3d5f45f54ec54ef9b2103565b7cce4e1)
-- [Protótipo](https://whimsical.com/4Ug5pJLABvCj2NWQXyuK38)
-- [Proffy-Web](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web)
+- [Instruções](https://www.notion.so/Vers-o-2-0-Proffy-eefca1b981694cd0a895613bc6235970)
+- [Proffy-Web 2.0](https://www.figma.com/file/Agvethfp7FANyXDDU3LUfd/Proffy-Web-2.0)
+- [Proffy-Mobile 2.0](https://www.figma.com/file/nZ7lMEBYZSMhRxfdvy6fKz/Proffy-Mobile-2.0)
 
 - [x] Autenticação
   - [x] Login / Logout 
